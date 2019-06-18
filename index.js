@@ -155,11 +155,10 @@ async function criaRaid(canalRaid, bicho, adicional, participantesRaid, sponser)
         }
 
 
-        msg.channel.send("111->"+local+"\n"+ horas+"\n"+ canalRaid+"\n"+ adicional+"\n"+ participantesRaid+"\n"+ ovo+"\n"+ braid+"\n"+ cpiv+"\n"+ status+"\n"+ adicional+"\n"+ bosscp+"\n"+ hinicio+"\n"+ hfim+"\n"+ hovo)
-
+    
             //--- fim novo          
 
-msg.channel.send("----------1-----------------------------");
+
 
         var result = await leinforaid('http://pnraidspn.atwebpages.com/raid.php', async function (pCLatLng) {
             pCLatLng.forEach(nivel => {
@@ -167,7 +166,7 @@ msg.channel.send("----------1-----------------------------");
 
                 if (nivel.boss == bicho ) {
                     tiporaid=nivel.nivel
-                    braid = nivel.boss
+                    braid = nivel.imagem
                     cpiv = nivel.cpiv + " " + nivel.bosted;
                     bosscp = nivel.bosscp + " " + nivel.bosstipo;
                     status = nivel.fraco + "\n" + nivel.counter;
@@ -176,9 +175,7 @@ msg.channel.send("----------1-----------------------------");
 
 
             })
-         msg.channel.send(tiporaid+"\n"+braid+"\n"+cpiv+"\n"+bosscp+"\n"+status)
-        msg.channel.send("----------2-----------------------------");
-
+       
 
 
 
@@ -190,13 +187,9 @@ msg.channel.send("----------1-----------------------------");
             }
             //----  FIM TIPO RAID ---
 
-msg.channel.send("222->"+local+"\n"+ horas+"\n"+ canalRaid+"\n"+ adicional+"\n"+ participantesRaid+"\n"+ ovo+"\n"+ braid+"\n"+ cpiv+"\n"+ status+"\n"+ adicional+"\n"+ bosscp+"\n"+ hinicio+"\n"+ hfim+"\n"+ hovo)
-           await disparaRaid(local, horas, canalRaid, adicional, participantesRaid, ovo, braid, cpiv, status, adicional, bosscp, hinicio, hfim, hovo);
-          // disparaRaid(local, horas, canalRaid, adicional, participantesRaid, ovo, braid);
-           //  msg.guild.channels.find("name", "raids-pinhal-novo").sendMessage(msg.guild.channels.find("name", msg.channel.name)+"\n"+membersWithRole.join("\n"));
-console.log("---------------------------------------")
 
- msg.channel.send("----------3-----------------------------");
+           await disparaRaid(local, horas, canalRaid, adicional, participantesRaid, ovo, braid, cpiv, status, adicional, bosscp, hinicio, hfim, hovo);
+          
         });//leinforaid
 
     } catch (err) {
