@@ -209,7 +209,8 @@ console.log("---------------------------------------")
 }
 
 function disparaRaid(local, horas, canalRaid, adicional, participantesRaid, ovo, braid, cpiv, status, adicional, bosscp, hinicio, hfim, hovo){
-    console.log(local+"\n", horas+"\n", canalRaid+"\n", adicional+"\n", participantesRaid+"\n", ovo+"\n", braid+"\n", cpiv+"\n", status+"\n", adicional+"\n", bosscp+"\n", hinicio+"\n", hfim+"\n", hovo);
+ msg.channel.send( local+"\n", horas+"\n", canalRaid+"\n", adicional+"\n", participantesRaid+"\n", ovo+"\n", braid+"\n", cpiv+"\n", status+"\n", adicional+"\n", bosscp+"\n", hinicio+"\n", hfim+"\n", hovo );
+ //console.log(local+"\n", horas+"\n", canalRaid+"\n", adicional+"\n", participantesRaid+"\n", ovo+"\n", braid+"\n", cpiv+"\n", status+"\n", adicional+"\n", bosscp+"\n", hinicio+"\n", hfim+"\n", hovo);
 }
 
 
