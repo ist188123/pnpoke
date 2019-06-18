@@ -52,7 +52,8 @@ var mzero= function(mzero){
 async function criaRaid(canalRaid, bicho, adicional, participantesRaid, sponser) {
 
     try {
-
+        var titulo = "RAID " + canalRaid.substr(5);
+        var tiporaid = canalRaid.substring(5, 6);
         let bosscp = "";
         var status = "Desconhecido";
         var cpiv = "Desconhecido"
@@ -79,7 +80,7 @@ msg.channel.send("----------1-----------------------------");
 
 
             })
-
+         msg.channel.send(tiporaid+"\n"+braid+"\n"+cpiv+"\n"+bosscp+"\n"+status)
         msg.channel.send("----------2-----------------------------");
 
         //-------
