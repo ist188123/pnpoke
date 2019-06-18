@@ -63,25 +63,6 @@ async function criaRaid(canalRaid, bicho, adicional, participantesRaid, sponser)
         //var bicho="";
 
         cor = "0x00AE86";
-msg.channel.send("----------1-----------------------------");
-
-        var result = await leinforaid('http://pnraidspn.atwebpages.com/raid.php', async function (pCLatLng) {
-            pCLatLng.forEach(nivel => {
-               
-
-                if (nivel.boss == bicho ) {
-                    tiporaid=nivel.nivel
-                    braid = nivel.boss
-                    cpiv = nivel.cpiv + " " + nivel.bosted;
-                    bosscp = nivel.bosscp + " " + nivel.bosstipo;
-                    status = nivel.fraco + "\n" + nivel.counter;
-                }
-
-
-
-            })
-         msg.channel.send(tiporaid+"\n"+braid+"\n"+cpiv+"\n"+bosscp+"\n"+status)
-        msg.channel.send("----------2-----------------------------");
 
         //-------
 
@@ -178,6 +159,25 @@ msg.channel.send("----------1-----------------------------");
 
             //--- fim novo          
 
+msg.channel.send("----------1-----------------------------");
+
+        var result = await leinforaid('http://pnraidspn.atwebpages.com/raid.php', async function (pCLatLng) {
+            pCLatLng.forEach(nivel => {
+               
+
+                if (nivel.boss == bicho ) {
+                    tiporaid=nivel.nivel
+                    braid = nivel.boss
+                    cpiv = nivel.cpiv + " " + nivel.bosted;
+                    bosscp = nivel.bosscp + " " + nivel.bosstipo;
+                    status = nivel.fraco + "\n" + nivel.counter;
+                }
+
+
+
+            })
+         msg.channel.send(tiporaid+"\n"+braid+"\n"+cpiv+"\n"+bosscp+"\n"+status)
+        msg.channel.send("----------2-----------------------------");
 
 
 
@@ -191,7 +191,7 @@ msg.channel.send("----------1-----------------------------");
             //----  FIM TIPO RAID ---
 
 msg.channel.send("222->"+local+"\n"+ horas+"\n"+ canalRaid+"\n"+ adicional+"\n"+ participantesRaid+"\n"+ ovo+"\n"+ braid+"\n"+ cpiv+"\n"+ status+"\n"+ adicional+"\n"+ bosscp+"\n"+ hinicio+"\n"+ hfim+"\n"+ hovo)
-            disparaRaid(local, horas, canalRaid, adicional, participantesRaid, ovo, braid, cpiv, status, adicional, bosscp, hinicio, hfim, hovo);
+           await disparaRaid(local, horas, canalRaid, adicional, participantesRaid, ovo, braid, cpiv, status, adicional, bosscp, hinicio, hfim, hovo);
           // disparaRaid(local, horas, canalRaid, adicional, participantesRaid, ovo, braid);
            //  msg.guild.channels.find("name", "raids-pinhal-novo").sendMessage(msg.guild.channels.find("name", msg.channel.name)+"\n"+membersWithRole.join("\n"));
 console.log("---------------------------------------")
@@ -209,7 +209,8 @@ console.log("---------------------------------------")
 
 }
 
-function disparaRaid(local, horas, canalRaid, adicional, participantesRaid, ovo, braid, cpiv, status, adicional, bosscp, hinicio, hfim, hovo){
+async function disparaRaid(local, horas, canalRaid, adicional, participantesRaid, ovo, braid, cpiv, status, adicional, bosscp, hinicio, hfim, hovo){
+msg.channel.send("funcao disparaRaid")
  msg.channel.send( local+"\n", horas+"\n", canalRaid+"\n", adicional+"\n", participantesRaid+"\n", ovo+"\n", braid+"\n", cpiv+"\n", status+"\n", adicional+"\n", bosscp+"\n", hinicio+"\n", hfim+"\n", hovo );
  //console.log(local+"\n", horas+"\n", canalRaid+"\n", adicional+"\n", participantesRaid+"\n", ovo+"\n", braid+"\n", cpiv+"\n", status+"\n", adicional+"\n", bosscp+"\n", hinicio+"\n", hfim+"\n", hovo);
 }
