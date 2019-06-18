@@ -174,7 +174,7 @@ msg.channel.send("----------1-----------------------------");
         }
 
 
-        
+        msg.channel.send("111->"+local+"\n"+ horas+"\n"+ canalRaid+"\n"+ adicional+"\n"+ participantesRaid+"\n"+ ovo+"\n"+ braid+"\n"+ cpiv+"\n"+ status+"\n"+ adicional+"\n"+ bosscp+"\n"+ hinicio+"\n"+ hfim+"\n"+ hovo)
 
             //--- fim novo          
 
@@ -190,7 +190,7 @@ msg.channel.send("----------1-----------------------------");
             }
             //----  FIM TIPO RAID ---
 
-
+msg.channel.send("222->"+local+"\n"+ horas+"\n"+ canalRaid+"\n"+ adicional+"\n"+ participantesRaid+"\n"+ ovo+"\n"+ braid+"\n"+ cpiv+"\n"+ status+"\n"+ adicional+"\n"+ bosscp+"\n"+ hinicio+"\n"+ hfim+"\n"+ hovo)
             disparaRaid(local, horas, canalRaid, adicional, participantesRaid, ovo, braid, cpiv, status, adicional, bosscp, hinicio, hfim, hovo);
           // disparaRaid(local, horas, canalRaid, adicional, participantesRaid, ovo, braid);
            //  msg.guild.channels.find("name", "raids-pinhal-novo").sendMessage(msg.guild.channels.find("name", msg.channel.name)+"\n"+membersWithRole.join("\n"));
