@@ -62,8 +62,8 @@ async function criaRaid(canalRaid, bicho, adicional, participantesRaid, sponser)
         //var bicho="";
 
         cor = "0x00AE86";
+msg.channel.send("----------1-----------------------------");
 
-console.log("---------------------------------")
         var result = await leinforaid('http://pnraidspn.atwebpages.com/raid.php', async function (pCLatLng) {
             pCLatLng.forEach(nivel => {
                
@@ -195,7 +195,7 @@ console.log("---------------------------------")
            //  msg.guild.channels.find("name", "raids-pinhal-novo").sendMessage(msg.guild.channels.find("name", msg.channel.name)+"\n"+membersWithRole.join("\n"));
 console.log("---------------------------------------")
 
-
+ msg.channel.send("----------2-----------------------------");
         });//leinforaid
 
     } catch (err) {
@@ -219,7 +219,7 @@ function disparaRaid(local, horas, canalRaid, adicional, participantesRaid, ovo,
 
       var texto = msg.content.substring(1) 
   
-  
+  msg.channel.send(texto);
 criaRaid('_raid3-teste-teste-00h00-a21-21h38',texto , 'adicional', 'participantesRaid', 'sponser')
       
   
