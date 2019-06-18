@@ -80,7 +80,7 @@ msg.channel.send("----------1-----------------------------");
 
             })
 
-        
+        msg.channel.send("----------2-----------------------------");
 
         //-------
 
@@ -195,7 +195,7 @@ msg.channel.send("----------1-----------------------------");
            //  msg.guild.channels.find("name", "raids-pinhal-novo").sendMessage(msg.guild.channels.find("name", msg.channel.name)+"\n"+membersWithRole.join("\n"));
 console.log("---------------------------------------")
 
- msg.channel.send("----------2-----------------------------");
+ msg.channel.send("----------3-----------------------------");
         });//leinforaid
 
     } catch (err) {
