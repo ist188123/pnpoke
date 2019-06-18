@@ -8,7 +8,7 @@ client.on("message", async (msg) => {
  
   
   //quest
-const http = require('http');
+
 
 function leinforaid(pCode, cb) {  //leraud
 
