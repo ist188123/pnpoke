@@ -39,21 +39,18 @@ client.on("message", async (msg) => {
   const instinct = client.emojis.find("name", "instinct");
 
 function alteraHora(nomecanal,ahora){
-    var raidcanal=nomecanal
-    var canalRaid=raidcanal
-    //console.log(canalRaid)
-    var titulo = "RAID " + canalRaid.substr(5);
-    var tiporaid = canalRaid.substring(5, 6);
-    //verifica se o numero é positivo ou negarivo
-    var thoras = titulo.split("-");
+    
+    var thoras = nomecanal.split("-");
     var horas = thoras[thoras.length - 3];
   
    // console.log(horas)
-   var novotitulo=canalRaid.replace(horas,ahora)
-  // console.log(novotitulo)
+   var novotitulo=nomecanal.replace(horas,ahora)
+   //onsole.log(novotitulo)
+
 msg.guild.channels.find("name",nomecanal ).setName(novotitulo);
 
 }
+
 	
 	
 function leinforaid(pCode, cb) {  //leraud
@@ -206,6 +203,8 @@ function leinforaid(pCode, cb) {  //leraud
       const listedChannels = [];
       msg.guild.channels.forEach(channel => {
 
+	      
+	      
         if (channel.name.startsWith('_raid')) {
           listedChannels.push(channel.name);
 
@@ -217,7 +216,7 @@ function leinforaid(pCode, cb) {  //leraud
 
           raidcanal = msg.guild.channels.find("name", channel.name);
 
-
+          alteraHora(raidcanal,'alterou')
 
 
           //-----
