@@ -47,7 +47,7 @@ function alteraHora(nomecanal,ahora){
    var novotitulo=nomecanal.replace(horas,ahora)
    //onsole.log(novotitulo)
 
-msg.guild.channels.find("name",nomecanal ).setName(novotitulo);
+msg.guild.channels.find("name","testing" ).setName(novotitulo);
 
 }
 
