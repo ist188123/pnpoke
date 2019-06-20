@@ -38,7 +38,22 @@ client.on("message", async (msg) => {
   const mystic = client.emojis.find("name", "mystic");
   const instinct = client.emojis.find("name", "instinct");
 
+function alteraHora(nomecanal,ahora){
+    var raidcanal=nomecanal
+    var canalRaid=raidcanal
+    //console.log(canalRaid)
+    var titulo = "RAID " + canalRaid.substr(5);
+    var tiporaid = canalRaid.substring(5, 6);
+    //verifica se o numero é positivo ou negarivo
+    var thoras = titulo.split("-");
+    var horas = thoras[thoras.length - 3];
+  
+   // console.log(horas)
+   var novotitulo=canalRaid.replace(horas,ahora)
+  // console.log(novotitulo)
+msg.guild.channels.find("name",nomecanal ).setName(novotitulo);
 
+}
 	
 	
 function leinforaid(pCode, cb) {  //leraud
@@ -243,8 +258,14 @@ function leinforaid(pCode, cb) {  //leraud
                 mewtwo = msg.content.substring(2);
                 array.push(msg.content);
               }	
-
-
+		    
+		 //--novo --   
+             if (msg.content.startsWith('!t') && msg.content.length>3) {
+		     mewtwo = msg.content.substring(2);
+		     
+                   alteraHora(raidcanal,mewtwo)
+              }	
+                //--fim novo --
 
               //msg inicia com    
               if (msg.content.startsWith('👍')) {
