@@ -337,7 +337,7 @@ if (msg.content.startsWith('!h') && msg.content.length > 2) {
     }
   });
 
-  // alteraHora(raidcanal,mewtwo)
+   alteraHora(raidcanal,mewtwo)
 }
 //--fim novo --
  //--------------------------------------     
