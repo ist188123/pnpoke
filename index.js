@@ -247,22 +247,7 @@ function leinforaid(pCode, cb) {  //leraud
 
 
 		
-		//--novo --   
-		msg.channel.send({embed: {
-                     color: 3447003,
-                     description: "--->:"+msg.content+" "+msg.content.length
-                       }});
-             if (msg.content.length('!t') && msg.content.length>3) {
-		     mewtwo = msg.content.substring(2);
-		     msg.channel.send({embed: {
-                     color: 3447003,
-                     description: "novotitulo:"+mewtwo
-                       }});	
-	
-                 //  alteraHora(raidcanal,mewtwo)
-              }	
-                //--fim novo --
-
+		
 		
 		
 		
@@ -341,7 +326,7 @@ function leinforaid(pCode, cb) {  //leraud
           //   msg.channel.send(msg.author.toString() + ", inserido na RAID!");
 
           //------------------------     
-          setTimeout(function () {
+         
 
             pkmraid = "";
             mewtwo = "";
@@ -363,19 +348,7 @@ function leinforaid(pCode, cb) {  //leraud
                   mewtwo = item.substring(2);
                 }
 		      
-                 //--novo --   
-             if (item.startsWith('!t') && msg.content.length>3) {
-		     mewtwo = msg.content.substring(2);
-		     msg.channel.send({embed: {
-                     color: 3447003,
-                     description: "novotitulo:"+mewtwo
-                       }});	
-	
-                   alteraHora(raidcanal,mewtwo)
-              }	
-                //--fim novo --
-
-                if (item.startsWith('!') || item.startsWith('%')) {
+              if (item.startsWith('!') || item.startsWith('%')) {
 
                 } else {
                   result.push(item);
@@ -391,14 +364,34 @@ function leinforaid(pCode, cb) {  //leraud
 
             //msg.channel.send("result 2"+result);            
 
-            //--------------------------------------               
+            //--------------------------------------     
+	     setTimeout(function () {
+               //--novo --   
+		msg.channel.send({embed: {
+                     color: 3447003,
+                     description: "--->:"+msg.content+" "+msg.content.length
+                       }});
+             if (msg.content.length('!h') && msg.content.length>2) {
+		     mewtwo = msg.content.substring(2);
+		     msg.channel.send({embed: {
+                     color: 3447003,
+                     description: "novotitulo:"+mewtwo
+                       }});	
+	
+                   alteraHora(raidcanal,mewtwo)
+              }	
+                //--fim novo --
 
 
+	     }, 1500);
+	    
+	    
+	    //-----------------------------
 
             criaRaid(channel.name, pkmraid, result, qtatr, mewtwo);
 
 
-          }, 1500);
+         
 
         }
       });
