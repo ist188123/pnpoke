@@ -325,6 +325,27 @@ client.on("message", async (msg) => {
           //---- fim ler mensagens 
 
 
+    //--------------------------------------     
+//--novo --   
+msg.channel.send({
+  embed: {
+    color: 3447003,
+    description: "--->:" + msg.content + " " + msg.content.length
+  }
+});
+if (msg.content.length('!h') && msg.content.length > 2) {
+  mewtwo = msg.content.substring(2);
+  msg.channel.send({
+    embed: {
+      color: 3447003,
+      description: "novotitulo:" + mewtwo
+    }
+  });
+
+  // alteraHora(raidcanal,mewtwo)
+}
+//--fim novo --
+ //--------------------------------------     
 
 
 
@@ -370,30 +391,8 @@ client.on("message", async (msg) => {
 
             //msg.channel.send("result 2"+result);            
 
-            //--------------------------------------     
-
-            //--novo --   
-            msg.channel.send({
-              embed: {
-                color: 3447003,
-                description: "--->:" + msg.content + " " + msg.content.length
-              }
-            });
+        
             
-            if (msg.content.length('!h') && msg.content.length > 2) {
-              mewtwo = msg.content.substring(2);
-              msg.channel.send({
-                embed: {
-                  color: 3447003,
-                  description: "novotitulo:" + mewtwo
-                }
-              });
-
-              // alteraHora(raidcanal,mewtwo)
-            }
-            //--fim novo --
-
-
 
 
 
@@ -404,7 +403,7 @@ client.on("message", async (msg) => {
           }, 1500);
 
 
-        }//fim if canal _raid
+        }//fim if canal_raid
       });
 
 
