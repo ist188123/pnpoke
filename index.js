@@ -229,7 +229,7 @@ function leinforaid(pCode, cb) {  //leraud
 
           raidcanal = msg.guild.channels.find("name", channel.name);
 
-          alteraHora(raidcanal,'alterou')
+         
 
 
           //-----
