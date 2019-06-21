@@ -328,7 +328,7 @@ client.on("message", async (msg) => {
     //--------------------------------------     
 //--novo --   
 
-if (msg.content.length('!h') && msg.content.length > 2) {
+if (msg.content.startsWith('!h') && msg.content.length > 2) {
   mewtwo = msg.content.substring(2);
   msg.channel.send({
     embed: {
