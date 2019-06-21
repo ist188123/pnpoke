@@ -326,7 +326,7 @@ function leinforaid(pCode, cb) {  //leraud
           //   msg.channel.send(msg.author.toString() + ", inserido na RAID!");
 
           //------------------------     
-         
+          setTimeout(function () {
 
             pkmraid = "";
             mewtwo = "";
@@ -365,7 +365,7 @@ function leinforaid(pCode, cb) {  //leraud
             //msg.channel.send("result 2"+result);            
 
             //--------------------------------------     
-	     setTimeout(function () {
+	    
                //--novo --   
 		msg.channel.send({embed: {
                      color: 3447003,
@@ -378,19 +378,19 @@ function leinforaid(pCode, cb) {  //leraud
                      description: "novotitulo:"+mewtwo
                        }});	
 	
-                   alteraHora(raidcanal,mewtwo)
+                  // alteraHora(raidcanal,mewtwo)
               }	
                 //--fim novo --
 
 
-	     }, 1500);
+	   
 	    
 	    
 	    //-----------------------------
 
             criaRaid(channel.name, pkmraid, result, qtatr, mewtwo);
 
-
+           }, 1500);
          
 
         }
