@@ -38,50 +38,56 @@ client.on("message", async (msg) => {
   const mystic = client.emojis.find("name", "mystic");
   const instinct = client.emojis.find("name", "instinct");
 
-function alteraHora(nomecanal,ahora){
-    msg.channel.send({embed: {
-  color: 3447003,
- description: "ATENÇÃO:"+nomecanal + " " +ahora
-}});
+  function alteraHora(nomecanal, ahora) {
+    msg.channel.send({
+      embed: {
+        color: 3447003,
+        description: "ATENÇÃO:" + nomecanal + " " + ahora
+      }
+    });
     var thoras = nomecanal.split("-");
     var horas = thoras[thoras.length - 3];
-  
-   // console.log(horas)
-   var novotitulo=nomecanal.replace(horas,ahora)
-   //onsole.log(novotitulo)
-msg.channel.send({embed: {
-  color: 3447003,
- description: "novotitulo:"+novotitulo
-}});
-msg.guild.channels.find("name","testing" ).setName(novotitulo);
 
-msg.channel.send({embed: {
-  color: 3447003,
- description: "novotitulo:"+novotitulo
-}});	
-	
-	
-	
-}
+    // console.log(horas)
+    var novotitulo = nomecanal.replace(horas, ahora)
+    //onsole.log(novotitulo)
+    msg.channel.send({
+      embed: {
+        color: 3447003,
+        description: "novotitulo:" + novotitulo
+      }
+    });
+    msg.guild.channels.find("name", "testing").setName(novotitulo);
 
-	
-	
-function leinforaid(pCode, cb) {  //leraud
+    msg.channel.send({
+      embed: {
+        color: 3447003,
+        description: "novotitulo:" + novotitulo
+      }
+    });
+
+
+
+  }
+
+
+
+  function leinforaid(pCode, cb) {  //leraud
 
     http.request(pCode).on('response', function (response) {
-        var data = '';
-        response.on("data", function (chunk) {
-            data += chunk;
-        });
-        response.on('end', function () {
-            var pCJSON = JSON.parse(data);
-            cb(pCJSON);
+      var data = '';
+      response.on("data", function (chunk) {
+        data += chunk;
+      });
+      response.on('end', function () {
+        var pCJSON = JSON.parse(data);
+        cb(pCJSON);
 
-        });
+      });
     }).end();
-}
-	
-	
+  }
+
+
   //---------------------------------------------------	
   //informação 	
   //---------------------------------------------------	
@@ -90,7 +96,7 @@ function leinforaid(pCode, cb) {  //leraud
 
 
 
-  
+
   //---------------------------------------------------		
   //fim informacao
   //---------------------------------------------------		
@@ -202,7 +208,7 @@ function leinforaid(pCode, cb) {  //leraud
 
 
     //-------------------------------------------
-    if (msg.content.startsWith('👍') || msg.content.startsWith(':+1:') || msg.content.startsWith('->') || msg.content.startsWith('%') || msg.content.startsWith('!exraid')|| msg.content.startsWith('!t')|| msg.content.startsWith('!h')) {
+    if (msg.content.startsWith('👍') || msg.content.startsWith(':+1:') || msg.content.startsWith('->') || msg.content.startsWith('%') || msg.content.startsWith('!exraid') || msg.content.startsWith('!t') || msg.content.startsWith('!h')) {
 
 
       //paga todas as mensagens do canal
@@ -216,8 +222,8 @@ function leinforaid(pCode, cb) {  //leraud
       const listedChannels = [];
       msg.guild.channels.forEach(channel => {
 
-	      
-	      
+
+
         if (channel.name.startsWith('_raid')) {
           listedChannels.push(channel.name);
 
@@ -229,7 +235,7 @@ function leinforaid(pCode, cb) {  //leraud
 
           raidcanal = msg.guild.channels.find("name", channel.name);
 
-         
+
 
 
           //-----
@@ -246,12 +252,12 @@ function leinforaid(pCode, cb) {  //leraud
 
 
 
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
           //--------------------------------
           //le todas as mensagens do canal
           //------------------------
@@ -271,13 +277,13 @@ function leinforaid(pCode, cb) {  //leraud
                 mewtwo = msg.content.substring(1);
                 array.push(msg.content);
               }
-		//tempo da raid em horas    
-              if (msg.content.startsWith('!t') && msg.content.length==3) {
+              //tempo da raid em horas    
+              if (msg.content.startsWith('!t') && msg.content.length == 3) {
                 mewtwo = msg.content.substring(2);
                 array.push(msg.content);
-              }	
-		    
-		
+              }
+
+
               //msg inicia com    
               if (msg.content.startsWith('👍')) {
 
@@ -343,12 +349,12 @@ function leinforaid(pCode, cb) {  //leraud
                 if (item.startsWith('!exraid')) {
                   mewtwo = item.substring(1);
                 }
-		      //tempo da raid
-		if (item.startsWith('!t') && msg.content.length==3) {
+                //tempo da raid
+                if (item.startsWith('!t') && msg.content.length == 3) {
                   mewtwo = item.substring(2);
                 }
-		      
-              if (item.startsWith('!') || item.startsWith('%')) {
+
+                if (item.startsWith('!') || item.startsWith('%')) {
 
                 } else {
                   result.push(item);
@@ -365,37 +371,44 @@ function leinforaid(pCode, cb) {  //leraud
             //msg.channel.send("result 2"+result);            
 
             //--------------------------------------     
-	    
-               //--novo --   
-		msg.channel.send({embed: {
-                     color: 3447003,
-                     description: "--->:"+msg.content+" "+msg.content.length
-                       }});
-             if (msg.content.length('!h') && msg.content.length>2) {
-		     mewtwo = msg.content.substring(2);
-		     msg.channel.send({embed: {
-                     color: 3447003,
-                     description: "novotitulo:"+mewtwo
-                       }});	
-	
-                  // alteraHora(raidcanal,mewtwo)
-              }	
-                //--fim novo --
+
+            //--novo --   
+            msg.channel.send({
+              embed: {
+                color: 3447003,
+                description: "--->:" + msg.content + " " + msg.content.length
+              }
+            });
+            
+            if (msg.content.length('!h') && msg.content.length > 2) {
+              mewtwo = msg.content.substring(2);
+              msg.channel.send({
+                embed: {
+                  color: 3447003,
+                  description: "novotitulo:" + mewtwo
+                }
+              });
+
+              // alteraHora(raidcanal,mewtwo)
+            }
+            //--fim novo --
 
 
-	   
-	    
-	    
-	    //-----------------------------
+
+
+
+            //-----------------------------
 
             criaRaid(channel.name, pkmraid, result, qtatr, mewtwo);
 
-           }, 1500);
-         
+          }, 1500);
 
-        }
+
+        }//fim if canal _raid
       });
-    }
+
+
+    }//fim if
 
   }
 
@@ -422,174 +435,174 @@ function leinforaid(pCode, cb) {  //leraud
   async function criaRaid(canalRaid, bicho, adicional, participantesRaid, sponser) {
 
     try {
-        var temporaid=45;
-	     
-	     
-	    
-	   //tempo duranção raid 
-	 if(parseInt(sponser)>0){
-          temporaid=60*parseInt(sponser)
-          }     //-------
-       
-	 
-	    
-	    
-        var titulo = "RAID " + canalRaid.substr(5);
-        var tiporaid = canalRaid.substring(5, 6);
-        let bosscp = "";
-        var status = "Desconhecido";
-        var cpiv = "Desconhecido"
+      var temporaid = 45;
 
-        var ovo = "";
-        var braid = ovo;
-        //var bicho="";
 
-        cor = "0x00AE86";
 
-        //-------
+      //tempo duranção raid 
+      if (parseInt(sponser) > 0) {
+        temporaid = 60 * parseInt(sponser)
+      }     //-------
 
-        //-------
-    
-        //verifica se o numero é positivo ou negarivo
-        var thoras = titulo.split("-");
-        var horas = thoras[thoras.length - 3];
-        var minutos_abrir_aberta = thoras[thoras.length - 2];
-        if (minutos_abrir_aberta.startsWith("a")) {
-            minutos_abrir_aberta = minutos_abrir_aberta.replace("a", "");
-        } else {
-            minutos_abrir_aberta = minutos_abrir_aberta.replace("f", "-");
+
+
+
+      var titulo = "RAID " + canalRaid.substr(5);
+      var tiporaid = canalRaid.substring(5, 6);
+      let bosscp = "";
+      var status = "Desconhecido";
+      var cpiv = "Desconhecido"
+
+      var ovo = "";
+      var braid = ovo;
+      //var bicho="";
+
+      cor = "0x00AE86";
+
+      //-------
+
+      //-------
+
+      //verifica se o numero é positivo ou negarivo
+      var thoras = titulo.split("-");
+      var horas = thoras[thoras.length - 3];
+      var minutos_abrir_aberta = thoras[thoras.length - 2];
+      if (minutos_abrir_aberta.startsWith("a")) {
+        minutos_abrir_aberta = minutos_abrir_aberta.replace("a", "");
+      } else {
+        minutos_abrir_aberta = minutos_abrir_aberta.replace("f", "-");
+      }
+
+      //--------------------------
+
+      var horas_relogio = thoras[thoras.length - 1];
+      horas_relogio = horas_relogio.replace("h", ":")
+
+      //tira o hora que foi marcada a raid do nome do canal
+      var horas_relogio_horas_minutos = horas_relogio.split(":")
+      var today = new Date();
+      var date = new Date(today.getFullYear(), today.getMonth(), today.getDate(), horas_relogio_horas_minutos[0], horas_relogio_horas_minutos[1]);
+      var dformat = [mzero(date.getHours()),
+      mzero(date.getMinutes())].join(':');
+
+      //-----------------------------
+
+      //cria o titulo da raid
+      var titulo_raid = ""
+      for (var i = 0; i < thoras.length - 3; i++) {
+
+        titulo_raid = titulo_raid + " " + thoras[i]
+
+
+      }
+
+      //console.log("Ntitulo "+titulo_raid)
+
+      //-----------
+
+      y = thoras;
+
+      var local = titulo_raid;
+      //console.log ("aberta_fechada: "+minutos_abrir_aberta);
+
+      var choca = minutos_abrir_aberta;
+      if (parseInt(choca) < 0) {
+        choca = -(parseInt(temporaid) + parseInt(choca))
+      }
+      //console.log("hora atual: "+add_minutes(new Date(),0));
+      //mais esta ouvo +30
+      // menos esta aberta -30
+      //horas que abre o ovo
+      var abre = add_minutes(date, choca).toString();
+      // console.log("Abre ovo : "+abre);
+      //-----------------------
+      var desaparece = parseInt(choca) + parseInt(temporaid);
+
+      // console.log("tempo da raid "+ desaparece)
+
+      var hinicio = add_minutes(date, choca).toString();
+      var hovo = add_minutes(date, choca).toString();
+
+      var hfim = add_minutes(date, desaparece).toString()
+
+      switch (tiporaid) {
+        case "1":
+          ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000097-88ffa8a090/200/nivel1.png";
+          break;
+        case "2":
+          ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000097-88ffa8a090/200/nivel1.png";
+          break;
+
+        case "3":
+          ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
+
+          break;
+        case "4":
+          ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
+
+          break;
+        case "5":
+          ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000019-4d5f84e5ec/200/Egg_Raid_Legendary.png";
+
+          break;
+
+      }
+
+
+
+      //--- fim novo          
+
+
+
+      var result = await leinforaid('http://pnraidspn.atwebpages.com/raid.php', async function (pCLatLng) {
+        pCLatLng.forEach(nivel => {
+
+
+          if (nivel.boss == bicho && nivel.nivel == tiporaid) {
+
+            braid = nivel.imagem
+            cpiv = nivel.cpiv + " " + nivel.bosted;
+            bosscp = nivel.bosscp + " " + nivel.bosstipo;
+            status = nivel.fraco + "\n" + nivel.counter;
+          }
+
+
+
+        })
+
+
+
+
+
+        if (sponser == "exraid") {
+          cor = "0XFEAFEA";
+          ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000023-29ab72ab0f/450/Mewtwo.png"
+          horas = horas + "\nGinásio em pontuação para o Deoxys";
         }
-
-        //--------------------------
-
-        var horas_relogio = thoras[thoras.length - 1];
-        horas_relogio = horas_relogio.replace("h", ":")
-
-        //tira o hora que foi marcada a raid do nome do canal
-        var horas_relogio_horas_minutos = horas_relogio.split(":")
-        var today = new Date();
-        var date = new Date(today.getFullYear(), today.getMonth(), today.getDate(), horas_relogio_horas_minutos[0], horas_relogio_horas_minutos[1]);
-        var dformat = [mzero(date.getHours()),
-        mzero(date.getMinutes())].join(':');
-
-        //-----------------------------
-
-        //cria o titulo da raid
-        var titulo_raid = ""
-        for (var i = 0; i < thoras.length - 3; i++) {
-
-            titulo_raid = titulo_raid + " " + thoras[i]
+        //----  FIM TIPO RAID ---
 
 
-        }
+        await disparaRaid(local, horas, canalRaid, adicional, participantesRaid, ovo, braid, cpiv, status, adicional, bosscp, hinicio, hfim, hovo);
 
-        //console.log("Ntitulo "+titulo_raid)
-
-        //-----------
-
-        y = thoras;
-
-        var local = titulo_raid;
-        //console.log ("aberta_fechada: "+minutos_abrir_aberta);
-
-        var choca = minutos_abrir_aberta;
-        if (parseInt(choca) < 0) {
-            choca = -(parseInt(temporaid) + parseInt(choca))
-        }
-        //console.log("hora atual: "+add_minutes(new Date(),0));
-        //mais esta ouvo +30
-        // menos esta aberta -30
-        //horas que abre o ovo
-        var abre = add_minutes(date, choca).toString();
-        // console.log("Abre ovo : "+abre);
-        //-----------------------
-        var desaparece = parseInt(choca) + parseInt(temporaid);
-
-        // console.log("tempo da raid "+ desaparece)
-
-        var hinicio = add_minutes(date, choca).toString();
-        var hovo = add_minutes(date, choca).toString();
-
-        var hfim = add_minutes(date, desaparece).toString()
-
-        switch (tiporaid) {
-            case "1":
-                ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000097-88ffa8a090/200/nivel1.png";
-                break;
-            case "2":
-                ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000097-88ffa8a090/200/nivel1.png";
-                break;
-
-            case "3":
-                ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
-
-                break;
-            case "4":
-                ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
-
-                break;
-            case "5":
-                ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000019-4d5f84e5ec/200/Egg_Raid_Legendary.png";
-
-                break;
-
-        }
-
-
-    
-            //--- fim novo          
-
-
-
-        var result = await leinforaid('http://pnraidspn.atwebpages.com/raid.php', async function (pCLatLng) {
-            pCLatLng.forEach(nivel => {
-               
-
-                if (nivel.boss == bicho && nivel.nivel==tiporaid ) {
-                    
-                    braid = nivel.imagem
-                    cpiv = nivel.cpiv + " " + nivel.bosted;
-                    bosscp = nivel.bosscp + " " + nivel.bosstipo;
-                    status = nivel.fraco + "\n" + nivel.counter;
-                }
-
-
-
-            })
-       
-
-
-
-
-            if (sponser == "exraid") {
-                cor = "0XFEAFEA";
-                ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000023-29ab72ab0f/450/Mewtwo.png"
-                horas = horas + "\nGinásio em pontuação para o Deoxys";
-            }
-            //----  FIM TIPO RAID ---
-
-
-           await disparaRaid(local, horas, canalRaid, adicional, participantesRaid, ovo, braid, cpiv, status, adicional, bosscp, hinicio, hfim, hovo);
-          
-        });//leinforaid
+      });//leinforaid
 
     } catch (err) {
-        console.log(err);
+      console.log(err);
 
 
     }
 
 
 
-}
+  }
 
 
 
 
 
 
-  async function  disparaRaid(local, horas, canal, treinadores, total, ovo, bicho, cpiv, status, adicional, cpboss,hinicio,hfim,hovo) {
-//+"\nAbre: "+hinicio+" Termina :"+hfim +" "+hovo
+  async function disparaRaid(local, horas, canal, treinadores, total, ovo, bicho, cpiv, status, adicional, cpboss, hinicio, hfim, hovo) {
+    //+"\nAbre: "+hinicio+" Termina :"+hfim +" "+hovo
     //msg.reply("disparaRaid");
     const embed = new Discord.RichEmbed()
       .setTitle(horas)
@@ -609,8 +622,8 @@ function leinforaid(pCode, cb) {  //leraud
        */
       .setTimestamp()
       .setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
-      
-      .addField("Abre: "+hinicio+"\nTermina: "+hfim +"\nBOSS CP " + cpboss, cpiv)
+
+      .addField("Abre: " + hinicio + "\nTermina: " + hfim + "\nBOSS CP " + cpboss, cpiv)
 
       /*
        * lista dos jogadores que vão RAID.
@@ -630,49 +643,49 @@ function leinforaid(pCode, cb) {  //leraud
   }
 
 
-//-------------------------
+  //-------------------------
 
 
-var dia =  function (dt) {
-    var d =  new Date(dt.getTime()),
-    dformat = [mzero(d.getDate()),
-        mzero(d.getMonth())+1,
-           d.getFullYear()].join('-');
+  var dia = function (dt) {
+    var d = new Date(dt.getTime()),
+      dformat = [mzero(d.getDate()),
+      mzero(d.getMonth()) + 1,
+      d.getFullYear()].join('-');
 
-           return dformat;
-}
+    return dformat;
+  }
 
-var add_minutes =  function (dt, minutes) {
-    var d =  new Date(dt.getTime() + minutes*60000),
-    dformat =  [mzero(d.getHours()),
-           mzero(d.getMinutes())].join(':');
+  var add_minutes = function (dt, minutes) {
+    var d = new Date(dt.getTime() + minutes * 60000),
+      dformat = [mzero(d.getHours()),
+      mzero(d.getMinutes())].join(':');
 
-           return dformat;
-}
+    return dformat;
+  }
 
-var mzero= function(mzero){
-      if(mzero<10){
-        mzero="0"+mzero
-       
+  var mzero = function (mzero) {
+    if (mzero < 10) {
+      mzero = "0" + mzero
+
     }
 
     return mzero;
 
+  }
+
+  var validaNumero = function (num) {
+    if (Number(num)) {
+      if (num < 0) {
+        num = "f" + Math.abs(num);
+      } else {
+        num = "a" + Math.abs(num);
+      }
+      return num
+    } else {
+      return false
     }
 
-var validaNumero=function(num){
-   if(Number(num)){
-    if(num<0){
-       num="f"+Math.abs(num); 
-    }else{
-        num="a"+Math.abs(num); 
-    }
-       return num
-    }else{
-        return false
-    }
-
-}
+  }
 
 
 
@@ -680,7 +693,7 @@ var validaNumero=function(num){
 
 
 
-//--------------------------
+  //--------------------------
   //----criar canal ---
 
   if (msg.channel.name == 'professor-boss') {
@@ -688,113 +701,115 @@ var validaNumero=function(num){
     if (msg.content.startsWith("!5") || msg.content.startsWith("!4") || msg.content.startsWith("!3")) {
 
 
-//noovo...
+      //noovo...
       var text = msg.content.substring(1);
-      
 
-   var divide_texto=text.split(' ');
-   var tempo_falta=validaNumero(divide_texto[divide_texto.length-1])
-   text=text.substring(0,text.length-divide_texto[divide_texto.length-1].length)+" "+tempo_falta;
-   
-   //console.log("Verifica se é numero tempo_falta "+tempo_falta)
-           
-   
 
-    //LE A MENSAGEM EXCLUINDO O !
-    var text = text.replace(/[`~@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
-    text = text.replace(/\s\s+/g, ' ');;
+      var divide_texto = text.split(' ');
+      var tempo_falta = validaNumero(divide_texto[divide_texto.length - 1])
+      text = text.substring(0, text.length - divide_texto[divide_texto.length - 1].length) + " " + tempo_falta;
+
+      //console.log("Verifica se é numero tempo_falta "+tempo_falta)
 
 
 
-    var canal = '_raid' + text
-
-    canal = canal.split('!').join('').toLowerCase();
-    var nomecanal = canal.split(' ').join('-').toLowerCase();
-    // msg.reply(nomecanal); 
-    nomecanal = nomecanal.replace(/--/gi, '-');
+      //LE A MENSAGEM EXCLUINDO O !
+      var text = text.replace(/[`~@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
+      text = text.replace(/\s\s+/g, ' ');;
 
 
-//mete minutos positivo ou negativos
 
-//console.log("nome canal sem ver tempo e horas : "+nomecanal)
+      var canal = '_raid' + text
+
+      canal = canal.split('!').join('').toLowerCase();
+      var nomecanal = canal.split(' ').join('-').toLowerCase();
+      // msg.reply(nomecanal); 
+      nomecanal = nomecanal.replace(/--/gi, '-');
 
 
-//meter a hora do relogio
-      
-  var dhlocal = new Date();
+      //mete minutos positivo ou negativos
+
+      //console.log("nome canal sem ver tempo e horas : "+nomecanal)
+
+
+      //meter a hora do relogio
+
+      var dhlocal = new Date();
       var data_local = dhlocal.getTimezoneOffset();
-      var horas_locais=dhlocal.getHours()+1;
- 
-      
-var relogio=horas_locais+":"+dhlocal.getMinutes();
-     
-      if(tempo_falta!=false){
-        
-     
-      
-// var relogio=add_minutes(new Date(),0);
- relogio=relogio.replace(":","h");
- nomecanal = nomecanal+"-"+relogio;
+      var horas_locais = dhlocal.getHours() + 1;
+
+
+      var relogio = horas_locais + ":" + dhlocal.getMinutes();
+
+      if (tempo_falta != false) {
+
+
+
+        // var relogio=add_minutes(new Date(),0);
+        relogio = relogio.replace(":", "h");
+        nomecanal = nomecanal + "-" + relogio;
 
 
 
 
-      //msg.reply(nomecanal); 
-      if (msg.guild.channels.find("name", nomecanal)) {
+        //msg.reply(nomecanal); 
+        if (msg.guild.channels.find("name", nomecanal)) {
+        } else {
+
+
+
+          msg.guild.createChannel(nomecanal, "text");
+
+
+        }
+        //
+        setTimeout(apagacanal, 5000000, nomecanal);
+        setTimeout(myFunc, 1500, nomecanal);
+
+
       } else {
 
-        
+        msg.channel.send({
+          embed: {
+            color: 3447003,
+            description: "ATENÇÃO:\nNecessário inserir o tempo que falta para a RAID\nExemplo: Raid aberta a 12 minutos:\n!5 piscinas !09h30 -12\nRaid com o Ovo 12 minutos para abrir:\n!5 piscinas !09h30 12\n"
+          }
+        });
 
-        msg.guild.createChannel(nomecanal, "text");
-        
+
 
       }
-      //
-      setTimeout(apagacanal, 5000000, nomecanal);
-      setTimeout(myFunc, 1500, nomecanal);
-        
-        
-      }else{
-        
-         msg.channel.send({embed: {
-  color: 3447003,
- description: "ATENÇÃO:\nNecessário inserir o tempo que falta para a RAID\nExemplo: Raid aberta a 12 minutos:\n!5 piscinas !09h30 -12\nRaid com o Ovo 12 minutos para abrir:\n!5 piscinas !09h30 12\n"
-}});
-        
-        
-        
-      }
-      
-      
-      
+
+
+
     }   // fim do inicio carater
-//fim criação de RAID PROFESSOR BOSS
+    //fim criação de RAID PROFESSOR BOSS
 
 
 
     //---inicio regras
     var regra = "";
     var role = "";
-    if (msg.content.toLowerCase().startsWith('+pnpogoraids') || msg.content.toLowerCase().startsWith('+treinador') ||msg.content.toLowerCase().startsWith('+su') || msg.content.toLowerCase().startsWith('+bot') || msg.content.toLowerCase().startsWith('+4fun')|| msg.content.toLowerCase().startsWith('+deoxys')) {
-       msg.guild.channels.find("name", "professor-boss").sendMessage("Olá, " + msg.author + "\nEssa regra não pode ser associada ao teu utilizador");
-    }else{
-    if (msg.content.startsWith('+')) {
-      msg.guild.channels.find("name", "professor-boss").sendMessage("Olá, " + msg.author + "\nAdicionado ás notificações da Quest de " + msg.content.substring(1) + ", no canal " + msg.guild.channels.find("name", "alertas"));
+    if (msg.content.toLowerCase().startsWith('+pnpogoraids') || msg.content.toLowerCase().startsWith('+treinador') || msg.content.toLowerCase().startsWith('+su') || msg.content.toLowerCase().startsWith('+bot') || msg.content.toLowerCase().startsWith('+4fun') || msg.content.toLowerCase().startsWith('+deoxys')) {
+      msg.guild.channels.find("name", "professor-boss").sendMessage("Olá, " + msg.author + "\nEssa regra não pode ser associada ao teu utilizador");
+    } else {
+      if (msg.content.startsWith('+')) {
+        msg.guild.channels.find("name", "professor-boss").sendMessage("Olá, " + msg.author + "\nAdicionado ás notificações da Quest de " + msg.content.substring(1) + ", no canal " + msg.guild.channels.find("name", "alertas"));
 
 
-      regra = msg.content.substring(1).toLowerCase();
-      role = msg.guild.roles.find(role => role.name.toLowerCase() === regra);
-      msg.member.addRole(role);
+        regra = msg.content.substring(1).toLowerCase();
+        role = msg.guild.roles.find(role => role.name.toLowerCase() === regra);
+        msg.member.addRole(role);
 
-    }
+      }
 
-    if (msg.content.startsWith('-')) {
-      regra = msg.content.substring(1).toLowerCase();
-      role = msg.guild.roles.find(role => role.name.toLowerCase() === regra);
-      msg.member.removeRole(role);
-      msg.guild.channels.find("name", "professor-boss").sendMessage("Olá, " + msg.author + "\nRemovido das notificações da Quest de " + msg.content.substring(1) + ", no canal " + msg.guild.channels.find("name", "alertas"));
+      if (msg.content.startsWith('-')) {
+        regra = msg.content.substring(1).toLowerCase();
+        role = msg.guild.roles.find(role => role.name.toLowerCase() === regra);
+        msg.member.removeRole(role);
+        msg.guild.channels.find("name", "professor-boss").sendMessage("Olá, " + msg.author + "\nRemovido das notificações da Quest de " + msg.content.substring(1) + ", no canal " + msg.guild.channels.find("name", "alertas"));
 
-    }
+      }
 
     }
     // FIM ADICIONAR REGRAS TREINADORES
@@ -804,94 +819,94 @@ var relogio=horas_locais+":"+dhlocal.getMinutes();
 
 
 
-//quest
+    //quest
     if (msg.content.startsWith('!q')) {
 
 
-//---------------  
- var mensagem=msg.content
-    var find = ""//mensagem.split(" ")[1].toLocaleLowerCase()
-     var pokemon=mensagem.split(" ")[1]
-   
-    for (x = 2; x < mensagem.split(" ").length ; x++) {
+      //---------------  
+      var mensagem = msg.content
+      var find = ""//mensagem.split(" ")[1].toLocaleLowerCase()
+      var pokemon = mensagem.split(" ")[1]
+
+      for (x = 2; x < mensagem.split(" ").length; x++) {
         find = find + mensagem.split(" ")[x] + " "
-    }
+      }
 
-    var   quest="";
-   
-    var missao="";  
-    var questimagem="";  
+      var quest = "";
 
-    console.log(find.toUpperCase())
-              
-    
-    async function getQuest(endereco,qualPokemon) {
-       
-       
-        var achou=false;
+      var missao = "";
+      var questimagem = "";
+
+      console.log(find.toUpperCase())
+
+
+      async function getQuest(endereco, qualPokemon) {
+
+
+        var achou = false;
         var result = await leinforaid(endereco, async function (pCLatLng) {
-            pCLatLng.forEach(nivel => {
-      
-                if(nivel.cod.toUpperCase().includes(qualPokemon.toUpperCase())){
-                    achou=true;
-                    quest = nivel.quest;
-                    missao = nivel.missao;
-                    questimagem = nivel.questimagem;
-               
+          pCLatLng.forEach(nivel => {
+
+            if (nivel.cod.toUpperCase().includes(qualPokemon.toUpperCase())) {
+              achou = true;
+              quest = nivel.quest;
+              missao = nivel.missao;
+              questimagem = nivel.questimagem;
+
             }
-            })
-           
-           if(achou){
-            
+          })
+
+          if (achou) {
+
             //--
             const embed = new Discord.RichEmbed()
-            .setTitle("Direcção para " +find)
-           .setURL("https://exraidspinhalnovo.webnode.pt/_files/200000083-e9b0feaad1/450/pkst.png")
-            .setAuthor(find, "https://exraidspinhalnovo.webnode.pt/_files/200000083-e9b0feaad1/450/pkst.png")
-            /*
-             * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
-             */
-            .setColor(0x00AE86)
-            .setDescription(" ")
-             .setFooter("PN PoGo Raids, pubicado ", "https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png")
-            
-               .setThumbnail(questimagem)
+              .setTitle("Direcção para " + find)
+              .setURL("https://exraidspinhalnovo.webnode.pt/_files/200000083-e9b0feaad1/450/pkst.png")
+              .setAuthor(find, "https://exraidspinhalnovo.webnode.pt/_files/200000083-e9b0feaad1/450/pkst.png")
+              /*
+               * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
+               */
+              .setColor(0x00AE86)
+              .setDescription(" ")
+              .setFooter("PN PoGo Raids, pubicado ", "https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png")
+
+              .setThumbnail(questimagem)
               .addField('Missão', missao, false)
-            .addField('Recompensa', quest, false)
+              .addField('Recompensa', quest, false)
               .addField('Reportado por:', msg.author.username, false)
               .setURL("https://exraidspinhalnovo.webnode.pt/_files/200000083-e9b0feaad1/450/pkst.png")
-            /*
-             * Takes a Date object, defaults to current date.
-             */
-            .setTimestamp();
-            msg.guild.channels.find("name", "quest").sendMessage({ embed }); 
-            
-           }else{
-            msg.channel.send({
-                embed: {
-                    color: 3447003,
-                    description: "O Quest "+qualPokemon+" não foi encontrado!"
-                }
-            });
-               
-           }
-            
-        })
-    }
-    
-    getQuest('http://pnraidspn.atwebpages.com/teste.php',pokemon)
+              /*
+               * Takes a Date object, defaults to current date.
+               */
+              .setTimestamp();
+            msg.guild.channels.find("name", "quest").sendMessage({ embed });
 
-   //----fim quest 
-	  
+          } else {
+            msg.channel.send({
+              embed: {
+                color: 3447003,
+                description: "O Quest " + qualPokemon + " não foi encontrado!"
+              }
+            });
+
+          }
+
+        })
+      }
+
+      getQuest('http://pnraidspn.atwebpages.com/teste.php', pokemon)
+
+      //----fim quest 
+
 
 
 
       let autor = msg.author;
-      
-      
-      
 
-      
+
+
+
+
 
 
       // let roleName = msg.content.split(" ").slice(1).join(" ");
@@ -918,38 +933,38 @@ var relogio=horas_locais+":"+dhlocal.getMinutes();
 
 
       })
-      
-    
-      
-     const embed = new Discord.RichEmbed()
-  .setTitle(quest)
-  .setAuthor(pokestop, "https://exraidspinhalnovo.webnode.pt/_files/200000084-5d1115e10b/450/Pass.png")
-  /*
-   * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
-   */
-  .setColor(0x00AE86)
-  .setDescription(missao)
-   .setFooter("PN PoGo Raids, pubicado ", "https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png")
-  
-  .setThumbnail(questimagem)
-  /*
-   * Takes a Date object, defaults to current date.
-   */
-  .setTimestamp();
-
-  
- if (msg.content.startsWith("!5") || msg.content.startsWith("!4") || msg.content.startsWith("!3")) {
-     msg.guild.channels.find("name", "alertas").sendMessage("\@everyone");
-      msg.guild.channels.find("name", "alertas").sendMessage({ embed });
-  
- 
-   
- }
-
-      
 
 
-    
+
+      const embed = new Discord.RichEmbed()
+        .setTitle(quest)
+        .setAuthor(pokestop, "https://exraidspinhalnovo.webnode.pt/_files/200000084-5d1115e10b/450/Pass.png")
+        /*
+         * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
+         */
+        .setColor(0x00AE86)
+        .setDescription(missao)
+        .setFooter("PN PoGo Raids, pubicado ", "https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png")
+
+        .setThumbnail(questimagem)
+        /*
+         * Takes a Date object, defaults to current date.
+         */
+        .setTimestamp();
+
+
+      if (msg.content.startsWith("!5") || msg.content.startsWith("!4") || msg.content.startsWith("!3")) {
+        msg.guild.channels.find("name", "alertas").sendMessage("\@everyone");
+        msg.guild.channels.find("name", "alertas").sendMessage({ embed });
+
+
+
+      }
+
+
+
+
+
 
 
 
