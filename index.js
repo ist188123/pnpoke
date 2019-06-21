@@ -39,16 +39,29 @@ client.on("message", async (msg) => {
   const instinct = client.emojis.find("name", "instinct");
 
 function alteraHora(nomecanal,ahora){
-    
+    msg.channel.send({embed: {
+  color: 3447003,
+ description: "ATENÇÃO:"+nomecanal + " " +ahora
+}});
     var thoras = nomecanal.split("-");
     var horas = thoras[thoras.length - 3];
   
    // console.log(horas)
    var novotitulo=nomecanal.replace(horas,ahora)
    //onsole.log(novotitulo)
-
+msg.channel.send({embed: {
+  color: 3447003,
+ description: "novotitulo:"+novotitulo
+}});
 msg.guild.channels.find("name","testing" ).setName(novotitulo);
 
+msg.channel.send({embed: {
+  color: 3447003,
+ description: "novotitulo:"+novotitulo
+}});	
+	
+	
+	
 }
 
 	
