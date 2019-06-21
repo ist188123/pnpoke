@@ -248,6 +248,10 @@ function leinforaid(pCode, cb) {  //leraud
 
 		
 		//--novo --   
+		msg.channel.send({embed: {
+                     color: 3447003,
+                     description: "--->:"+msg.content+" "+msg.content.length
+                       }});
              if (msg.content.length('!t') && msg.content.length>3) {
 		     mewtwo = msg.content.substring(2);
 		     msg.channel.send({embed: {
@@ -255,7 +259,7 @@ function leinforaid(pCode, cb) {  //leraud
                      description: "novotitulo:"+mewtwo
                        }});	
 	
-                   alteraHora(raidcanal,mewtwo)
+                 //  alteraHora(raidcanal,mewtwo)
               }	
                 //--fim novo --
 
