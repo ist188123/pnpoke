@@ -246,6 +246,23 @@ function leinforaid(pCode, cb) {  //leraud
 
 
 
+		
+		//--novo --   
+             if (msg.content.length('!t') && msg.content.length>3) {
+		     mewtwo = msg.content.substring(2);
+		     msg.channel.send({embed: {
+                     color: 3447003,
+                     description: "novotitulo:"+mewtwo
+                       }});	
+	
+                   alteraHora(raidcanal,mewtwo)
+              }	
+                //--fim novo --
+
+		
+		
+		
+		
           //--------------------------------
           //le todas as mensagens do canal
           //------------------------
