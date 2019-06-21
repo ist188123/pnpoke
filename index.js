@@ -258,14 +258,7 @@ function leinforaid(pCode, cb) {  //leraud
                 array.push(msg.content);
               }	
 		    
-		 //--novo --   
-             if (msg.content.startsWith('!t') && msg.content.length>3) {
-		     mewtwo = msg.content.substring(2);
-		     
-                   alteraHora(raidcanal,mewtwo)
-              }	
-                //--fim novo --
-
+		
               //msg inicia com    
               if (msg.content.startsWith('👍')) {
 
@@ -335,6 +328,14 @@ function leinforaid(pCode, cb) {  //leraud
 		if (item.startsWith('!t') && msg.content.length==3) {
                   mewtwo = item.substring(2);
                 }
+		      
+                 //--novo --   
+             if (item.startsWith('!t') && msg.content.length>3) {
+		     mewtwo = msg.content.substring(2);
+		     
+                   alteraHora(raidcanal,mewtwo)
+              }	
+                //--fim novo --
 
                 if (item.startsWith('!') || item.startsWith('%')) {
 
