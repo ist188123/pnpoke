@@ -202,7 +202,7 @@ function leinforaid(pCode, cb) {  //leraud
 
 
     //-------------------------------------------
-    if (msg.content.startsWith('👍') || msg.content.startsWith(':+1:') || msg.content.startsWith('->') || msg.content.startsWith('%') || msg.content.startsWith('!exraid')|| msg.content.startsWith('!t')) {
+    if (msg.content.startsWith('👍') || msg.content.startsWith(':+1:') || msg.content.startsWith('->') || msg.content.startsWith('%') || msg.content.startsWith('!exraid')|| msg.content.startsWith('!t')|| msg.content.startsWith('!h')) {
 
 
       //paga todas as mensagens do canal
