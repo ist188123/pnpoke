@@ -327,12 +327,7 @@ client.on("message", async (msg) => {
 
     //--------------------------------------     
 //--novo --   
-msg.channel.send({
-  embed: {
-    color: 3447003,
-    description: "--->:" + msg.content + " " + msg.content.length
-  }
-});
+
 if (msg.content.length('!h') && msg.content.length > 2) {
   mewtwo = msg.content.substring(2);
   msg.channel.send({
