@@ -38,11 +38,14 @@ client.on("message", async (msg) => {
   const mystic = client.emojis.find("name", "mystic");
   const instinct = client.emojis.find("name", "instinct");
 
+  
+  
+  
   function alteraHora(nomecanal, ahora) {
     msg.channel.send({
       embed: {
         color: 3447003,
-        description: "ATENÇÃO:" + nomecanal + " " + ahora
+        description: "---1-->:" + nomecanal + " " + ahora
       }
     });
     var thoras = nomecanal.split("-");
@@ -54,15 +57,15 @@ client.on("message", async (msg) => {
     msg.channel.send({
       embed: {
         color: 3447003,
-        description: "novotitulo:" + novotitulo
+        description: "novotitulo----2---->:" + novotitulo
       }
     });
-    msg.guild.channels.find("name", "testing").setName(novotitulo);
+    msg.guild.channels.find("name", nomecanal).setName(novotitulo);
 
     msg.channel.send({
       embed: {
         color: 3447003,
-        description: "novotitulo:" + novotitulo
+        description: "novotitulo:----3--->" + novotitulo
       }
     });
 
