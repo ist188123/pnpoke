@@ -38,13 +38,13 @@ msg.channel.send({
   
   
 
-if (channel.name.startsWith('_raid')) {
+if (msg.channel.name.startsWith('_raid')) {
   
 
     msg.channel.send({
         embed: {
           color: 3447003,
-          description: "----ee----channel.name:" + channel.name
+          description: "----ee----channel.name:" + msg.channel.name
         }
       });
 
