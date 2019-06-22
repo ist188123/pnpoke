@@ -1,21 +1,3 @@
-const Discord = require("discord.js");
-
-const client = new Discord.Client();
-
-const prefix = "+";
-const http = require('http');
-
-
-//console.log(tamanhoFicheiro)
-
-
-
-
-
-
-
-
-
 client.on("message", async (msg) => {
   let mewtwo = "";
   let cor = "0x00AE86";
@@ -63,16 +45,19 @@ client.on("message", async (msg) => {
   }
 
 if (channel.name.startsWith('_raid')) {
-  listedChannels.push(channel.name);
+  
 
-
-
+    msg.channel.send({
+        embed: {
+          color: 3447003,
+          description: "----ee----channel.name:" + channel.name
+        }
+      });
 
   //  msg.reply("aqui 2"+channel.name);
+  
 
-
-  var raidcanal = msg.guild.channels.find("name", channel.name);
-
+  
 
 if (msg.content.startsWith('!h') && msg.content.length > 2) {
   mewtwo = msg.content.substring(2);
@@ -83,7 +68,7 @@ if (msg.content.startsWith('!h') && msg.content.length > 2) {
     }
   });
 
-   alteraHora(raidcanal,mewtwo)
+  
   msg.channel.send({
     embed: {
       color: 3447003,
