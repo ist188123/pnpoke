@@ -328,23 +328,7 @@ client.on("message", async (msg) => {
           //---- fim ler mensagens 
 
 
-    //--------------------------------------     
-//--novo --   
-
-if (msg.content.startsWith('!h') && msg.content.length > 2) {
-  mewtwo = msg.content.substring(2);
-  msg.channel.send({
-    embed: {
-      color: 3447003,
-      description: "novotitulo:" + mewtwo
-    }
-  });
-
-   alteraHora(raidcanal,mewtwo)
-}
-//--fim novo --
- //--------------------------------------     
-
+    
 
 
 
@@ -390,7 +374,23 @@ if (msg.content.startsWith('!h') && msg.content.length > 2) {
             //msg.channel.send("result 2"+result);            
 
         
-            
+            //--------------------------------------     
+//--novo --   
+
+if (msg.content.startsWith('!h') && msg.content.length > 2) {
+  mewtwo = msg.content.substring(2);
+  msg.channel.send({
+    embed: {
+      color: 3447003,
+      description: "novotitulo:" + mewtwo
+    }
+  });
+
+   alteraHora(raidcanal,mewtwo)
+}
+//--fim novo --
+ //--------------------------------------     
+
 
 
 
