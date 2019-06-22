@@ -54,7 +54,7 @@ client.on("message", async (msg) => {
       msg.channel.send({
         embed: {
           color: 3447003,
-          description: "Nova hora Raid:" + novahora
+          description: "Nova hora Raid:" + novahora +" alterado por : "+msg.author
         }
       });
       //onsole.log(novotitulo)
