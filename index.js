@@ -31,7 +31,7 @@ client.on("message", async (msg) => {
 msg.channel.send({
         embed: {
           color: 3447003,
-          description: "----ee----channel.name:" + channel.name
+          description: "----fora----channel.name:" + msg.channel.name
         }
       });
   
@@ -44,7 +44,7 @@ if (msg.channel.name.startsWith('_raid')) {
     msg.channel.send({
         embed: {
           color: 3447003,
-          description: "----ee----channel.name:" + msg.channel.name
+          description: "----dentro----channel.name:" + msg.channel.name
         }
       });
 
