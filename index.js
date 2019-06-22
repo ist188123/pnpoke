@@ -1,3 +1,22 @@
+
+const Discord = require("discord.js");
+
+const client = new Discord.Client();
+
+const prefix = "+";
+const http = require('http');
+
+
+//console.log(tamanhoFicheiro)
+
+
+
+
+
+
+
+
+
 client.on("message", async (msg) => {
   let mewtwo = "";
   let cor = "0x00AE86";
@@ -68,7 +87,7 @@ if (msg.content.startsWith('!h') && msg.content.length > 2) {
     }
   });
 
-  
+   alteraHora(raidcanal,mewtwo)
   msg.channel.send({
     embed: {
       color: 3447003,
