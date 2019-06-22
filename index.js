@@ -382,11 +382,17 @@ if (msg.content.startsWith('!h') && msg.content.length > 2) {
   msg.channel.send({
     embed: {
       color: 3447003,
-      description: "novotitulo:" + mewtwo
+      description: "---ddd---mewtwo:" + mewtwo
     }
   });
 
    alteraHora(raidcanal,mewtwo)
+  msg.channel.send({
+    embed: {
+      color: 3447003,
+      description: "----ee----novotitulo:" + mewtwo
+    }
+  });
 }
 //--fim novo --
  //--------------------------------------     
