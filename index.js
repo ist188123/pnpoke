@@ -28,40 +28,15 @@ client.on("message", async (msg) => {
   let pkmraid = "Desconhecido";
   let adicional = "";
 
-
+msg.channel.send({
+        embed: {
+          color: 3447003,
+          description: "----ee----channel.name:" + channel.name
+        }
+      });
   
   
-  function alteraHora(nomecanal, ahora) {
-    msg.channel.send({
-      embed: {
-        color: 3447003,
-        description: "---1-->:" + nomecanal + " " + ahora
-      }
-    });
-    var thoras = nomecanal.split("-");
-    var horas = thoras[thoras.length - 3];
-
-    // console.log(horas)
-    var novotitulo = nomecanal.replace(horas, ahora)
-    //onsole.log(novotitulo)
-    msg.channel.send({
-      embed: {
-        color: 3447003,
-        description: "novotitulo----2---->:" + novotitulo
-      }
-    });
-    msg.guild.channels.find("name", nomecanal).setName(novotitulo);
-
-    msg.channel.send({
-      embed: {
-        color: 3447003,
-        description: "novotitulo:----3--->" + novotitulo
-      }
-    });
-
-
-
-  }
+  
 
 if (channel.name.startsWith('_raid')) {
   
