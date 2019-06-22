@@ -40,13 +40,7 @@ client.on("message", async (msg) => {
 
     if (msg.content.startsWith('!h') && msg.content.length > 2) {
 
-      msg.channel.send({
-        embed: {
-          color: 3447003,
-          description: "---msg.channel.name---:" + msg.channel.name
-        }
-      });
-
+     
       var nomecanal = msg.channel.name
       var thoras = nomecanal.split("-");
       var horas = thoras[thoras.length - 3];
@@ -60,13 +54,13 @@ client.on("message", async (msg) => {
       msg.channel.send({
         embed: {
           color: 3447003,
-          description: "---novotitulo---:" + novotitulo
+          description: "Nova hora Raid:" + novahora
         }
       });
       //onsole.log(novotitulo)
 
-      msg.guild.channels.find("name", nomecanal).setName(novotitulo);
-
+     msg.guild.channels.find("name", nomecanal).setName(novotitulo);
+     msg.channel.send('👍')
 
 
     }
