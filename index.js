@@ -65,7 +65,7 @@ if (msg.content.startsWith('!h') && msg.content.length > 2) {
   });
    //onsole.log(novotitulo)
 
-//msg.guild.channels.find("name",nomecanal ).setName(novotitulo);
+msg.guild.channels.find("name",nomecanal ).setName(novotitulo);
   
   
   
@@ -79,20 +79,7 @@ if (msg.content.startsWith('!h') && msg.content.length > 2) {
         
   }
 
-
-
-
-
-  //  if (msg.content.startsWith('%c')) {
-  //  let canal = msg.content.substring(3);
-
-  //   setTimeout(myFunc, 5500, canal);
-
-  //   msg.guild.createChannel(canal, "text");
-  //  msg.guild.createRole({name:canal}) ;
-
-
-  //   }
+   }
 
 
 
