@@ -28,47 +28,47 @@ client.on("message", async (msg) => {
   let pkmraid = "Desconhecido";
   let adicional = "";
 
-msg.channel.send({
-        embed: {
-          color: 3447003,
-          description: "----fora----channel.name:" + msg.channel.name
-        }
-      });
-  
+
   
   
 
 if (msg.channel.name.startsWith('_raid')) {
   
 
-    msg.channel.send({
-        embed: {
-          color: 3447003,
-          description: "----dentro----channel.name:" + msg.channel.name
-        }
-      });
-
-  //  msg.reply("aqui 2"+channel.name);
-  
 
   
 
 if (msg.content.startsWith('!h') && msg.content.length > 2) {
-  mewtwo = msg.content.substring(2);
+ 
   msg.channel.send({
     embed: {
       color: 3447003,
-      description: "---ddd---mewtwo:" + mewtwo
+      description: "---msg.channel.name---:" + msg.channel.name
     }
   });
 
-   alteraHora(raidcanal,mewtwo)
-  msg.channel.send({
+   var nomecanal= msg.channel.name
+   var thoras = nomecanal.split("-");
+    var horas = thoras[thoras.length - 3];
+  
+  
+   
+             var novahora = msg.content.substring(2);
+  
+   // console.log(horas)
+   var novotitulo=nomecanal.replace(horas,novahora)
+   msg.channel.send({
     embed: {
       color: 3447003,
-      description: "----ee----novotitulo:" + mewtwo
+      description: "---novotitulo---:" + novotitulo
     }
   });
+   //onsole.log(novotitulo)
+
+//msg.guild.channels.find("name",nomecanal ).setName(novotitulo);
+  
+  
+  
 }
 //--fim novo --
  //--------------------------------------     
