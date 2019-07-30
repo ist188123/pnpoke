@@ -21,7 +21,7 @@ client.on("message", async (msg) => {
 
 
        
-          var Attachment = (message.attachments).array();
+          var Attachment = (msg.attachments).array();
           msg.channel.send(Attachment); //outputs array
           msg.channel.send(Attachment[0].url);
          
