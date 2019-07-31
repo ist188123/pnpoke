@@ -5,7 +5,7 @@ const client = new Discord.Client();
 
 const http = require('http');
 
-const tesseract = require('tesseract.js')
+const tesseract = require(TESSDATA_PREFIX)
 //console.log(tamanhoFicheiro)
 
 
