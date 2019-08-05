@@ -59,7 +59,7 @@ client.on("message", async (msg) => {
 } 
   
   
-  getNest('https://api.ocr.space/parse/imageurl?apikey=56695ba50588957&url='+imagem+'&isOverlayRequired=false&language=chs')
+  getNest('https://api.ocr.space/parse/imageurl?apikey=56695ba50588957&url='+imagem+'&isOverlayRequired=false&language=cht')
 
 
        
