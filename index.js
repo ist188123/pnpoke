@@ -29,7 +29,7 @@ client.on("message", async (msg) => {
  
  function getTextoImagem(htelef,exgym,timagem,mraid){
 
-
+msg.channel.send("estou getTextoImagem");
 //------
     msg.channel.send({embed: {
     color: 3447003,
@@ -72,7 +72,7 @@ client.on("message", async (msg) => {
 
 
 function readOCR(m) {
-
+msg.channel.send("estou readOCR");
     //var found = ginasios.includes('PARQUEINFANTIL');
     // console.log('found ',found)
 var exraidgym="";
@@ -174,6 +174,7 @@ var minutosraid="";
         leuOCR='Erro na imagem:\nVerique o tamanho, não pode ser superior a 1MB.'
         //console.log('As imagens deve ter 1MB.');
       }
+       msg.channel.send("estou readOCR(leuOCR); ");
       readOCR(leuOCR); 
     //  msg.channel.send(leuOCR);
     })
