@@ -54,14 +54,14 @@ client.on("message", async (msg) => {
       },
       {
         name: "exgym",
-        value: 'kkkk'
+        value: exgym
       }
 	
     ],
     timestamp: new Date(),
     footer: {
       icon_url: client.user.avatarURL,
-      text: "© Example"
+      text: "©2019 PN PoGo Raids"
     }
   }
 });
@@ -71,10 +71,10 @@ client.on("message", async (msg) => {
 
 
 function readOCR(m) {
-msg.channel.send("estou readOCR");
+
     //var found = ginasios.includes('PARQUEINFANTIL');
     // console.log('found ',found)
-var exraidgym="";
+var exraidgym="NORMAL GYM";
 var horasTelefone="";
 var textoimagem="";
 var minutosraid="";
