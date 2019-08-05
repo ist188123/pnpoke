@@ -46,7 +46,7 @@ msg.channel.send("estou getTextoImagem");
       },
       {
         name: "Minutos Raid",
-        value: mraid
+        value: 'jj'
       },
       {
         name: "exgym",
