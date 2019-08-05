@@ -28,8 +28,7 @@ client.on("message", async (msg) => {
  
  
  function getTextoImagem(htelef,exgym,timagem,mraid){
-var ovo=
-    var boss=
+
 msg.channel.send("estou getTextoImagem");
 //------
     const raidinfomsg = new Discord.RichEmbed()
