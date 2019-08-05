@@ -183,7 +183,7 @@ var minutosraid="";
 } 
   
   
-  getNest('https://api.ocr.space/parse/imageurl?apikey='+process.env.TOKEN+'&url='+imagem+'&isOverlayRequired=false&language=cht')
+  getNest('https://api.ocr.space/parse/imageurl?apikey='+process.env.TOKEN+'&url='+imagem+'&scale=true&isOverlayRequired=false&language=cht')
 
 
        
