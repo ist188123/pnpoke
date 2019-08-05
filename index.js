@@ -28,51 +28,25 @@ client.on("message", async (msg) => {
  
  
  function getTextoImagem(htelef,exgym,timagem,mraid){
-
+var ovo=
+    var boss=
 msg.channel.send("estou getTextoImagem");
 //------
-   const exampleEmbed = {
-    color: 0x0099ff,
-	title: 'Some title',
-	url: 'https://discord.js.org',
-	author: {
-		name: 'Some name',
-		icon_url: 'https://i.imgur.com/wSTFkRM.png',
-		url: 'https://discord.js.org',
-	},
-	description: 'Some description here',
-	thumbnail: {
-		url: 'https://i.imgur.com/wSTFkRM.png',
-	},
-    fields: [
-       {
-        name: "HORAS TELEMOVEL",
-        value: htelef
-      },
-             {
-        name: "TEMPO RAID",
-        value: mraid
-      },
-      {
-        name: "EX-RAID GYM",
-        value: exgym
-      },
-      {
-        name: "TEXTO IMAGEM",
-        value: timagem
-      }
-    ],
-	image: {
-		url: 'https://i.imgur.com/wSTFkRM.png',
-	},
-	timestamp: new Date(),
-	footer: {
-		text: 'Some footer text here',
-		icon_url: 'https://i.imgur.com/wSTFkRM.png',
-	},
-};
-    
- msg.channel.send({ embed: exampleEmbed });   
+    const raidinfomsg = new Discord.RichEmbed()
+    setColor('#FF0000')
+                            .setTitle("TESTE OCR")
+                            .setURL('https://discord.js.org/')
+                            .setAuthor('TEXTO IMAGEM', 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png', 'https://discord.js.org')
+                            .setThumbnail('https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png')
+                            .addField('Ginásio', htelef)
+                            //.addBlankField()
+	                    .addField('Abre',  mraid , true)
+                            .addField('Abre',  exgym , true)
+                            .addField('Termina', timagem, true)
+                            .setTimestamp()
+                            .setFooter('Anunciado por : ' + msg.author.username, 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png');
+                        msg.guild.channels.find("name", "ocr-teste").sendMessage(raidinfomsg);
+                
     
 //-----    
 }
