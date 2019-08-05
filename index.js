@@ -46,7 +46,7 @@ msg.channel.send("estou getTextoImagem\n"+exgym+"\n"+timagem+"\n"+mraid);
       },
       {
         name: "Minutos Raid",
-        value: 'jj'
+        value: exgym.trim()
       },
       {
         name: "exgym",
