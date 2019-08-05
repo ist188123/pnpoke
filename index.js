@@ -29,7 +29,7 @@ client.on("message", async (msg) => {
  
  function getTextoImagem(htelef,exgym,timagem,mraid){
 
-msg.channel.send("estou getTextoImagem");
+msg.channel.send("estou getTextoImagem\n"+exgym+"\n"+timagem+"\n"+mraid);
 	 
 	 msg.channel.send({embed: {
     color: 3447003,
