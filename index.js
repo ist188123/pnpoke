@@ -113,7 +113,7 @@ var minutosraid="";
         }
 
         if (!/[^a-zA-Z]/.test(xx)) {
-		if(textoimagem!='BATTLE' || textoimagem!='PRIVATEGROUP'|| textoimagem!='WalkclosertointeractwiththisGym'){
+		if(xx!='BATTLE' || xx!='PRIVATEGROUP'|| xx!='WalkclosertointeractwiththisGym'){
             textoimagem=textoimagem+"\n"+ xx
 		}
         }
