@@ -39,13 +39,17 @@ msg.channel.send("estou getTextoImagem\n"+exgym+"\n"+timagem+"\n"+mraid);
     },
     title: "TESTE OCR",
     url: "http://google.com",
-    description: "Teste OCR.",
+    description: "Compilação",
     fields: [{
         name: "Hora Telefone",
         value: htelef
       },
+	     {
+        name: "Texto imagem",
+        value: timagem
+      },
       {
-        name: "Minutos Raid",
+        name: "Texto imagem",
         value: timagem
       },
       {
