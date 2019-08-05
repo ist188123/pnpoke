@@ -50,7 +50,7 @@ msg.channel.send("estou getTextoImagem");
       },
       {
         name: "exgym",
-        value: exgym
+        value: 'kkkk'
       }
 	
     ],
