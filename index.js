@@ -52,11 +52,7 @@ msg.channel.send("estou getTextoImagem");
         name: "exgym",
         value: exgym
       }
-	 ,
-      {
-        name: "Texto Imagem",
-        value: timagem
-      }
+	
     ],
     timestamp: new Date(),
     footer: {
