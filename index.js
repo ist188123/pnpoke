@@ -72,7 +72,7 @@ msg.channel.send("estou getTextoImagem");
 	},
 };
     
- channel.send({ embed: exampleEmbed });   
+ msg.channel.send({ embed: exampleEmbed });   
     
 //-----    
 }
