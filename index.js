@@ -175,7 +175,7 @@ var minutosraid="";
         leuOCR='Erro na imagem:\nVerique o tamanho, não pode ser superior a 1MB.'
         //console.log('As imagens deve ter 1MB.');
       }
-       msg.channel.send("estou readOCR(leuOCR); ");
+      
       readOCR(leuOCR); 
     //  msg.channel.send(leuOCR);
     })
