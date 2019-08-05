@@ -20,8 +20,8 @@ client.on("message", async (msg) => {
    
   
   var Attachment = (msg.attachments).array();
-          msg.channel.send(Attachment); //outputs array
-          msg.channel.send(Attachment[0].url);
+         // msg.channel.send(Attachment); //outputs array
+        //  msg.channel.send(Attachment[0].url);
  var imagem=Attachment[0].url
   
   
