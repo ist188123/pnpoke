@@ -45,12 +45,17 @@ msg.channel.send("estou getTextoImagem");
         value: htelef
       },
       {
-        name: "Masked links",
-        value: "You can put [masked links](http://google.com) inside of rich embeds."
+        name: "Minutos Raid",
+        value: mraid
       },
       {
-        name: "Markdown",
-        value: "You can put all the *usual* **__Markdown__** inside of them."
+        name: "exgym",
+        value: exgym
+      }
+	 ,
+      {
+        name: "Texto Imagem",
+        value: timagem
       }
     ],
     timestamp: new Date(),
@@ -61,23 +66,7 @@ msg.channel.send("estou getTextoImagem");
   }
 });
 //------
-    const raidinfomsg = new Discord.RichEmbed()
-    setColor('#FF0000')
-                            .setTitle("TESTE OCR")
-                            .setURL('https://discord.js.org/')
-                            .setAuthor('TEXTO IMAGEM', 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png', 'https://discord.js.org')
-                            .setThumbnail('https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png')
-                            .addField('Ginásio', htelef)
-                            //.addBlankField()
-	                    .addField('Abre',  mraid , true)
-                            .addField('Abre',  exgym , true)
-                            .addField('Termina', timagem, true)
-                            .setTimestamp()
-                            .setFooter('Anunciado por : ' + msg.author.username, 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png');
-                        msg.guild.channels.find("name", "ocr-teste").sendMessage(raidinfomsg);
-                
-    
-//-----    
+      
 }
 
 
