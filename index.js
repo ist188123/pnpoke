@@ -31,16 +31,21 @@ client.on("message", async (msg) => {
 
 msg.channel.send("estou getTextoImagem");
 //------
-    msg.channel.send({embed: {
-    color: 3447003,
-    author: {
-      name: client.user.username,
-      icon_url: client.user.avatarURL
-    },
-    title: "TESTE OCR-PNRAIDS",
-    url: "http://pjnr.pt",
-    description: "Teste ocr.",
-    fields: [{
+   const exampleEmbed = {
+    color: 0x0099ff,
+	title: 'Some title',
+	url: 'https://discord.js.org',
+	author: {
+		name: 'Some name',
+		icon_url: 'https://i.imgur.com/wSTFkRM.png',
+		url: 'https://discord.js.org',
+	},
+	description: 'Some description here',
+	thumbnail: {
+		url: 'https://i.imgur.com/wSTFkRM.png',
+	},
+    fields: [
+       {
         name: "HORAS TELEMOVEL",
         value: htelef
       },
@@ -57,15 +62,17 @@ msg.channel.send("estou getTextoImagem");
         value: timagem
       }
     ],
-    timestamp: new Date(),
-    footer: {
-      icon_url: client.user.avatarURL,
-      text: "©Pinhal Novo - PoGo Raids"
-    }
-  }
-});
+	image: {
+		url: 'https://i.imgur.com/wSTFkRM.png',
+	},
+	timestamp: new Date(),
+	footer: {
+		text: 'Some footer text here',
+		icon_url: 'https://i.imgur.com/wSTFkRM.png',
+	},
+};
     
-    
+ channel.send({ embed: exampleEmbed });   
     
 //-----    
 }
