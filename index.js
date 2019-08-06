@@ -75,9 +75,9 @@ function readOCR(m) {
     //var found = ginasios.includes('PARQUEINFANTIL');
     // console.log('found ',found)
 var exraidgym="NORMAL GYM";
-var horasTelefone="";
-var textoimagem="";
-var minutosraid="";
+var horasTelefone=" ";
+var textoimagem="  ";
+var minutosraid="  ";
     var x = m.split('\n')
 
 
@@ -106,8 +106,15 @@ var minutosraid="";
 
         }
         if (xx.split('').filter(x => x == ':').length == 1) {
-
-            horasTelefone=horasTelefone+"\n"+xx
+         var horasplit=xx.split(':')[0].substring(xx.split(':')[0].length-2)
+            var minsplit=xx.split(':')[1].substring(0,2)
+            console.log('horasplit ',horasplit,' minsplit ',minsplit)
+            var nanhoras=!isNaN(horasplit)
+            var nanminutos=!isNaN(minsplit)
+           if(nanhoras && nanminutos){
+            horasTelefone=horasTelefone+horasplit+":"+minsplit
+           }
+            
 
 
         }
