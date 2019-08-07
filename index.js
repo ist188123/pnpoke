@@ -27,6 +27,57 @@ client.on("message", async (msg) => {
   
  
  
+ function similarity(s1, s2) {
+    var longer = s1;
+    var shorter = s2;
+    if (s1.length < s2.length) {
+        longer = s2;
+        shorter = s1;
+    }
+    var longerLength = longer.length;
+    if (longerLength == 0) {
+        return 1.0;
+    }
+    return (longerLength - editDistance(longer, shorter)) / parseFloat(longerLength);
+}
+function editDistance(s1, s2) {
+    s1 = s1.toLowerCase();
+    s2 = s2.toLowerCase();
+  
+    var costs = new Array();
+    for (var i = 0; i <= s1.length; i++) {
+      var lastValue = i;
+      for (var j = 0; j <= s2.length; j++) {
+        if (i == 0)
+          costs[j] = j;
+        else {
+          if (j > 0) {
+            var newValue = costs[j - 1];
+            if (s1.charAt(i - 1) != s2.charAt(j - 1))
+              newValue = Math.min(Math.min(newValue, lastValue),
+                costs[j]) + 1;
+            costs[j - 1] = lastValue;
+            lastValue = newValue;
+          }
+        }
+      }
+      if (i > 0)
+        costs[s2.length] = lastValue;
+    }
+    return costs[s2.length];
+  }
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  function getTextoImagem(htelef,exgym,timagem,mraid){
 
 //msg.channel.send("estou getTextoImagem\n"+exgym+"\n"+timagem+"\n"+mraid);
@@ -80,7 +131,8 @@ var textoimagem="  ";
 var minutosraid="  ";
     var x = m.split('\n')
 
-
+var ginasiosPN = ['Colonia de felinos','Parque Infantil Ferreira da Costa','Estação de Comboios do Pinhal Novo',
+'O Ferroviário','Moral de Grafiti do Campo de Futebol','Polidesportivo 25 de Abril']
 
     for (z in x) {
 
@@ -118,12 +170,24 @@ var minutosraid="  ";
 
 
         }
+	    
+	    
+    var semelhante;
+if (!/[^a-zA-Z]/.test(xx)) {
+    if (xx.trim() != 'BATTLE' || xx.trim() != 'PRIVATEGROUP' || xx.trim() != 'WalkclosertointeractwiththisGym') {
 
-        if (!/[^a-zA-Z]/.test(xx)) {
-		if(xx.trim()!='BATTLE' || xx.trim()!='PRIVATEGROUP'|| xx.trim()!='WalkclosertointeractwiththisGym'){
-            textoimagem=textoimagem+"\n"+ xx
-		}
+        for (f in ginasiosPN) {
+
+            semelhante = similarity(xx, ginasiosPN[f])
+
+            if (semelhante > 0.361) {
+                textoimagem = textoimagem + '\n**Ginásio**\n' + ginasiosPN[f]
+            }
+
         }
+        textoimagem = textoimagem + "\n" + xx
+    }
+}
 
        
 
