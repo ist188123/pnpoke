@@ -137,7 +137,7 @@ var minutosraid="  ";
     var x = m.split('\n')
 
 var ginasiosPN = ['Colonia de felinos','Parque Infantil Ferreira da Costa','Estação de Comboios do Pinhal Novo',
-'O Ferroviário','Moral de Grafiti do Campo de Futebol','Polidesportivo 25 de Abril']
+'O Ferroviário','Moral de Grafiti do Campo de Futebol','Polidesportivo 25 de Abril','Mercado Mensal']
 
     for (z in x) {
 
