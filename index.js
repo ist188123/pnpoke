@@ -81,7 +81,10 @@ function editDistance(s1, s2) {
  function getTextoImagem(htelef,exgym,timagem,mraid,gymraid){
 
 //msg.channel.send("estou getTextoImagem\n"+exgym+"\n"+timagem+"\n"+mraid);
-	 
+	 if(gymraid.trim.length<1){
+            gymraid='Não leu'
+	 }
+
 	 msg.channel.send({embed: {
     color: 3447003,
     author: {
@@ -97,7 +100,7 @@ function editDistance(s1, s2) {
       },
 	     {
         name: "Ginásio",
-        value: gymraid+" "
+        value: gymraid
       },
 	     {
         name: "Tempo Raid",
