@@ -97,7 +97,7 @@ function editDistance(s1, s2) {
       },
 	     {
         name: "Ginásio",
-        value: gymraid
+        value: gymraid+" "
       },
 	     {
         name: "Tempo Raid",
