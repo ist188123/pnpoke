@@ -78,7 +78,7 @@ function editDistance(s1, s2) {
  
  
  
- function getTextoImagem(htelef,exgym,timagem,mraid){
+ function getTextoImagem(htelef,exgym,timagem,mraid,gymraid){
 
 //msg.channel.send("estou getTextoImagem\n"+exgym+"\n"+timagem+"\n"+mraid);
 	 
@@ -94,6 +94,10 @@ function editDistance(s1, s2) {
     fields: [{
         name: "Hora Telefone",
         value: htelef
+      },
+	     {
+        name: "Ginásio",
+        value: gymraid
       },
 	     {
         name: "Tempo Raid",
@@ -171,7 +175,7 @@ var ginasiosPN = ['Colonia de felinos','Parque Infantil Ferreira da Costa','Esta
 
         }
 	    
-	    
+	var ginasioRaid="  "    
     var semelhante;
 if (!/[^a-zA-Z]/.test(xx)) {
     if (xx.trim() != 'BATTLE' || xx.trim() != 'PRIVATEGROUP' || xx.trim() != 'WalkclosertointeractwiththisGym') {
@@ -181,7 +185,7 @@ if (!/[^a-zA-Z]/.test(xx)) {
             semelhante = similarity(xx, ginasiosPN[f])
 
             if (semelhante > 0.361) {
-                textoimagem = textoimagem + '\n**Ginásio**\n' + ginasiosPN[f]
+                ginasioRaid= ginasiosPN[f]
             }
 
         }
@@ -193,7 +197,7 @@ if (!/[^a-zA-Z]/.test(xx)) {
 
     }
 
-    getTextoImagem(horasTelefone,exraidgym,textoimagem,minutosraid)
+    getTextoImagem(horasTelefone,exraidgym,textoimagem,minutosraid,ginasioRaid)
     
 }
 
