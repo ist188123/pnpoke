@@ -129,6 +129,7 @@ function readOCR(m) {
 
     //var found = ginasios.includes('PARQUEINFANTIL');
     // console.log('found ',found)
+	var ginasioRaid="  ";    
 var exraidgym="NORMAL GYM";
 var horasTelefone=" ";
 var textoimagem="  ";
@@ -175,7 +176,7 @@ var ginasiosPN = ['Colonia de felinos','Parque Infantil Ferreira da Costa','Esta
 
         }
 	    
-	var ginasioRaid="  "    
+	
     var semelhante;
 if (!/[^a-zA-Z]/.test(xx)) {
     if (xx.trim() != 'BATTLE' || xx.trim() != 'PRIVATEGROUP' || xx.trim() != 'WalkclosertointeractwiththisGym') {
