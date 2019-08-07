@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 
 const http = require('https');
-var tesseract = require('node-tesseract');
+
 
 //console.log(tamanhoFicheiro)
 
