@@ -81,9 +81,7 @@ function editDistance(s1, s2) {
  function getTextoImagem(htelef,exgym,timagem,mraid,gymraid){
 
 //msg.channel.send("estou getTextoImagem\n"+exgym+"\n"+timagem+"\n"+mraid);
-	 if(gymraid.trim.length<1){
-            gymraid='Não leu'
-	 }
+	 
 
 	 msg.channel.send({embed: {
     color: 3447003,
@@ -133,7 +131,7 @@ function readOCR(m) {
     //var found = ginasios.includes('PARQUEINFANTIL');
     // console.log('found ',found)
 	var ginasioRaid="  ";    
-var exraidgym="NORMAL GYM";
+var exraidgym="NORMAL";
 var horasTelefone=" ";
 var textoimagem="  ";
 var minutosraid="  ";
@@ -148,7 +146,7 @@ var ginasiosPN = ['Colonia de felinos','Parque Infantil Ferreira da Costa','Esta
 
 
         if (x[z].trim() == 'EXRAIDGYM') {
-            exraidgym='EXRAID GYM'
+            exraidgym='EXRAID'
         }
         //console.log('Orginal -> ',x[z])
         var xx = x[z].trim().replace(/[^:a-zA-Z0-9]/g, '');
@@ -180,7 +178,8 @@ var ginasiosPN = ['Colonia de felinos','Parque Infantil Ferreira da Costa','Esta
         }
 	    
 	
-    var semelhante;
+    var semelhante=0;
+	ginasioRaid="?";    
 if (!/[^a-zA-Z]/.test(xx)) {
     if (xx.trim() != 'BATTLE' || xx.trim() != 'PRIVATEGROUP' || xx.trim() != 'WalkclosertointeractwiththisGym') {
 
