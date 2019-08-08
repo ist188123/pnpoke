@@ -181,19 +181,19 @@ var ginasiosPN = ['Colonia de felinos','Parque Infantil Ferreira da Costa','Esta
     var semelhante=0;
 	ginasioRaid="?";    
 if (!/[^a-zA-Z]/.test(xx)) {
-    if (xx.trim() != 'BATTLE' || xx.trim() != 'PRIVATEGROUP' || xx.trim() != 'WalkclosertointeractwiththisGym') {
+  
 
         for (f in ginasiosPN) {
 
             semelhante = similarity(xx, ginasiosPN[f])
 
-            if (semelhante > 0.361) {
+            if (semelhante > 0.35) {
                 ginasioRaid= ginasiosPN[f]
             }
 
         }
         textoimagem = textoimagem + "\n" + xx
-    }
+   
 }
 
        
