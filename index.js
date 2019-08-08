@@ -187,7 +187,8 @@ var ginasiosPN = [
 	    
 	
     var semelhante=0;
-	ginasioRaid="?";    
+	ginasioRaid="?";   
+	    var ultimolido=0;
 if (!/[^a-zA-Z]/.test(xx)) {
   
 
@@ -196,7 +197,12 @@ if (!/[^a-zA-Z]/.test(xx)) {
             semelhante = similarity(xx.toUpperCase(), ginasiosPN[f].toUpperCase())
 
             if (semelhante > 0.35) {
+		    if(semelhante>ultimolido){
                 ginasioRaid= ginasiosPN[f]
+                ultimolido=semelhante
+             }
+       
+               
             }
 
         }
