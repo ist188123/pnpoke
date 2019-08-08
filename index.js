@@ -137,8 +137,16 @@ var textoimagem="  ";
 var minutosraid="  ";
     var x = m.split('\n')
 
-var ginasiosPN = ['Colonia de felinos','Parque Infantil Ferreira da Costa','Estação de Comboios do Pinhal Novo',
-'O Ferroviário','Moral de Grafiti do Campo de Futebol','Polidesportivo 25 de Abril','Mercado Mensal','Comboios Pinhal Novo']
+var ginasiosPN = [
+    'Colonia De Felinos',
+    'Parque Infantil Ferreira da Costa',
+    'Estação De Comboios Do Pinhal Novo',
+    'O Ferroviário',
+    'Moral de Grafiti Do Campo De Futebol',
+    'Polidesportivo 25 De Abril',
+    'Mercado Mensal',
+    'Antiga Estação De Comboios Pinhal Novo'
+]
 
     for (z in x) {
 
@@ -185,7 +193,7 @@ if (!/[^a-zA-Z]/.test(xx)) {
 
         for (f in ginasiosPN) {
 
-            semelhante = similarity(xx, ginasiosPN[f])
+            semelhante = similarity(xx.toUpperCase(), ginasiosPN[f].toUpperCase())
 
             if (semelhante > 0.35) {
                 ginasioRaid= ginasiosPN[f]
