@@ -314,9 +314,9 @@ if (!/[^a-zA-Z]/.test(xx)) {
    
 } 
   
-  
+  if (msg.channel.name == 'ocr-teste') {
   getNest('https://api.ocr.space/parse/imageurl?apikey='+process.env.TOKEN+'&url='+imagem+'&scale=true&isOverlayRequired=false&language=cht')
-
+  }
 
        
          
