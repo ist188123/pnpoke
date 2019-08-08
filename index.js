@@ -109,7 +109,7 @@ if(gymraid.trim().length<1){
     },
     title: "TESTE OCR",
     url: "http://google.com",
-    description: "Compilação",
+    description: "Reportado por: "+msg.author.username,
     fields: [{
         name: "Hora Telefone",
         value: htelef
