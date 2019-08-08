@@ -201,7 +201,7 @@ if (!/[^a-zA-Z]/.test(xx)) {
             if (semelhante > 0.35) {
 		    if(semelhante>ultimolido){
                 ginasioRaid= ginasiosPN[f]
-		msg.channel.send(ginasiosPN[f])	    
+		
                 ultimolido=semelhante
              }
        
