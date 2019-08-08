@@ -197,7 +197,7 @@ if (!/[^a-zA-Z]/.test(xx)) {
         for (f in ginasiosPN) {
 
             semelhante = similarity(xx.toUpperCase(), ginasiosPN[f].toUpperCase())
-msg.channel.send(semelhante)	   
+	   
             if (semelhante > 0.35) {
 		    if(semelhante>ultimolido){
                 ginasioRaid= ginasiosPN[f]
