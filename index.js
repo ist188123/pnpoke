@@ -82,6 +82,24 @@ function editDistance(s1, s2) {
 
 //msg.channel.send("estou getTextoImagem\n"+exgym+"\n"+timagem+"\n"+mraid);
 	 
+	 
+	if(htelef.trim().length<1){
+    htelef='?'
+}
+ if(timagem.trim().length<1){
+    timagem='?'
+}
+ if(mraid.trim().length<1){
+    mraid='?'
+}
+if(gymraid.trim().length<1){
+    gymraid='?'
+}
+ 
+	 
+	 
+	 
+	 
 
 	 msg.channel.send({embed: {
     color: 3447003,
