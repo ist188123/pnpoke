@@ -268,6 +268,7 @@ if (!/[^a-zA-Z]/.test(xx)) {
         
     }catch(error) {
         leuOCR='Erro na imagem:\nVerique o tamanho, não pode ser superior a 1MB.'
+	    msg.channel.send(leuOCR)
         //console.log('As imagens deve ter 1MB.');
       }
       
