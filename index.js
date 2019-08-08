@@ -143,6 +143,7 @@ var ginasiosPN = [
     'Estação De Comboios Do Pinhal Novo',
     'Moral de Grafiti Do Campo De Futebol',
     'Parque Infantil Ferreira da Costa',
+    'Parque Infantil',
     'Polidesportivo 25 De Abril',
     'Polidesportivo Da Sul Ponte',
     'Mercado Mensal',
@@ -188,7 +189,7 @@ var ginasiosPN = [
 	    
 	
     var semelhante=0;
-	ginasioRaid="?";   
+	
 	    var ultimolido=0;
 if (!/[^a-zA-Z]/.test(xx)) {
   
