@@ -132,21 +132,22 @@ function readOCR(m) {
     // console.log('found ',found)
 	var ginasioRaid="?";    
 var exraidgym="NORMAL";
-var horasTelefone="?";
-var textoimagem="?";
-var minutosraid="?";
+var horasTelefone=" ";
+var textoimagem=" ";
+var minutosraid=" ";
     var x = m.split('\n')
 
 var ginasiosPN = [
+     'Antiga Estação De Comboios Do Pinhal Novo',
     'Colonia De Felinos',
-    'Parque Infantil Ferreira da Costa',
     'Estação De Comboios Do Pinhal Novo',
-    'O Ferroviário',
     'Moral de Grafiti Do Campo De Futebol',
+    'Parque Infantil Ferreira da Costa',
     'Polidesportivo 25 De Abril',
+    'Polidesportivo Da Sul Ponte',
     'Mercado Mensal',
-    'Antiga Estação De Comboios Pinhal Novo'
-]
+    'O Ferroviário'
+   ]
 
     for (z in x) {
 
@@ -199,6 +200,7 @@ if (!/[^a-zA-Z]/.test(xx)) {
             if (semelhante > 0.35) {
 		    if(semelhante>ultimolido){
                 ginasioRaid= ginasiosPN[f]
+		msg.channel.send(ginasiosPN[f])	    
                 ultimolido=semelhante
              }
        
