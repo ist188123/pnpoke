@@ -140,6 +140,28 @@ if(gymraid.trim().length<1){
   }
 });
 //------
+	 
+const collector = msg.createReactionCollector((reaction, user) => 
+    user.id === msg.author.id &&
+    reaction.emoji.name === "◀" ||
+    reaction.emoji.name === "▶" ||
+    reaction.emoji.name === "❌"
+).once("collect", reaction => {
+    const chosen = reaction.emoji.name;
+    if(chosen === "◀"){
+        msg.channel.send('Escolheu 1')
+    }else if(chosen === "▶"){
+        msg.channel.send('Escolheu 2')
+    }else{
+        msg.channel.send('Escolheu x')
+    }
+    collector.stop();
+});
+	 
+	 
+	 
+//-------	 
+	 
       
 }
 
