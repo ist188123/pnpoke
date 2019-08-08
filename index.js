@@ -144,76 +144,7 @@ if(gymraid.trim().length<1){
 
 	 
 //-----
-	
-const buttons = [
-  reactions.zero, reactions.one, reactions.two, reactions.three, reactions.four, 
-  reactions.five, reactions.six, reactions.seven, reactions.eight, reactions.nine,
-];
-const commandsPerPage = 3;
-let pages;
-pages = _.chunk(client.commands, commandsPerPage);
-pages = pages.map((page) => {
-  // Generate the command fields
-  const fields = page.map(command => ({
-    name: `__${command.name}__`,
-    value: `Description: ${command.description}\nSyntax: \`${command.syntax}\``,
-  }));
-  
-  return {
-    embed: {
-      color: 12388653,
-      author: {
-        name: 'Click Here For Full List',
-        url: 'https://goo.gl/eFN6wF',
-        icon_url: 'https://user-images.githubusercontent.com/6385983/34427109-5772d042-ec0c-11e7-896d-7e9096b92856.png',
-      },
-      fields, // Here are the commands!
-    },
-  };
-});	 
-	 
-msg.channel.send(pages[0]).then(async (msg) => { // send the first command page
-  // Display all the number buttons
-  for (const [index, _] of pages.entries()) {
-    await msg.react(buttons[index]);
-  }
-
-  // Display the X button after the buttons
-  await msg.react(reactions.x);
-  msg.delete(60000).catch();
-
-  // Create a collector to listen for button presses
-  const collector = msg.createReactionCollector((reaction, user) => user !== client.user);
-
-  // Every time a button is pressed, run this function.
-  collector.on('collect', async (messageReaction) => {
-    // If the x button is pressed, remove the message.
-    if (messageReaction.emoji.name === reactions.x) {
-      msg.delete(); // Delete the message
-      collector.stop(); // Delete the collector.
-      return;
-    }
-
-    // Get the index of the page by button pressed
-    const pageIndex = buttons.indexOf(messageReaction.emoji.name);
-
-    // Return if emoji is irrelevant or the page doesnt exist (number too high)
-    if (pageIndex === -1 || !pages[pageIndex]) return;
-
-    // Edit the message to show the new page.
-    msg.edit(pages[pageIndex]);
-
-    /*
-    Get the user that clicked the reaction and remove the reaction.
-    This matters because if you just do remove(), it will remove the bots
-    reaction which will have unintended side effects.
-    */
-    const notbot = messageReaction.users.filter(clientuser => clientuser !== client.user).first();
-    await messageReaction.remove(notbot);
-  });
-}).catch(err => console.log(err));	 
-	 
-	 
+ 
 //-------	 
 	 
       
