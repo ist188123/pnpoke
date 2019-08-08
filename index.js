@@ -275,13 +275,7 @@ if (!/[^a-zA-Z]/.test(xx)) {
 	 
       if(leuOCR.startsWith('Erro')){
 	      
-	      msg.channel.send({
-                embed: {
-                    color: 3447003,
-                    description: leuOCR
-                }
-            });
-	      
+	      msg.channel.send(leuOCR)
 	      
         
        // console.log(leuOCR)
