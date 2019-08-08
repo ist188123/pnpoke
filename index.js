@@ -130,11 +130,11 @@ function readOCR(m) {
 
     //var found = ginasios.includes('PARQUEINFANTIL');
     // console.log('found ',found)
-	var ginasioRaid="  ";    
+	var ginasioRaid="?";    
 var exraidgym="NORMAL";
-var horasTelefone=" ";
-var textoimagem="  ";
-var minutosraid="  ";
+var horasTelefone="?";
+var textoimagem="?";
+var minutosraid="?";
     var x = m.split('\n')
 
 var ginasiosPN = [
