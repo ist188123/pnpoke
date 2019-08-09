@@ -110,8 +110,12 @@ if(gymraid.trim().length<1){
     },
     title: "INFO IMAGEM",
     url: "http://google.com",
-    description: "Reportado por : "+msg.author.username,
+    description: "Raid ",
     fields: [{
+        name: "Criado por",
+        value: msg.author.username
+      },
+	    {
         name: "Hora Telefone",
         value: htelef
       },
