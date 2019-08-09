@@ -327,26 +327,32 @@ if (!/[^a-zA-Z0]/.test(xx)) {
   if (msg.channel.name == 'ocr-teste') {
   getNest('https://api.ocr.space/parse/imageurl?apikey='+process.env.TOKEN+'&url='+imagem+'&scale=true&isOverlayRequired=false&language=cht')
  
+  //-----
+	  
+msg.react('👍').then(() => msg.react('👎'));
+
+const filter = (reaction, user) => {
+	return ['👍', '👎'].includes(reaction.emoji.name) && user.id === msg.author.id;
+};
+
+msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+	.then(collected => {
+		const reaction = collected.first();
+
+		if (reaction.emoji.name === '👍') {
+			msg.reply('you reacted with a thumbs up.');
+		} else {
+			msg.reply('you reacted with a thumbs down.');
+		}
+	})
+	.catch(collected => {
+		msg.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+	});	  
   
   
-   const reactionCollector = new ReactionCollector(msg, reactionFilter, {max: 5})
-  reactionCollector.on('ended', (collected, reason) => {
-	   msg.channel.send('ddd')
-    if (collected.entries().length === 5) {
-      // Successful, add to a #starred-messages channel
-	    msg.channel.send('Successful, add to a #starred-messages channel')
-    } else {
-      // not successful, not enough reactions.
-	    msg.channel.send('not successful, not enough reactions.')
-    }
-  })
-  // create a timeout to stop after 5 minutes
-  setTimeout(() => {
-    reactionCollector.stop('not enough reactions collected')
-  }, 300000)
   
   
-  }
+  }//fim msg.channel.name
 
        
          
