@@ -329,25 +329,7 @@ if (!/[^a-zA-Z0]/.test(xx)) {
 	  
 
 
-const filter = (reaction, user) => {
-	return ['👍', '👎'].includes(reaction.emoji.name) && user.id === msg.author.id;
-};
 
-msg.awaitReactions(filter, { max: 0, time: 60000, errors: ['time'] })
-	.then(collected => {
-		const reaction = collected.first();
-
-		if (reaction.emoji.name === '👍') {
-			msg.reply('you reacted with a thumbs up.');
-		} else {
-			msg.reply('you reacted with a thumbs down.');
-		}
-	})
-	.catch(collected => {
-		msg.reply('you reacted with neither a thumbs up, nor a thumbs down.');
-	});	  
-  
-  
   
   
   }//fim msg.channel.name
