@@ -143,8 +143,9 @@ if(gymraid.trim().length<1){
       text: "©2019 PN PoGo Raids"
     }
   }
-});
+}).then(msg => {
 	 msg.react('👍').then(() => msg.react('👎'));
+	 });
 //------
 	 
 
