@@ -140,7 +140,7 @@ if(gymraid.trim().length<1){
     }
   }
 }).then(msg => {
-	 msg.react('👍');
+	 msg.react('\:one:');
 	 });
 //------
 	 /**
@@ -174,16 +174,19 @@ var minutosraid=" ";
 
 var ginasiosPN = [
      'Antiga Estação De Comboios Do Pinhal Novo',
+	'Biblioteca Municipal',
     'Colonia De Felinos',
     'Estação De Comboios Do Pinhal Novo',
     'Moral de Grafiti Do Campo De Futebol',
     'Parque Infantil Ferreira da Costa',
     'Parque Infantil',
+    'Piscinas Municipais De Pinhal Novo',
     'Polidesportivo 25 De Abril',
     'Polidesportivo Da Sul Ponte',
+     'Pinhal Novo Sauda-vos',
     'Mercado Mensal',
-    'O Ferroviário',
-    'Biblioteca Municipal'
+    'O Ferroviário'
+    
    ]
 
     for (z in x) {
