@@ -18,11 +18,6 @@ const { ReactionCollector } = require('discord.js')
 
 client.on("message", async (msg) => {
    
-	const emojiToTrack = '👍'
-
-const reactionFilter = reaction => {
-  return reaction.name === emojiToTrack
-}
 	
 	
 	
@@ -335,7 +330,7 @@ const filter = (reaction, user) => {
 	return ['👍', '👎'].includes(reaction.emoji.name) && user.id === msg.author.id;
 };
 
-msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+msg.awaitReactions(filter, { max: 40, time: 60000, errors: ['time'] })
 	.then(collected => {
 		const reaction = collected.first();
 
