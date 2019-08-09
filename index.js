@@ -199,7 +199,7 @@ var ginasiosPN = [
 
 
 
-        if (x[z].trim() == 'EXRAIDGYM') {
+        if (x[z].trim().toUpperCase().startsWith('EXRAID')) {
             exraidgym='EXRAID'
         }
         //console.log('Orginal -> ',x[z])
