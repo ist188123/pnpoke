@@ -107,9 +107,9 @@ if(gymraid.trim().length<1){
       name: client.user.username,
       icon_url: client.user.avatarURL
     },
-    title: "TESTE OCR",
+    title: "INFO IMAGEM",
     url: "http://google.com",
-    description: "Reportado por: "+msg.author.username,
+    description: "Reportado por : "+msg.author.username,
     fields: [{
         name: "Hora Telefone",
         value: htelef
@@ -216,7 +216,7 @@ var ginasiosPN = [
     var semelhante=0;
 	
 	    var ultimolido=0;
-if (!/[^a-zA-Z]/.test(xx)) {
+if (!/[^a-zA-Z0]/.test(xx)) {
   
 
         for (f in ginasiosPN) {
