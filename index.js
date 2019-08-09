@@ -24,10 +24,6 @@ client.on("message", async (msg) => {
 	
 	
   
-  var Attachment = (msg.attachments).array();
-         // msg.channel.send(Attachment); //outputs array
-        //  msg.channel.send(Attachment[0].url);
- var imagem=Attachment[0].url
   
   
  
@@ -323,6 +319,14 @@ if (!/[^a-zA-Z0]/.test(xx)) {
 } 
   
   if (msg.channel.name == 'ocr-teste') {
+	  
+	var Attachment = (msg.attachments).array();
+         // msg.channel.send(Attachment); //outputs array
+        //  msg.channel.send(Attachment[0].url);
+       var imagem=Attachment[0].url
+    
+	  
+	  
   getNest('https://api.ocr.space/parse/imageurl?apikey='+process.env.TOKEN+'&url='+imagem+'&scale=true&isOverlayRequired=false&language=cht')
  
   //-----
