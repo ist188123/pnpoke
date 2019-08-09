@@ -144,7 +144,7 @@ if(gymraid.trim().length<1){
     }
   }
 }).then(msg => {
-	 msg.react('👍'));
+	 msg.react('👍');
 	 });
 //------
 	 
