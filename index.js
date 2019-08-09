@@ -5,7 +5,7 @@ const client = new Discord.Client();
 
 const http = require('https');
 
-
+const { ReactionCollector } = require('discord.js')
 //console.log(tamanhoFicheiro)
 
 
@@ -18,6 +18,16 @@ const http = require('https');
 
 client.on("message", async (msg) => {
    
+	const emojiToTrack = '👍'
+
+const reactionFilter = reaction => {
+  return reaction.name === emojiToTrack
+}
+	
+	
+	
+	
+	
   
   var Attachment = (msg.attachments).array();
          // msg.channel.send(Attachment); //outputs array
@@ -316,6 +326,23 @@ if (!/[^a-zA-Z0]/.test(xx)) {
   
   if (msg.channel.name == 'ocr-teste') {
   getNest('https://api.ocr.space/parse/imageurl?apikey='+process.env.TOKEN+'&url='+imagem+'&scale=true&isOverlayRequired=false&language=cht')
+ 
+  
+  
+   const reactionCollector = new ReactionCollector(msg, reactionFilter, {max: 5})
+  reactionCollector.on('ended', (collected, reason) => {
+    if (collected.entries().length === 5) {
+      // Successful, add to a #starred-messages channel
+    } else {
+      // not successful, not enough reactions.
+    }
+  })
+  // create a timeout to stop after 5 minutes
+  setTimeout(() => {
+    reactionCollector.stop('not enough reactions collected')
+  }, 300000)
+  
+  
   }
 
        
