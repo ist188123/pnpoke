@@ -325,7 +325,7 @@ if (!/[^a-zA-Z0]/.test(xx)) {
         //  msg.channel.send(Attachment[0].url);
        var imagem=Attachment[0].url
     
-	  
+	msg.channel.fetchMessage();  
 	  
   getNest('https://api.ocr.space/parse/imageurl?apikey='+process.env.TOKEN+'&url='+imagem+'&scale=true&isOverlayRequired=false&language=cht')
  
