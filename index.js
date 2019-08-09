@@ -181,7 +181,7 @@ var ginasiosPN = [
      'Antiga Estação De Comboios',
      'Biblioteca Municipal',
     'Colonia De Felinos',
-    'Estação De Comboios',
+    'Comboios Pinhal Novo',
     'Moral de Grafiti Do Campo De Futebol',
     'Parque Infantil Ferreira da Costa',
     'Parque Infantil',
