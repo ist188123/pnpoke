@@ -144,7 +144,7 @@ if(gymraid.trim().length<1){
     }
   }
 }).then(msg => {
-	 msg.react('👍').then(() => msg.react('👎'));
+	 msg.react('👍').then(() => msg.react('12:30'));
 	 });
 //------
 	 
@@ -179,7 +179,8 @@ var ginasiosPN = [
     'Polidesportivo 25 De Abril',
     'Polidesportivo Da Sul Ponte',
     'Mercado Mensal',
-    'O Ferroviário'
+    'O Ferroviário',
+    'Biblioteca Municipal'
    ]
 
     for (z in x) {
