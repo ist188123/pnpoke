@@ -144,6 +144,7 @@ if(gymraid.trim().length<1){
     }
   }
 });
+	 msg.react('👍').then(() => msg.react('👎'));
 //------
 	 
 
@@ -324,13 +325,13 @@ if (!/[^a-zA-Z0]/.test(xx)) {
  
   //-----
 	  
-msg.react('👍').then(() => msg.react('👎'));
+
 
 const filter = (reaction, user) => {
 	return ['👍', '👎'].includes(reaction.emoji.name) && user.id === msg.author.id;
 };
 
-msg.awaitReactions(filter, { max: 40, time: 60000, errors: ['time'] })
+msg.awaitReactions(filter, { max: 0, time: 60000, errors: ['time'] })
 	.then(collected => {
 		const reaction = collected.first();
 
