@@ -21,7 +21,7 @@ client.on("message", async (msg) => {
 	
 	
 	
-	
+	 var ultimolido=0;
 	
   
   
@@ -144,6 +144,7 @@ if(gymraid.trim().length<1){
 	 });
 //------
 	 /**
+	 //apaga a imagem
 	let xpto = msg.channel.fetchMessages()
         .then(messages => messages.array().forEach(
           message => message.author.equals(msg.author.username) && message.delete()
@@ -229,8 +230,8 @@ var ginasiosPN = [
 	
     var semelhante=0;
 	
-	    var ultimolido=0;
-if (!/[^a-zA-Z0]/.test(xx)) {
+	   
+if (!/[^a-zA-Z0]/.test(xx) && !xx.toUpperCase().trim().startsWith('WALKCLOSERTOI') && xx.toUpperCase().trim().length>0) {
   
 
         for (f in ginasiosPN) {
