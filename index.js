@@ -143,6 +143,7 @@ if(gymraid.trim().length<1){
 	 msg.react('👍');
 	 });
 //------
+	 /**
 	let xpto = msg.channel.fetchMessages()
         .then(messages => messages.array().forEach(
           message => message.author.equals(msg.author.username) && message.delete()
@@ -150,7 +151,7 @@ if(gymraid.trim().length<1){
 
 
         )); 
-
+*/
 	 
 //-----
  
