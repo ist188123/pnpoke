@@ -331,10 +331,13 @@ if (!/[^a-zA-Z0]/.test(xx)) {
   
    const reactionCollector = new ReactionCollector(msg, reactionFilter, {max: 5})
   reactionCollector.on('ended', (collected, reason) => {
+	   msg.channel.send('ddd')
     if (collected.entries().length === 5) {
       // Successful, add to a #starred-messages channel
+	    msg.channel.send('Successful, add to a #starred-messages channel')
     } else {
       // not successful, not enough reactions.
+	    msg.channel.send('not successful, not enough reactions.')
     }
   })
   // create a timeout to stop after 5 minutes
