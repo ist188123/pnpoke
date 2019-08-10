@@ -183,8 +183,9 @@ var ginasiosPN = [
     'Colonia De Felinos',
     'Comboios Pinhal Novo',
     'Moral de Grafiti Do Campo De Futebol',
-    'Parque Infantil Ferreira da Costa',
-    'Parque Infantil',
+    'PI Ferreira da Costa',
+    'PI Da Vila Serena',
+'PI Zeca Afonso'
     'Piscinas Municipais',
     'Polidesportivo 25 De Abril',
     'Polidesportivo Da Sul Ponte',
