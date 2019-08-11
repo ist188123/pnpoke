@@ -159,13 +159,7 @@ if(gymraid.trim().length<1){
       {
         name: "exgym",
         value: exgym
-      },
-	    
-	     {
-        name: "info-teste",
-        value: timagem
-      },
-	
+      }
     ],
     timestamp: new Date(),
     footer: {
