@@ -107,7 +107,7 @@ function editDistance(s1, s2) {
  
  function getTextoImagem(htelef,exgym,timagem,mraid,gymraid,pokemon,tier){
 
-msg.channel.send(htelef,exgym,timagem,mraid,gymraid,pokemon,tier);
+
 	 if(tier.trim().length<1){
         tier='?'
     } 
@@ -128,8 +128,7 @@ if(gymraid.trim().length<1){
 }
  
 	 
-msg.channel.send(htelef,exgym,timagem,mraid,gymraid,pokemon,tier);	 
-	 
+
 	 
 
 	 msg.channel.send({embed: {
