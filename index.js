@@ -128,7 +128,7 @@ if(gymraid.trim().length<1){
 }
  
 	 
-	 
+msg.channel.send(htelef,exgym,timagem,mraid,gymraid,pokemon,tier);	 
 	 
 	 
 
