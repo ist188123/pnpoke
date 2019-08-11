@@ -41,6 +41,7 @@ var ginasiosPN = [
    'Moral de Grafiti Do Campo De Futebol',
    'PI Ferreira da Costa',
    'PI Da Vila Serena',
+   'PI Da Escola Zeca Afonso',	
    'Piscinas Municipais',
    'Polidesportivo 25 De Abril',
    'Polidesportivo Da Sul Ponte',
