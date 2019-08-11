@@ -108,7 +108,7 @@ function editDistance(s1, s2) {
  function getTextoImagem(htelef,exgym,timagem,mraid,gymraid,pokemon,tier){
 
 
-	 if(tier.trim().length<1){
+	 if(tier.length<1){
         tier='?'
     } 
 	if(pokemon.trim().length<1){
@@ -206,7 +206,7 @@ function readOCR(m) {
 
     //var found = ginasios.includes('PARQUEINFANTIL');
     // console.log('found ',found)
-    var tier="";
+    var tier;
     var pokemon="?"
 	var ginasioRaid="?";    
     var exraidgym="NORMAL";
