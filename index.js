@@ -108,9 +108,7 @@ function editDistance(s1, s2) {
  function getTextoImagem(htelef,exgym,timagem,mraid,gymraid,pokemon,tier){
 
 
-	 if(tier.length<1){
-        tier='?'
-    } 
+	 
 	if(pokemon.trim().length<1){
         pokemon='?'
     } 
@@ -236,7 +234,7 @@ var minutosraid=" ";
         //se econtrou : :
         if (xx.split('').filter(x => x == ':').length == 2) {
 
-            minutosraid=minutosraid+"\n"+xx
+            minutosraid="\n"+xx
 
 
         }
@@ -248,7 +246,7 @@ var minutosraid=" ";
             var nanhoras=!isNaN(horasplit)
             var nanminutos=!isNaN(minsplit)
            if(nanhoras && nanminutos){
-            horasTelefone=horasTelefone+horasplit+":"+minsplit
+            horasTelefone=horasplit+":"+minsplit
            }
             
 
