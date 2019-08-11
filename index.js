@@ -108,7 +108,9 @@ function editDistance(s1, s2) {
  function getTextoImagem(htelef,exgym,timagem,mraid,gymraid,pokemon,tier){
 
 //msg.channel.send("estou getTextoImagem\n"+exgym+"\n"+timagem+"\n"+mraid);
-	 
+	 if(tier.trim().length<1){
+        tier='?'
+    } 
 	if(pokemon.trim().length<1){
         pokemon='?'
     } 
@@ -170,12 +172,12 @@ if(gymraid.trim().length<1){
     timestamp: new Date(),
     footer: {
       icon_url: client.user.avatarURL,
-      text: "PN PoGo Raids\nReportado por : "+msg.author.username+" "
+      text: "PN PoGo Raids Reportado por : "+msg.author.username
       
     }
   }
 }).then(msg => {
-	 msg.react(msg.guild.emojis.find('name', "thumbsup"))
+	 msg.react('👍')
 	 });
 //------
 	 /**
@@ -205,7 +207,7 @@ function readOCR(m) {
 
     //var found = ginasios.includes('PARQUEINFANTIL');
     // console.log('found ',found)
-    var tier="1";
+    var tier="";
     var pokemon="?"
 	var ginasioRaid="?";    
     var exraidgym="NORMAL";
