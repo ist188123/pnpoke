@@ -374,8 +374,7 @@ for(g in raids)
       // console.log(leuOCR)
     }else{
         texto=leuOCR
-        console.log('--------------------1')
-        console.log(texto)
+        
    // readOCR(leuOCR); 
     }
    
@@ -398,10 +397,9 @@ for(g in raids)
       // console.log(leuOCR)
     }else{
         texto=texto+leuOCR
-        console.log('--------------------2')
         
-        console.log(texto)
     readOCR(texto); 
+	   
     }
    
     
