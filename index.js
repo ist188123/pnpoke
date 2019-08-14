@@ -366,9 +366,9 @@ for(g in raids)
 	      
       // console.log(leuOCR)
     }else{
-        texto=leuOCR
+       
         
-   // readOCR(leuOCR); 
+   readOCR(leuOCR); 
     }
    
     
