@@ -348,7 +348,7 @@ for(g in raids)
   
   
  
- async function getNest(endereco,endereco2) {
+ async function getNest(endereco) {
    
     var leuOCR=""
     var texto;
@@ -374,30 +374,6 @@ for(g in raids)
     
     
 
-
-    var result2 = await leinforaid(endereco2, async function (pCLatLng) {
-       
-        try{
-            leuOCR=  pCLatLng.ParsedResults[0].ParsedText
-           // console.log(pCLatLng.ParsedResults[0].ParsedText)
-        
-    }catch(error) {
-        leuOCR='Erro na imagem:\nVerique o tamanho, não pode ser superior a 1MB.'
-        //console.log('As imagens deve ter 1MB.');
-      }
-      if(leuOCR.startsWith('Erro')){
-	      
-      // console.log(leuOCR)
-    }else{
-        texto=texto+leuOCR
-        
-    readOCR(texto); 
-	   
-    }
-   
-    
-    })
-
 })
 
    
@@ -413,7 +389,7 @@ for(g in raids)
     
 	 
 	  
-  getNest('https://api.ocr.space/parse/imageurl?apikey='+process.env.TOKEN+'&url='+imagem+'&scale=true&isOverlayRequired=false&language=cht','https://api.ocr.space/parse/imageurl?apikey='+process.env.TOKEN+'&url='+imagem+'&scale=true&isOverlayRequired=false&language=por')
+  getNest('https://api.ocr.space/parse/imageurl?apikey='+process.env.TOKEN+'&url='+imagem+'&scale=true&isOverlayRequired=false&language=por&OCREngine=2')
  
   //-----
 	  
