@@ -277,12 +277,12 @@ if (!/[^a-zA-Z0]/.test(xx) && !xx.toUpperCase().trim().startsWith('WALKCLOSERTOI
         }
       var  raids=[raid1,raid2,raid3,raid4,raid5]
       semelhante=0;
-      ultimolido=0;
+     
 for(g in raids)
         for (f in raids[g]) {
            
             semelhante = similarity(xx.toUpperCase(), raids[g][f].toUpperCase())
-            console.log(xx.toUpperCase(),' -> ',raids[g][f].toUpperCase(),' -> ',semelhante)
+            //console.log(xx.toUpperCase(),' -> ',raids[g][f].toUpperCase(),' -> ',semelhante)
             
             if (semelhante > 0.35) {
                
