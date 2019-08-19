@@ -19,7 +19,7 @@ const { ReactionCollector } = require('discord.js')
 client.on("message", async (msg) => {
    
 	
-	
+	 var semelhante=0;
 	
 	 var ultimolido=0;
 	
@@ -34,10 +34,13 @@ var raid5=['Rayquaza'.'Suicune']
 
 
 var ginasiosPN = [
+    'A Ler',
     'Antiga Estação De Comboios',
     'Biblioteca Municipal',
    'Colonia De Felinos',
    'Comboios Pinhal Novo',
+   'Deposito De Agua',
+   'Manás',
    'Moral de Grafiti Do Campo De Futebol',
    'PI Ferreira da Costa',
    'PI Da Vila Serena',
@@ -48,6 +51,7 @@ var ginasiosPN = [
    'Pinhal Novo Sauda-vos',
    'Mercado Mensal',
    'O Ferroviário'
+   	
    
   ]
 
@@ -254,8 +258,8 @@ var minutosraid=" ";
         
        // console.log('--->',x[z].toUpperCase(),!/[^a-zA-Z]/.test(x[z]))
 if (!/[^a-zA-Z0]/.test(xx) && !xx.toUpperCase().trim().startsWith('WALKCLOSERTOI') && xx.toUpperCase().trim().length>0) {
-    console.log('Orginal -> ',xx)
-    var semelhante=0;
+  //  console.log('Orginal -> ',xx)
+    semelhante=0;
         for (f in ginasiosPN) {
            
             semelhante = similarity(xx.toUpperCase(), ginasiosPN[f].toUpperCase())
@@ -272,6 +276,7 @@ if (!/[^a-zA-Z0]/.test(xx) && !xx.toUpperCase().trim().startsWith('WALKCLOSERTOI
 
         }
       var  raids=[raid1,raid2,raid3,raid4,raid5]
+      semelhante=0;
       ultimolido=0;
 for(g in raids)
         for (f in raids[g]) {
