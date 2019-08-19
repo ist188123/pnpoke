@@ -38,7 +38,7 @@ var ginasiosPN = [
     'Antiga Estação De Comboios',
     'Biblioteca Municipal',
    'Colonia De Felinos',
-   'Comboios Pinhal Novo',
+   'Comboios PN',
    'Deposito De Agua',
    'Manás',
    'Moral de Grafiti Do Campo De Futebol',
@@ -48,7 +48,7 @@ var ginasiosPN = [
    'Piscinas Municipais',
    'Polidesportivo 25 De Abril',
    'Polidesportivo Da Sul Ponte',
-   'Pinhal Novo Sauda-vos',
+   'PN Sauda-vos',
    'Mercado Mensal',
    'O Ferroviário'
    	
