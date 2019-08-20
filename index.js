@@ -393,9 +393,9 @@ for(g in raids)
         //  msg.channel.send(Attachment[0].url);
        var imagem=Attachment[0].url
     
-	 
+	getNest(process.env.pnPoGoOCR+imagem+process.env.valuespnPoGo) 
 	  
-  getNest('https://api.ocr.space/parse/imageurl?apikey='+process.env.TOKEN+'&url='+imagem+'&scale=true&isOverlayRequired=false&language=por&OCREngine=2')
+ // getNest('https://api.ocr.space/parse/imageurl?apikey='+process.env.TOKEN+'&url='+imagem+'&scale=true&isOverlayRequired=false&language=por&OCREngine=2')
  
   //-----
 	  
