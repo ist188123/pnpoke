@@ -284,7 +284,7 @@ for(g in raids)
            
             semelhante = similarity(xx.toUpperCase(), raids[g][f].toUpperCase())
             //console.log(xx.toUpperCase(),' -> ',raids[g][f].toUpperCase(),' -> ',semelhante)
-            
+            if(xx.toUpperCase()!='NI'){
             if (semelhante > 0.35) {
                
 		    if(semelhante>ultimolido){
@@ -299,7 +299,7 @@ for(g in raids)
 
         }
 
-
+	}
 
 
         textoimagem = textoimagem + "\n" + xx
