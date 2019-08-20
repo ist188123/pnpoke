@@ -395,8 +395,7 @@ for(g in raids)
     
 	getNest(process.env.pnPoGoOCR+imagem+process.env.valuespnPoGo) 
 	  
- // getNest('https://api.ocr.space/parse/imageurl?apikey='+process.env.TOKEN+'&url='+imagem+'&scale=true&isOverlayRequired=false&language=por&OCREngine=2')
- 
+
   //-----
 	  
 
