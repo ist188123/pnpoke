@@ -260,6 +260,7 @@ var minutosraid=" ";
 if (!/[^a-zA-Z0]/.test(xx) && !xx.toUpperCase().trim().startsWith('WALKCLOSERTOI') && xx.toUpperCase().trim().length>0) {
   //  console.log('Orginal -> ',xx)
     semelhante=0;
+	ultimolido=0;
         for (f in ginasiosPN) {
            
             semelhante = similarity(xx.toUpperCase(), ginasiosPN[f].toUpperCase())
@@ -277,7 +278,7 @@ if (!/[^a-zA-Z0]/.test(xx) && !xx.toUpperCase().trim().startsWith('WALKCLOSERTOI
         }
       var  raids=[raid1,raid2,raid3,raid4,raid5]
       semelhante=0;
-     
+     ultimolido=0;
 for(g in raids)
         for (f in raids[g]) {
            
