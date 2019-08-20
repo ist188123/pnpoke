@@ -130,7 +130,9 @@ if(gymraid.trim().length<1){
     gymraid='?'
 }
  
-	 
+if(isNaN(parseInt(tier))){  
+  tier='?'
+}	 
 
 	 
 
