@@ -148,31 +148,22 @@ if(isNaN(parseInt(tier))){
 var mn=mraid.split(':')[1];
 var horas_telefone=htelef.split(':')[0];
 var minutos_telefone=htelef.split(':')[1];
-
-	  if(pokemon!='?'){
-		 
-		mn=-mn 
-		 
-	 }
-   
 var today = new Date();
+
+
 var inicioRaid = new Date(today.getFullYear(), today.getMonth(), today.getDate(), horas_telefone, minutos_telefone);
-var fimRaid = new Date(today.getFullYear(), today.getMonth(), today.getDate(), horas_telefone, minutos_telefone);
-var ct=inicioRaid;
-minutos_telefone= parseInt(minutos_telefone)+parseInt(mn)
+//se boss
+  if(pokemon!='?'){
+    mn=-(45-mn)
+  }
+inicioRaid.setMinutes(parseInt(minutos_telefone)+parseInt(mn));
 
-//set hora inicio raid
-inicioRaid.setMinutes(minutos_telefone);
-var horai=inicioRaid.getTime();
+var fimRaid  = new Date(today.getFullYear(), today.getMonth(), today.getDate(), inicioRaid.getHours(), inicioRaid.getMinutes());
+
+
+fimRaid.setMinutes(inicioRaid.getMinutes()+45);
 var hora_inicio_raid=horas(inicioRaid.getHours(),inicioRaid.getMinutes())
-
-//set hora fim raid
-//fimRaid.setMinutes(inicioRaid.getMinutes()+45);
-fimRaid.setMinutes(minutos_telefone+45);
-var horaf=fimRaid.getTime();
-var hora_fim_raid=horas(fimRaid.getHours(),fimRaid.getMinutes())
-
-	
+ var hora_fim_raid=horas(fimRaid.getHours(),fimRaid.getMinutes())  
 	 
 //-----	 
 	 
