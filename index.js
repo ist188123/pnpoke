@@ -56,7 +56,17 @@ var ginasiosPN = [
   ]
 
   
-  
+  var horas=function(h,m){
+
+    if(h<10){
+        h=0+""+h
+    }
+    if(m<10){
+        m=0+""+m
+    }
+
+    return h+":"+m
+}
  
  
  function similarity(s1, s2) {
@@ -134,6 +144,36 @@ if(isNaN(parseInt(tier))){
   tier='?'
 }	 
 
+//-----
+var mn=mraid.split(':')[1];
+var horas_telefone=htelef.split(':')[0];
+var minutos_telefone=htelef.split(':')[1];
+
+	  if(pokemon='?'){
+		 
+		mn=-mn 
+		 
+	 }
+   
+var today = new Date();
+var inicioRaid = new Date(today.getFullYear(), today.getMonth(), today.getDate(), horas_telefone, minutos_telefone);
+var fimRaid = new Date(today.getFullYear(), today.getMonth(), today.getDate(), horas_telefone, minutos_telefone);
+var ct=inicioRaid;
+minutos_telefone= parseInt(minutos_telefone)+parseInt(mn)
+
+//set hora inicio raid
+inicioRaid.setMinutes(minutos_telefone);
+var horai=inicioRaid.getTime();
+var hora_inicio_raid=horas(inicioRaid.getHours(),inicioRaid.getMinutes())
+
+//set hora fim raid
+fimRaid.setMinutes(inicioRaid.getMinutes()+45);
+var horaf=fimRaid.getTime();
+var hora_fim_raid=horas(fimRaid.getHours(),fimRaid.getMinutes())
+
+	
+	 
+//-----	 
 	 
 
 	 msg.channel.send({embed: {
@@ -150,9 +190,14 @@ if(isNaN(parseInt(tier))){
         value: pokemon
       },
 	    {
-        name: "Hora Telefone",
-        value: htelef
+        name: "Hora Inicio Raid",
+        value: hora_inicio_raid
       },
+	    {
+        name: "Hora Fim Raid",
+        value: hora_fim_raid
+      }
+	     ,
 	     {
         name: "Ginásio",
         value: gymraid
