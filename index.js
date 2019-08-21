@@ -149,7 +149,7 @@ var mn=mraid.split(':')[1];
 var horas_telefone=htelef.split(':')[0];
 var minutos_telefone=htelef.split(':')[1];
 
-	  if(pokemon='?'){
+	  if(pokemon!='?'){
 		 
 		mn=-mn 
 		 
