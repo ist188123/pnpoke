@@ -167,7 +167,8 @@ var horai=inicioRaid.getTime();
 var hora_inicio_raid=horas(inicioRaid.getHours(),inicioRaid.getMinutes())
 
 //set hora fim raid
-fimRaid.setMinutes(inicioRaid.getMinutes()+45);
+//fimRaid.setMinutes(inicioRaid.getMinutes()+45);
+fimRaid.setMinutes(minutos_telefone+45);
 var horaf=fimRaid.getTime();
 var hora_fim_raid=horas(fimRaid.getHours(),fimRaid.getMinutes())
 
