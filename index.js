@@ -191,11 +191,11 @@ var hora_fim_raid=horas(fimRaid.getHours(),fimRaid.getMinutes())
         value: pokemon
       },
 	    {
-        name: "Hora Inicio Raid",
+        name: "Abre",
         value: hora_inicio_raid
       },
 	    {
-        name: "Hora Fim Raid",
+        name: "Termina",
         value: hora_fim_raid
       }
 	     ,
