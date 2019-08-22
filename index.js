@@ -184,10 +184,10 @@ msg.channel.send({embed: {
     },
     title: "ANUNCIO RAID",
     url: "http://google.com",
-    description: " ",
+    description: "\@everyone",
     fields: [{
-        name: "Nivel "+tier,
-        value: " "
+        name: "Nivel ",
+        value: tier
       },
 	    {
         name: "Boss",
