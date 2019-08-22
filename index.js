@@ -223,7 +223,7 @@ msg.channel.send({embed: {
       
     }
   }
-}).then(msg => 
+}).then(msg => {
 	 
 		  msg.react('\u0031\u20E3')
 		  msg.react('\u0032\u20E3')
@@ -234,7 +234,7 @@ msg.channel.send({embed: {
 		  
 		 
 		 
-	msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+	msg.awaitReactions(filter, { max: 1, time: tempoEspera, errors: ['time'] })
 	.then(collected => {
 		
 		
