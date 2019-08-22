@@ -183,7 +183,15 @@ const embed = new Discord.RichEmbed({
 
 // add reaction emoji to message
 msg.channel.send(embed)
-  .then(msg => msg.react('✅'))
+  .then(msg => 
+	
+	          msg.react('\u0031\u20E3')
+		  msg.react('\u0032\u20E3')
+		  msg.react('\u0033\u20E3')
+		  msg.react('\u0034\u20E3')
+		  msg.react('\u0035\u20E3')
+       
+       )
   .then(mReaction => mReaction.message.react('❎'))
   .then(mReaction => {
     // createReactionCollector - responds on each react, AND again at the end.
@@ -198,8 +206,16 @@ msg.channel.send(embed)
       let embedLikeField = Object.assign({}, embed.fields[0]);
 
       // update 'field' with new value
-      embedLikeField.value = '<3 <3 <3';
-
+	    if(msg.react('\u0031\u20E3')){
+      embedLikeField.value = '111111';
+	    }
+	    if(msg.react('\u0032\u20E3')){
+      embedLikeField.value = '2222222';
+	    }
+	     if(msg.react('\u0033\u20E3')){
+      embedLikeField.value = '333333';
+	    }
+	    
       // create new embed with old title & description, new field
       const newEmbed = new Discord.RichEmbed({
         title: embed.title,
