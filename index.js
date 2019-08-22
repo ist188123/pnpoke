@@ -170,81 +170,52 @@ const filter = (reaction, user) => {
 	return ['👍', '👎'].includes(reaction.emoji.name) && user.id === msg.author.id;
 };	 
 //------------
-	 msg.channel.send({embed: {
-    color: 3447003,
-    author: {
-      name: client.user.username,
-      icon_url: client.user.avatarURL
-    },
-    title: "INFO RAID",
-    url: "http://google.com",
-    description: "Raid "+tier,
-    fields: [{
-        name: "Pokemon",
-        value: pokemon
-      },
-	    {
-        name: "Abre",
-        value: hora_inicio_raid
-      },
-	    {
-        name: "Termina",
-        value: hora_fim_raid
-      }
-	     ,
-	     {
-        name: "Ginásio",
-        value: gymraid
-      },
-	     {
-        name: "Tempo Raid",
-        value: mraid
-      },
-      
-      {
-        name: "exgym",
-        value: exgym
-      }
-    ],
-    timestamp: new Date(),
-    footer: {
-      icon_url: client.user.avatarURL,
-      text: "PN PoGo Raids Reportado por : "+msg.author.username
-      
-    }
-  }
-}).then(msg => {
-	 
-		  msg.react('\u0031\u20E3')
-		  msg.react('\u0032\u20E3')
-		  msg.react('\u0033\u20E3')
-		  msg.react('\u0034\u20E3')
-		  msg.react('\u0035\u20E3')
-		
-		  
-		 
-		 
-	msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
-	.then(collected => {
-		const reaction = collected.first();
+const reactionFilter = (reaction, user) => reaction.emoji.name === '✅';
 
-		if (reaction.emoji.name === '👍') {
-			msg.reply('thumbs up.');
-		} else {
-			msg.reply('thumbs down.');
-		}
-	})
-	.catch(collected => {
-		msg.reply('you reacted with neither a thumbs up, nor a thumbs down.');
-	});		 
-	 	 
-		 
-		 
-		 
-		 
-		 
-		 
-	 });
+const embed = new Discord.RichEmbed({
+  title: 'Suggestion by someone',
+  description: 'This is a test suggestion. Can you please like it or dislike it :)',
+  fields: [{
+    name: 'Like:',
+    value: '<3'
+  }]
+});
+
+// add reaction emoji to message
+msg.channel.send(embed)
+  .then(msg => msg.react('✅'))
+  .then(mReaction => mReaction.message.react('❎'))
+  .then(mReaction => {
+    // createReactionCollector - responds on each react, AND again at the end.
+    const collector = mReaction.message
+      .createReactionCollector(reactionFilter, {
+        time: 15000
+      });
+
+    // set collector events
+    collector.on('collect', r => {
+      // immutably copy embed's Like field to new obj
+      let embedLikeField = Object.assign({}, embed.fields[0]);
+
+      // update 'field' with new value
+      embedLikeField.value = '<3 <3 <3';
+
+      // create new embed with old title & description, new field
+      const newEmbed = new Discord.RichEmbed({
+        title: embed.title,
+        description: embed.description,
+        fields: [embedLikeField]
+      });
+
+      // edit message with new embed
+      // NOTE: can only edit messages you author
+      r.message.edit(newEmbed)
+        .then(newMsg => console.log(`new embed added`))
+        .catch(console.log);
+    });
+    collector.on('end', collected => console.log(`Collected ${collected.size} reactions`));
+  })
+  .catch(console.log);
 	 
 	 
 	 //------
