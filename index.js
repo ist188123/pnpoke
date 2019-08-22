@@ -234,7 +234,7 @@ msg.channel.send({embed: {
 		  
 		 
 		 
-	msg.awaitReactions(filter, { max: 1, time: tempoEspera, errors: ['time'] })
+	msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 	.then(collected => {
 		
 		
@@ -272,7 +272,7 @@ if (r.emoji.name === '👍') {
 		
 	})
 	.catch(collected => {
-		msg.reply('Terminou a RAID.');
+		msg.reply('Teste OCR, obrigado por colaborar.');
 	});		 
 	 
 	 });
