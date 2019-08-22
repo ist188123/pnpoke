@@ -223,72 +223,77 @@ msg.channel.send({embed: {
       
     }
   }
-}).then(msg => {
+}).then(msg => 
 	 
-		  msg.react('\u0031\u20E3')
-		  msg.react('\u0032\u20E3')
-		  msg.react('\u0033\u20E3')
-		  msg.react('\u0034\u20E3')
+		  msg.react('\u0031\u20E3'),
+		  msg.react('\u0032\u20E3'),
+		  msg.react('\u0033\u20E3'),
+		  msg.react('\u0034\u20E3'),
 		  msg.react('\u0035\u20E3')
-		
-	const collector = msg.createReactionCollector(filter, {
+		)
+	.then(mReaction => {	
+		const collector = mReaction.msg
+      .createReactionCollector(filter, {
         time: 15000
-      });  
-	collector.on('collect', r => {
-		
-		
-	});
-    collector.on('end', collected => msg.reply('Collected ${collected.size} reactions'));
-  })
-  .catch();	
-		
-		
-		 
-	msg.awaitReactions(filter, { max: 1, time: tempoEspera, errors: ['time'] })
-	.then(collected => {
-		
-		
-		const reaction = collected.first();
+      });
+collector.on('collect', r => {
+      // immutably copy embed's Like field to new obj
+      let embedLikeField = Object.assign({}, embed.fields[0]);
 
-		if (reaction.emoji.name === '👍') {
+      // update 'field' with new value
+	if (r.emoji.name === '👍') {
 			msg.reply('thumbs up.');
 		} 
 		
-		if (reaction.emoji.name === '\u0031\u20E3') {
+		if (r.emoji.name === '\u0031\u20E3') {
 			msg.reply('Nivel 1');
+			embedLikeField.value = '1';
 			msg.react('👍')
 		} 
-		if (reaction.emoji.name === '\u0032\u20E3') {
+		if (r.emoji.name === '\u0032\u20E3') {
 			msg.reply('Nivel 2');
+			embedLikeField.value = '2';
 			msg.react('👍')
 		} 
-		if (reaction.emoji.name === '\u0033\u20E3') {
+		if (r.emoji.name === '\u0033\u20E3') {
 			msg.reply('Nivel 3');
+			embedLikeField.value = '3';
 			msg.react('👍')
 		} 
-		if (reaction.emoji.name === '\u0034\u20E3') {
+		if (r.emoji.name === '\u0034\u20E3') {
 			msg.reply('Nivel 4');
+			embedLikeField.value = '4';
 			msg.react('👍')
 		} 
-		if (reaction.emoji.name === '\u0035\u20E3') {
+		if (r.emoji.name === '\u0035\u20E3') {
 			msg.reply('Nivel 5');
+			embedLikeField.value = '5';
 			msg.react('👍')
 		} 
+	
+	
+	
+	
+      
+
+      // create new embed with old title & description, new field
+      const newEmbed = new Discord.RichEmbed({
+        title: embed.title,
+        description: embed.description,
+        fields: [embedLikeField]
+      });
+
+      // edit message with new embed
+      // NOTE: can only edit messages you author
+      r.msg.edit(newEmbed)
+        .then(newMsg => msg.reply(`new embed added`))
+        .catch(console.log);
+    });
+    collector.on('end', collected => msg.reply(`Collected ${collected.size} reactions`));
+  })
+  .catch(console.log);
 		
-		
-		
-	})
-	.catch(collected => {
-		msg.reply('Terminou a Raid.');
-	});		 
-	 	 
-		 
-		 
-		 
-		 
-		 
-		 
-	 });
+	
 	 
 	 //------
 	
