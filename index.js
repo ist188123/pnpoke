@@ -166,8 +166,10 @@ var hora_inicio_raid=horas(inicioRaid.getHours(),inicioRaid.getMinutes())
  var hora_fim_raid=horas(fimRaid.getHours(),fimRaid.getMinutes())  
 	 
 //-----	 
-	 
-
+const filter = (reaction, user) => {
+	return ['👍', '👎'].includes(reaction.emoji.name) && user.id === msg.author.id;
+};	 
+//------------
 	 msg.channel.send({embed: {
     color: 3447003,
     author: {
@@ -212,21 +214,10 @@ var hora_inicio_raid=horas(inicioRaid.getHours(),inicioRaid.getMinutes())
     }
   }
 }).then(msg => {
-	 msg.react('👍')
+	// msg.react('👍')
 		 
-	 });
-	 
-	 
-	 //------
-	
-	
-msg.react('👍').then(() => msg.react('👎'));
-
-const filter = (reaction, user) => {
-	return ['👍', '👎'].includes(reaction.emoji.name) && user.id === msg.author.id;
-};
-
-msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+		 
+	msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 	.then(collected => {
 		const reaction = collected.first();
 
@@ -239,7 +230,23 @@ msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 	.catch(collected => {
 		msg.reply('you reacted with neither a thumbs up, nor a thumbs down.');
 	});		 
+	 	 
+		 
+		 
+		 
+		 
+		 
+		 
+	 });
 	 
+	 
+	 //------
+	
+	
+
+
+
+
 	 
 	 
 	 
