@@ -214,7 +214,7 @@ const filter = (reaction, user) => {
     }
   }
 }).then(msg => {
-	 msg.react("\:one:")
+	 msg.react('\:poop:')
 		  msg.react(':two:')
 		  msg.react('\:three:')
 		  msg.react('\:four:')
