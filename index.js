@@ -167,7 +167,7 @@ var hora_inicio_raid=horas(inicioRaid.getHours(),inicioRaid.getMinutes())
 	 
 //-----	 
 const filter = (reaction, user) => {
-	return ['👍', '👎','1️⃣'].includes(reaction.emoji.name) && user.id === msg.author.id;
+	return ['👍', '👎'].includes(reaction.emoji.name) && user.id === msg.author.id;
 };	 
 //------------
 	 msg.channel.send({embed: {
@@ -215,11 +215,12 @@ const filter = (reaction, user) => {
   }
 }).then(msg => {
 	 
-		  msg.react('1️⃣')
-		 msg.react('2️⃣')
-		  msg.react('3️⃣')
-		  msg.react('4️⃣')
-		  msg.react('5️⃣')
+		  msg.react('\u0031\u20E3')
+		  msg.react('\u0032\u20E3')
+		  msg.react('\u0033\u20E3')
+		  msg.react('\u0034\u20E3')
+		  msg.react('\u0035\u20E3')
+		
 		  
 		 
 		 
