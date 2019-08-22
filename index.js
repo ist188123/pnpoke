@@ -167,7 +167,7 @@ var hora_inicio_raid=horas(inicioRaid.getHours(),inicioRaid.getMinutes())
 	 
 //-----	 
 const filter = (reaction, user) => {
-	return ['👍', '👎'].includes(reaction.emoji.name) && user.id === msg.author.id;
+	return ['👍', '👎','1️⃣'].includes(reaction.emoji.name) && user.id === msg.author.id;
 };	 
 //------------
 	 msg.channel.send({embed: {
