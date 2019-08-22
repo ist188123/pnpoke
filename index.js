@@ -290,16 +290,14 @@ msg.channel.send({embed: {
 	 
 	 
 //------
-	 /**
+	if( msg.channel.name == 'info-raids'){
 	 //apaga a imagem
 	let xpto = msg.channel.fetchMessages()
         .then(messages => messages.array().forEach(
           message => message.author.equals(msg.author.username) && message.delete()
 
-
-
         )); 
-*/
+	}
 	 
 //-----
  
@@ -500,7 +498,7 @@ for(g in raids)
 } 
   
   
-  if (msg.channel.name == 'ocr-teste') {
+  if (msg.channel.name == 'ocr-teste' || msg.channel.name == 'info-raids') {
 	  
 	var Attachment = (msg.attachments).array();
          // msg.channel.send(Attachment); //outputs array
