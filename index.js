@@ -164,10 +164,16 @@ var fimRaid  = new Date(today.getFullYear(), today.getMonth(), today.getDate(), 
 fimRaid.setMinutes(inicioRaid.getMinutes()+45);
 var hora_inicio_raid=horas(inicioRaid.getHours(),inicioRaid.getMinutes())
  var hora_fim_raid=horas(fimRaid.getHours(),fimRaid.getMinutes())  
-	 
+	
+ 
+ var mi=inicioRaid.getTime();
+var mf=fimRaid.getTime();
+var tempoEspera=mf-mi;
+ 
+ 
 //-----	 
 const filter = (reaction, user) => {
-	return ['👍', '👎','\u0031\u20E3','\u0032\u20E3','\u0033\u20E3','\u0034\u20E3','\u0035\u20E3'].includes(reaction.emoji.name) && user.id === msg.author.id;
+	return ['👍', '\u0031\u20E3','\u0032\u20E3','\u0033\u20E3','\u0034\u20E3','\u0035\u20E3'].includes(reaction.emoji.name) && user.id === msg.author.id;
 };	 
 //------------
 msg.channel.send({embed: {
@@ -176,10 +182,14 @@ msg.channel.send({embed: {
       name: client.user.username,
       icon_url: client.user.avatarURL
     },
-    title: "INFO RAID",
+    title: "ANUNCIO RAID",
     url: "http://google.com",
-    description: "Raid "+tier,
+    description: " ",
     fields: [{
+        name: "Nivel "+tier,
+        value: " "
+      },
+	    {
         name: "Boss",
         value: pokemon
       },
@@ -224,7 +234,7 @@ msg.channel.send({embed: {
 		  
 		 
 		 
-	msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+	msg.awaitReactions(filter, { max: 10, time: tempoEspera, errors: ['time'] })
 	.then(collected => {
 		
 		
