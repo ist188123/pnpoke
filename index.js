@@ -239,7 +239,7 @@ msg.channel.send({embed: {
 		
 		
 		const reaction = collected.first();
-if (r.emoji.name === '👍') {
+                if (reaction.emoji.name === '👍') {
 			msg.reply('thumbs up.');
 		} 
 		
