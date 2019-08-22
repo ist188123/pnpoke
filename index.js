@@ -214,12 +214,13 @@ const filter = (reaction, user) => {
     }
   }
 }).then(msg => {
-	 msg.react('\:poop:')
-		  msg.react(':two:')
-		  msg.react('\:three:')
-		  msg.react('\:four:')
-		  msg.react('\:five:')
-		msg.react( '👍')
+	 
+		  msg.react('1️⃣')
+		 msg.react('2️⃣')
+		  msg.react('3️⃣')
+		  msg.react('4️⃣')
+		  msg.react('5️⃣')
+		  
 		 
 		 
 	msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
