@@ -220,15 +220,24 @@ var hora_inicio_raid=horas(inicioRaid.getHours(),inicioRaid.getMinutes())
 	 //------
 	
 	
+msg.react('👍').then(() => msg.react('👎'));
+
 const filter = (reaction, user) => {
-	return reaction.emoji.name === '👍' && user.id === msg.author.id;
+	return ['👍', '👎'].includes(reaction.emoji.name) && user.id === msg.author.id;
 };
 
-msg.awaitReactions(filter, { max: 4, time: 60000, errors: ['time'] })
-	.then(collected => msg.reply("---${collected.size}---!")
+msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+	.then(collected => {
+		const reaction = collected.first();
+
+		if (reaction.emoji.name === '👍') {
+			msg.reply('thumbs up.');
+		} else {
+			msg.reply('thumbs down.');
+		}
+	})
 	.catch(collected => {
-	      msg.reply("---${collected.size}---!");
-		
+		msg.reply('you reacted with neither a thumbs up, nor a thumbs down.');
 	});		 
 	 
 	 
