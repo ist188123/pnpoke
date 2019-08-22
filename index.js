@@ -231,10 +231,20 @@ msg.channel.send({embed: {
 		  msg.react('\u0034\u20E3')
 		  msg.react('\u0035\u20E3')
 		
-		  
+	const collector = msg.createReactionCollector(filter, {
+        time: 15000
+      });  
+	collector.on('collect', r => {
+		
+		
+	});
+    collector.on('end', collected => msg.reply('Collected ${collected.size} reactions'));
+  })
+  .catch();	
+		
+		
 		 
-		 
-	msg.awaitReactions(filter, { max: 10, time: tempoEspera, errors: ['time'] })
+	msg.awaitReactions(filter, { max: 1, time: tempoEspera, errors: ['time'] })
 	.then(collected => {
 		
 		
