@@ -167,7 +167,7 @@ var hora_inicio_raid=horas(inicioRaid.getHours(),inicioRaid.getMinutes())
 	 
 //-----	 
 const filter = (reaction, user) => {
-	return ['👍', '👎'].includes(reaction.emoji.name) && user.id === msg.author.id;
+	return ['👍', '👎','\u0031\u20E3','\u0032\u20E3','\u0033\u20E3','\u0034\u20E3','\u0035\u20E3'].includes(reaction.emoji.name) && user.id === msg.author.id;
 };	 
 //------------
 msg.channel.send({embed: {
@@ -180,7 +180,7 @@ msg.channel.send({embed: {
     url: "http://google.com",
     description: "Raid "+tier,
     fields: [{
-        name: "Pokemon",
+        name: "Boss",
         value: pokemon
       },
 	    {
