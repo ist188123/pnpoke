@@ -213,7 +213,26 @@ var hora_inicio_raid=horas(inicioRaid.getHours(),inicioRaid.getMinutes())
   }
 }).then(msg => {
 	 msg.react('👍')
+		 
 	 });
+	 const filter = (reaction, user) => {
+    return ['👍', '👎'].includes(reaction.emoji.name) && user.id === msg.author.id;
+};
+	 msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+    .then(collected => {
+        const reaction = collected.first();
+
+        if (reaction.emoji.name === '👍') {
+            msg.reply('you reacted with a thumbs up.');
+        }
+        else {
+            msg.reply('you reacted with a thumbs down.');
+        }
+    })
+    .catch(collected => {
+        console.log(`After a minute, only ${collected.size} out of 4 reacted.`);
+        message.reply('you didn\'t react with neither a thumbs up, nor a thumbs down.');
+    });
 //------
 	 /**
 	 //apaga a imagem
