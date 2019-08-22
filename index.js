@@ -223,15 +223,15 @@ var hora_inicio_raid=horas(inicioRaid.getHours(),inicioRaid.getMinutes())
         const reaction = collected.first();
 
         if (reaction.emoji.name === '👍') {
-            msg.reply('you reacted with a thumbs up.');
+            msg.reply('thumbs up.');
         }
         else {
-            msg.reply('you reacted with a thumbs down.');
+            msg.reply('thumbs down.');
         }
     })
     .catch(collected => {
-        console.log(`After a minute, only ${collected.size} out of 4 reacted.`);
-        message.reply('you didn\'t react with neither a thumbs up, nor a thumbs down.');
+        
+        msg.reply('A raid terminou.');
     });
 //------
 	 /**
