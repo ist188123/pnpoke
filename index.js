@@ -216,7 +216,7 @@ var hora_inicio_raid=horas(inicioRaid.getHours(),inicioRaid.getMinutes())
 		 
 	 });
 	 const filter = (reaction, user) => {
-    return ['👍', '👎'].includes(reaction.emoji.name) && user.id === msg.author.id;
+    return ['👍', '👎'].includes(reaction.emoji.name);
 };
 	 msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
     .then(collected => {
