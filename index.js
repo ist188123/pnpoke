@@ -170,7 +170,7 @@ var hora_inicio_raid=horas(inicioRaid.getHours(),inicioRaid.getMinutes())
 var mf=fimRaid.getTime();
 var tempoEspera=mf-mi;
  
- 
+ msg.delete()
 //-----	 
 const filter = (reaction, user) => {
 	return ['👍', '\u0031\u20E3','\u0032\u20E3','\u0033\u20E3','\u0034\u20E3','\u0035\u20E3'].includes(reaction.emoji.name) && user.id === msg.author.id;
