@@ -224,7 +224,7 @@ msg.channel.send({embed: {
     }
   }
 }).then(msg => {
-	
+	msg.replay(msg.id)
 	 if(pokemon=='?'){
 		  msg.react('\u0031\u20E3')
 		  msg.react('\u0032\u20E3')
