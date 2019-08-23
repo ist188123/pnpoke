@@ -224,26 +224,27 @@ msg.channel.send({embed: {
     }
   }
 }).then(msg => {
-	let embedLikeField = Object.assign({}, embed.fields[0]);
+	
 	 if(pokemon=='?'){
 		  msg.react('\u0031\u20E3')
 		  msg.react('\u0032\u20E3')
 		  msg.react('\u0033\u20E3')
 		  msg.react('\u0034\u20E3')
 		  msg.react('\u0035\u20E3')
-		let embedLikeField = Object.assign({}, embed.fields[0]);
-	const newEmbed = new Discord.RichEmbed({
-        title: embed.title,
-        description: embed.description,
-        fields: [embedLikeField]
-      });
-		 
 		 
 	 }else{
 		msg.react('👍') 
 	 }
 		 
-		 
+	
+	let embedLikeField = Object.assign({}, embed.fields[0]);
+	const newEmbed = new Discord.RichEmbed({
+        title: embed.title,
+        description: embed.description,
+        fields: [embedLikeField]
+	  });
+	
+	
 	msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 	.then(collected => {
 		
