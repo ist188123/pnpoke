@@ -304,9 +304,9 @@ msg.channel.send({embed: {
 //------
 	if( msg.channel.name == 'info-raids'){
 	 //apaga a imagemmessage.channel.fetchMessages({limit: 1}).then(
-	let xpto = msg.channel.fetchMessages({limit: 1}).then(
+	 msg.channel.fetchMessages({limit: 1}).then(
         messages => msg.author.equals(msg.author.username) && msg.delete()
-        )); 
+        ); 
 	}
 	 
 //-----
