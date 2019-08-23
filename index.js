@@ -247,7 +247,7 @@ msg.channel.send({embed: {
 	    {
         name: "Termina",
         value: hora_fim_raid
-      }
+      }/**
 	     ,
 	     {
         name: "Ginásio",
@@ -262,7 +262,7 @@ msg.channel.send({embed: {
       {
         name: "exgym",
         value: exgym
-      }
+      }*/
     ],
     timestamp: new Date(),
     footer: {
