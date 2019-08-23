@@ -218,7 +218,8 @@ msg.channel.send({embed: {
 	     {
         name: "Ginásio",
         value: gymraid
-      },
+      }
+	     /**,
 	     {
         name: "Tempo Raid",
         value: mraid
@@ -227,7 +228,7 @@ msg.channel.send({embed: {
       {
         name: "exgym",
         value: exgym
-      }
+      }*/
     ],
     timestamp: new Date(),
     footer: {
