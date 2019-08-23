@@ -305,7 +305,7 @@ msg.channel.send({embed: {
 	if( msg.channel.name == 'info-raids'){
 	 //apaga a imagem
 	let xpto = msg.channel.fetchMessages()
-        .then(messages => messages.array().forEach(
+        .then(messages => messages.array(0)(
           message => message.author.equals(msg.author.username) && message.delete()
 
         )); 
