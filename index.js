@@ -187,10 +187,16 @@ var tempoEspera=mf-mi;
 	 
 const filter = (reaction, user) => {
 	return ['👍', '\u0031\u20E3','\u0032\u20E3','\u0033\u20E3','\u0034\u20E3','\u0035\u20E3'].includes(reaction.emoji.name) && user.id === msg.author.id;
-};	 
+};
+	 
+	 
+	 
+	 
+	 
 //------------
+/**	 
 msg.channel.send({embed: {
-    color: 3447003,
+    color: 15158332,
     author: {
       name: client.user.username,
       icon_url: client.user.avatarURL
@@ -219,7 +225,7 @@ msg.channel.send({embed: {
         name: "Ginásio",
         value: gymraid
       }
-	     /**,
+	    ,
 	     {
         name: "Tempo Raid",
         value: mraid
@@ -228,7 +234,7 @@ msg.channel.send({embed: {
       {
         name: "exgym",
         value: exgym
-      }*/
+      }
     ],
     timestamp: new Date(),
     footer: {
@@ -237,7 +243,55 @@ msg.channel.send({embed: {
       
     }
   }
-}).then(msg => {
+})
+	
+*/	
+	 
+	 
+var ovo='https://torneiopokemongopinhalnovo.webnode.pt/_files/200000047-74c3d74c3f/450/question.jpg';
+
+switch (tier) {
+    case "1":
+        ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000097-88ffa8a090/200/nivel1.png";
+        break;
+    case "2":
+        ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000097-88ffa8a090/200/nivel1.png";
+        break;
+
+    case "3":
+        ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
+
+        break;
+    case "4":
+        ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
+
+        break;
+    case "5":
+        ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000019-4d5f84e5ec/200/Egg_Raid_Legendary.png";
+
+        break;
+
+}
+	 
+	const raidinfomsg = new Discord.RichEmbed()
+                            .setColor('#FF0000')
+                            .setTitle("\@everyone")
+                            .setURL('https://discord.js.org/')
+                            .setAuthor('ANUNCIO RAID ' + tier, ovo, 'https://discord.js.org')
+                            .setThumbnail(pokemon)
+                            .addField('Ginásio', gymraid)
+                            //.addBlankField()
+                            .addField('Abre', "**" + hora_inicio_raid + "**", true)
+                            .addField('Termina', "**" + hora_fim_raid + "**", true)
+                            .setTimestamp()
+                            .setFooter('Anunciado por : ' + msg.author.username, 'https://exraidspinhalnovo.webnode.pt/_files/200000022-231042409e/200/damasc010.png');
+                        msg.guild.channels.find("name", "info-raids").sendMessage(raidinfomsg) 
+	 
+	 
+	 
+	 
+	
+	.then(msg => {
 	
 	 if(pokemon=='?'){
 		  msg.react('\u0031\u20E3')
