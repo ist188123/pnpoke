@@ -224,7 +224,7 @@ msg.channel.send({embed: {
     }
   }
 }).then(msg => {
-	msg.replay(msg.id)
+	
 	 if(pokemon=='?'){
 		  msg.react('\u0031\u20E3')
 		  msg.react('\u0032\u20E3')
@@ -304,11 +304,7 @@ msg.channel.send({embed: {
 //------
 	if( msg.channel.name == 'info-raids'){
 	 //apaga a imagemmessage.channel.fetchMessages({limit: 1}).then(
-	 msg.channel.fetchMessages({limit: 10}).then(
-		messages => {
-               
-              msg.author.equals(msg.author.username) && msg.delete()
-		} ); 
+	 
 	}
 	 
 //-----
