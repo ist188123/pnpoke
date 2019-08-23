@@ -269,7 +269,7 @@ msg.channel.send({embed: {
 		
 		if (reaction.emoji.name === '\u0031\u20E3') {
 			msg.reply('Nivel 1');
-			embedLikeField.value = '1';
+			//embedLikeField.value = '1';
 			collected.msg.edit(newEmbed)
 			msg.react('👍')
 		} 
@@ -341,7 +341,8 @@ var horasTelefone=" ";
 var textoimagem=" ";
 var minutosraid=" ";
     var x = m.split('\n')
-
+var semelhantePokemon=0;
+var ultimolidoPokemon=0;
 
 
     for (z in x) {
@@ -389,8 +390,7 @@ var minutosraid=" ";
        // console.log('--->',x[z].toUpperCase(),!/[^a-zA-Z]/.test(x[z]))
 if (!/[^a-zA-Z0]/.test(xx) && !xx.toUpperCase().trim().startsWith('WALKCLOSERTOI') && xx.toUpperCase().trim().length>0) {
   //  console.log('Orginal -> ',xx)
-    semelhante=0;
-	ultimolido=0;
+   
         for (f in ginasiosPN) {
            
             semelhante = similarity(xx.toUpperCase(), ginasiosPN[f].toUpperCase())
@@ -407,21 +407,20 @@ if (!/[^a-zA-Z0]/.test(xx) && !xx.toUpperCase().trim().startsWith('WALKCLOSERTOI
 
         }
       var  raids=[raid1,raid2,raid3,raid4,raid5]
-      semelhante=0;
-     ultimolido=0;
+      
 for(g in raids)
         for (f in raids[g]) {
            
-            semelhante = similarity(xx.toUpperCase(), raids[g][f].toUpperCase())
-            //console.log(xx.toUpperCase(),' -> ',raids[g][f].toUpperCase(),' -> ',semelhante)
+            semelhantePokemon = similarity(xx.toUpperCase(), raids[g][f].toUpperCase())
+            //console.log(xx.toUpperCase(),' -> ',raids[g][f].toUpperCase(),' -> ',semelhantePokemon)
             if(xx.toUpperCase()!='NI'){
-            if (semelhante > 0.38) {
+            if (semelhantePokemon > 0.38) {
                
-		    if(semelhante>ultimolido){
+		    if(semelhantePokemon>ultimolidoPokemon){
                
                 pokemon= raids[g][f]
                 tier=parseInt(g)+1
-                ultimolido=semelhante
+                ultimolidoPokemon=semelhantePokemon
              }
        
                
