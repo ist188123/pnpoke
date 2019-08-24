@@ -25,7 +25,7 @@ client.on("message", async (msg) => {
 	
   
 var raid1=['Swablu','Snorunt','Bagon','Shinx'];
-var raid2=['Cloyster','Exeggutor','Sneasel','Combusken','Kirlia','Breloom','Mawile']
+var raid2=['Cloyster','Exeggutor','Sneasel','Combusken','Kirlia','Breloom','Mawile','Marshtomp']
 var raid3=['Raichu','Onix','Jynx','Aerodactyl','Piloswine','Machamp','Hitmonlee']
 var raid4=['Marowak','Lapras','Dragonite','Togetic','Granbull']
 var raid5=['Rayquaza','Suicune']
