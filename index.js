@@ -247,13 +247,12 @@ msg.channel.send({embed: {
 	    {
         name: "Termina",
         value: hora_fim_raid
-      }/**
-	     ,
+      },
 	     {
         name: "Ginásio",
         value: gymraid
       }
-	    ,
+	 /**   ,
 	     {
         name: "Tempo Raid",
         value: mraid
