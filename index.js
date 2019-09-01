@@ -573,53 +573,7 @@ if (msg.channel.name == 'teste' ){
 	    
 		//----  
 		    
-let embed01 = new Discord.RichEmbed()
-.setColor("#15f153")
-.setDescription(pages[page-1])
-.setFooter(`Page ${page} of ${pages.length}`)
-.addField("field 1")
-.addField("field 2")
-.addField("!field 3")
-.addField("field 4")	
 
-	let embed02 = new Discord.RichEmbed()
-.setColor("#15f153")
-.setDescription(pages[page-1])
-.setFooter(`Page ${page} of ${pages.length}`)
-.addField("field 1")
-.addField("field 2")
-.addField("!field 3")
-.addField("field 4")	    
-		    
-		    
-let embed03 = new Discord.RichEmbed()
-.setColor("#15f153")
-.setDescription(pages[page-1])
-.setFooter(`Page ${page} of ${pages.length}`)
-.addField("field 1")
-.addField("field 2")
-.addField("!field 3")
-.addField("field 4")
- 
-msg.channel.send(embed01).then(msg => {
-
-msg.react('⬅').then( r => {
-msg.react('➡')
-
-// Filters
-const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && user.id === message.author.id;
-const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && user.id === message.author.id;
-
-const backwards = msg.createReactionCollector(backwardsFilter, {timer: 1000});
-const forwards = msg.createReactionCollector(forwardsFilter, {timer: 1000});
- 
-backwards.on('collect', r => {
-if (page === 4) {
-
-embed03.setDescription(pages[page-1])
-embed03.setFooter(`Page ${page} of ${pages.length}`)
-msg.edit(embed03)
-}
 		    
 		//---    
 		    
