@@ -17,7 +17,7 @@ const { ReactionCollector } = require('discord.js')
 
 
 client.on("message", async (msg) => {
-   
+   var mensagem=msg.content;
 	
 	 var semelhante=0;
 	
