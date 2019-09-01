@@ -570,6 +570,7 @@ for(g in raids)
 
        
      if (msg.channel.name == 'testing') { 
+	    if (mensagem.startsWith("!x")) {
 	     msg.channel.send(":apple:***SONDAGE :apple:\n "+choix1+" ou "+""+choix2+"***")
             .then(function (message) {
               message.react("👍")
@@ -579,7 +580,7 @@ for(g in raids)
             }).catch(function() {
               //Something
              });
-	     
+	    }
      }
          
      
