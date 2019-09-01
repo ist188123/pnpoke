@@ -568,12 +568,12 @@ for(g in raids)
   
   }//fim msg.channel.name
 	
-
+if (msg.channel.name == 'teste' ){
 	    if (msg.startsWith("!x")) {
 	     msg.reply('ddd')
 	    }
      
-         
+}
        
      
      
