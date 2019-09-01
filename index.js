@@ -571,19 +571,52 @@ for(g in raids)
 if (msg.channel.name == 'teste' ){
 	    if (mensagem.startsWith("!x")) {
 	    
+		//----    
+		 
+		    et pages = ['General Commands Page 1', 'General Command Page 2', 'General Commands Page 3']; 
+let page = 1; 
+
+let embed = new Discord.RichEmbed()
+.setColor("#15f153")
+.setFooter(`Page ${page} of ${pages.length}`)
+.setDescription(pages[page-1])
+
+message.channel.send(embed).then(msg => {
+
+msg.react('⬅').then( r => {
+msg.react('➡')
+
+// Filters
+const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && user.id === message.author.id;
+const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && user.id === message.author.id;
+
+const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
+const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
+ 
+backwards.on('collect', r => {
+if (page === 1) return;
+page--;
+embed.setDescription(pages[page-1]);
+embed.setFooter(`Page ${page} of ${pages.length}`);
+msg.edit(embed)
+
+r.remove(r.users.filter(u => u === message.author).first());
+})
+
+forwards.on('collect', r => {
+if (page === pages.length) return;
+page++;
+embed.setDescription(pages[page-1]);
+embed.setFooter(`Page ${page} of ${pages.length}`);
+msg.edit(embed)
+
+r.remove(r.users.filter(u => u === message.author).first());
+})
+})
+})
+}
 		    
-		  msg.channel.send(":apple:***SONDAGE :apple:\n")
-            .then(function (message) {
-              message.react("👍")
-              message.react("👎")
-              message.pin()
-              message.delete()
-            }).catch(function() {
-              //Something
-             });  
-		    
-		    
-		    
+		//---    
 		    
 	    }
      
