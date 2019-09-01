@@ -573,7 +573,7 @@ if (msg.channel.name == 'teste' ){
 	    
 		//----    
 		 
-		    et pages = ['General Commands Page 1', 'General Command Page 2', 'General Commands Page 3']; 
+		    let pages = ['General Commands Page 1', 'General Command Page 2', 'General Commands Page 3']; 
 let page = 1; 
 
 let embed = new Discord.RichEmbed()
