@@ -571,17 +571,37 @@ for(g in raids)
 if (msg.channel.name == 'teste' ){
 	    if (mensagem.startsWith("!x")) {
 	    
-		//----    
-		 
-		    let pages = ['General Commands Page 1', 'General Command Page 2', 'General Commands Page 3']; 
-let page = 1; 
-
-let embed = new Discord.RichEmbed()
+		//----  
+		    
+let embed01 = new Discord.RichEmbed()
 .setColor("#15f153")
-.setFooter(`Page ${page} of ${pages.length}`)
 .setDescription(pages[page-1])
+.setFooter(`Page ${page} of ${pages.length}`)
+.addField("field 1")
+.addField("field 2")
+.addField("!field 3")
+.addField("field 4")	
 
-message.channel.send(embed).then(msg => {
+	let embed02 = new Discord.RichEmbed()
+.setColor("#15f153")
+.setDescription(pages[page-1])
+.setFooter(`Page ${page} of ${pages.length}`)
+.addField("field 1")
+.addField("field 2")
+.addField("!field 3")
+.addField("field 4")	    
+		    
+		    
+let embed03 = new Discord.RichEmbed()
+.setColor("#15f153")
+.setDescription(pages[page-1])
+.setFooter(`Page ${page} of ${pages.length}`)
+.addField("field 1")
+.addField("field 2")
+.addField("!field 3")
+.addField("field 4")
+ 
+msg.channel.send(embed01).then(msg => {
 
 msg.react('⬅').then( r => {
 msg.react('➡')
@@ -590,30 +610,15 @@ msg.react('➡')
 const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && user.id === message.author.id;
 const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && user.id === message.author.id;
 
-const backwards = msg.createReactionCollector(backwardsFilter, {timer: 6000});
-const forwards = msg.createReactionCollector(forwardsFilter, {timer: 6000});
+const backwards = msg.createReactionCollector(backwardsFilter, {timer: 1000});
+const forwards = msg.createReactionCollector(forwardsFilter, {timer: 1000});
  
 backwards.on('collect', r => {
-if (page === 1) return;
-page--;
-embed.setDescription(pages[page-1]);
-embed.setFooter(`Page ${page} of ${pages.length}`);
-msg.edit(embed)
+if (page === 4) {
 
-r.remove(r.users.filter(u => u === message.author).first());
-})
-
-forwards.on('collect', r => {
-if (page === pages.length) return;
-page++;
-embed.setDescription(pages[page-1]);
-embed.setFooter(`Page ${page} of ${pages.length}`);
-msg.edit(embed)
-
-r.remove(r.users.filter(u => u === message.author).first());
-})
-})
-})
+embed03.setDescription(pages[page-1])
+embed03.setFooter(`Page ${page} of ${pages.length}`)
+msg.edit(embed03)
 }
 		    
 		//---    
