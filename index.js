@@ -570,7 +570,21 @@ for(g in raids)
 	
 if (msg.channel.name == 'teste' ){
 	    if (mensagem.startsWith("!x")) {
-	     msg.reply('ddd')
+	    
+		    
+		  msg.channel.send(":apple:***SONDAGE :apple:\n")
+            .then(function (message) {
+              message.react("👍")
+              message.react("👎")
+              message.pin()
+              message.delete()
+            }).catch(function() {
+              //Something
+             });  
+		    
+		    
+		    
+		    
 	    }
      
 }
