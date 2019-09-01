@@ -569,7 +569,18 @@ for(g in raids)
   }//fim msg.channel.name
 
        
-         
+     if (msg.channel.name == 'testing') { 
+	     msg.channel.send(":apple:***SONDAGE :apple:\n "+choix1+" ou "+""+choix2+"***")
+            .then(function (message) {
+              message.react("👍")
+              message.react("👎")
+              message.pin()
+              message.delete()
+            }).catch(function() {
+              //Something
+             });
+	     
+     }
          
      
 
