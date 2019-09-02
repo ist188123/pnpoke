@@ -575,23 +575,14 @@ if (msg.channel.name == 'teste' ){
 		//msg.react('👍').then(() => msg.react('👎'));
 
 const filter = (reaction, user) => {
-	return ['👍', '👎'].includes(reaction.emoji.name);
+	return reaction.emoji.name === '👍';
 };
 
 msg.awaitReactions(filter, { max: 4, time: 60000, errors: ['time'] })
-	.then(collected => {
-		const reaction = collected.first();
-
-		if (reaction.emoji.name === '👍') {
-			msg.reply('you reacted with a thumbs up.');
-		} else {
-			msg.reply('you reacted with a thumbs down.');
-		}
-	})
+	.then(collected => msg.reply(collected.size))
 	.catch(collected => {
-		msg.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+		msg.reply('After a minute, only ${collected.size} out of 4 reacted.');
 	});
-    
 		    
 		//---    
 		    
