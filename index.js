@@ -599,11 +599,15 @@ if (msg.channel.name == 'teste' ){
 
 
 
-client.on('messageReactionAdd', function(reaction, user,msg) {
-    if (!user.bot) {
-        //The following code will only run if the user is not a bot, therefore filering out the initial bot reactions.
-         msg.reply('testing....')
-    }
+client.on('messageReactionAdd', (messageReaction, user) => {
+if(user.bot)  return;
+const { message, emoji } = messageReaction;
+
+if(emoji.name === "") {
+if(message.id === "message id here") {
+// code to run when that emoji is reacted on specified message
+  }
+ } 
 });
 
 
