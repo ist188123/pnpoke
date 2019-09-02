@@ -574,25 +574,23 @@ if (msg.channel.name == 'teste' ){
 		//----  
 		    
 
-        const quiz = require('./quiz.json');
-const item = quiz[Math.floor(Math.random() * quiz.length)];
-const filter = response => {
-	return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
+        const filter = (reaction, user) => {
+	return ['👍', '👎'].includes(reaction.emoji.name);
 };
 
-const xf = (reaction, user) => {
-	return reaction.emoji.name === '👍';
-};
-		    
-		    
-msg.channel.send(item.question).then(() => {
-	msg.awaitReactions(xf, { max: 4, time: 60000, errors: ['time'] })
-	.then(collected => msg.channel.send(collected.size))
+msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+	.then(collected => {
+		const reaction = collected.first();
+
+		if (reaction.emoji.name === '👍') {
+			msg.reply('you reacted with a thumbs up.');
+		} else {
+			msg.reply('you reacted with a thumbs down.');
+		}
+	})
 	.catch(collected => {
-		msg.channel.send(`After a minute, only ${collected.size} out of 4 reacted.`);
+		msg.reply('you reacted with neither a thumbs up, nor a thumbs down.');
 	});
-	
-	
 	
 	
 	
