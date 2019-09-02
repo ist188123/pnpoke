@@ -603,10 +603,8 @@ client.on('messageReactionAdd', (messageReaction, user) => {
 if(user.bot)  return;
 const { message, emoji } = messageReaction;
 
-if(emoji.name === "") {
-if(message.id === "message id here") {
-// code to run when that emoji is reacted on specified message
-  }
+if(emoji.name === '👍') {
+  message.reply('......');
  } 
 });
 
