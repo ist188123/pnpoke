@@ -574,6 +574,10 @@ if (msg.channel.name == 'teste' ){
 		//----  
 		    
 
+        msg.reply('testing emoji edit').then(msg => {
+            msg.react('😀').then((msgreaction) => msgreaction.message.edit('test test test'));
+        })
+    
 		    
 		//---    
 		    
