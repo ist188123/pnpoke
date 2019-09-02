@@ -580,15 +580,22 @@ const filter = response => {
 	return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
 };
 
+const xf = (reaction, user) => {
+	return reaction.emoji.name === '👍';
+};
+		    
+		    
 msg.channel.send(item.question).then(() => {
-	msg.channel.awaitMessages(filter, { maxMatches: 1, time: 30000, errors: ['time'] })
-		.then(collected => {
-			msg.channel.send(`${collected.first().author} got the correct answer!`);
-		})
-		.catch(collected => {
-			msg.channel.send('Looks like nobody got the answer this time.');
-		});
-});
+	msg.awaitReactions(xf, { max: 4, time: 60000, errors: ['time'] })
+	.then(collected => msg.channel.send(collected.size))
+	.catch(collected => {
+		msg.channel.send(`After a minute, only ${collected.size} out of 4 reacted.`);
+	});
+	
+	
+	
+	
+	
     
 		    
 		//---    
