@@ -599,7 +599,7 @@ if (msg.channel.name == 'teste' ){
 
 
 
-client.on('messageReactionAdd','message', function(reaction, user,msg) {
+client.on('messageReactionAdd', function(reaction, user,msg) {
     if (!user.bot) {
         //The following code will only run if the user is not a bot, therefore filering out the initial bot reactions.
          msg.reply('testing....')
