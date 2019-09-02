@@ -578,7 +578,7 @@ if (msg.channel.name == 'teste' ){
 	return ['👍', '👎'].includes(reaction.emoji.name);
 };
 
-msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+msg.awaitReactions(filter, { max: 10, time: 60000, errors: ['time'] })
 	.then(collected => {
 		const reaction = collected.first();
 
