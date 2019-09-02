@@ -574,10 +574,21 @@ if (msg.channel.name == 'teste' ){
 		//----  
 		    
 
-        msg.reply('testing emoji edit').then(msg => {
-          msg.react('😀').then((msgreaction) => msgreaction.message.edit('test test test'));
-	   }
-        })
+        const quiz = require('./quiz.json');
+const item = quiz[Math.floor(Math.random() * quiz.length)];
+const filter = response => {
+	return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
+};
+
+message.channel.send(item.question).then(() => {
+	message.channel.awaitMessages(filter, { maxMatches: 1, time: 30000, errors: ['time'] })
+		.then(collected => {
+			message.channel.send(`${collected.first().author} got the correct answer!`);
+		})
+		.catch(collected => {
+			message.channel.send('Looks like nobody got the answer this time.');
+		});
+});
     
 		    
 		//---    
@@ -599,14 +610,7 @@ if (msg.channel.name == 'teste' ){
 
 
 
-client.on('messageReactionAdd', (messageReaction, user) => {
-if(user.bot)  return;
-const { message, emoji } = messageReaction;
 
-if(emoji.name === '👍') {
-  message.reply('......');
- } 
-});
 
 
 
