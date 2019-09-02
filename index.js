@@ -572,13 +572,13 @@ if (msg.channel.name == 'teste' ){
 	    if (mensagem.startsWith("!x")) {
 	    
 		//----  
-		msg.react('👍').then(() => msg.react('👎'));
+		//msg.react('👍').then(() => msg.react('👎'));
 
 const filter = (reaction, user) => {
 	return ['👍', '👎'].includes(reaction.emoji.name);
 };
 
-msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+msg.awaitReactions(filter, { max: 4, time: 60000, errors: ['time'] })
 	.then(collected => {
 		const reaction = collected.first();
 
