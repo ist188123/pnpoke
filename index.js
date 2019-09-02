@@ -580,13 +580,13 @@ const filter = response => {
 	return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
 };
 
-message.channel.send(item.question).then(() => {
-	message.channel.awaitMessages(filter, { maxMatches: 1, time: 30000, errors: ['time'] })
+msg.channel.send(item.question).then(() => {
+	msg.channel.awaitMessages(filter, { maxMatches: 1, time: 30000, errors: ['time'] })
 		.then(collected => {
-			message.channel.send(`${collected.first().author} got the correct answer!`);
+			msg.channel.send(`${collected.first().author} got the correct answer!`);
 		})
 		.catch(collected => {
-			message.channel.send('Looks like nobody got the answer this time.');
+			msg.channel.send('Looks like nobody got the answer this time.');
 		});
 });
     
