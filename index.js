@@ -583,13 +583,13 @@ mensagem.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
 		const reaction = collected.first();
 
 		if (reaction.emoji.name === '👍') {
-			mensagem.reply('you reacted with a thumbs up.');
+			msg.reply('you reacted with a thumbs up.');
 		} else {
-			mensagem.reply('you reacted with a thumbs down.');
+			msg.reply('you reacted with a thumbs down.');
 		}
 	})
 	.catch(collected => {
-		mensagem.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+		msg.reply('you reacted with neither a thumbs up, nor a thumbs down.');
 	}); 
 		    
 		    
