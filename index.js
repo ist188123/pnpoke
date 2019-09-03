@@ -574,15 +574,22 @@ if (msg.channel.name == 'teste' ){
 		//----  
 		//msg.react('👍').then(() => msg.react('👎'));
 
-const filter = (reaction, user) => {
-	return reaction.emoji.name === '👍';
+
+const reactions = await msg.awaitReactions(reaction => reaction.emoji.name == '👍' || reaction.emoji.name == '👎', {time: 60000, max: 1});
+let reaction = await reactions.first();
+if (reaction.emoji.name === '👍') {
+    await msg.delete();
+    await msg.author.send('Your order was completed. Please come to the pharmacy');
+    return;
 };
 
-msg.awaitReactions(filter, { max: 4, time: 60000, errors: ['time'] })
-	.then(collected => msg.reply(collected.size))
-	.catch(collected => {
-		msg.reply('After a minute, only ${collected.size} out of 4 reacted.');
-	});
+if (reaction.emoji.name === '👎') {
+    await msg.delete();
+    await msg.author.send('Your order has been delayed, please message Pixel for info.');
+    return;
+};		    
+		    
+		    
 		    
 		//---    
 		    
