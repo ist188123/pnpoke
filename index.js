@@ -582,6 +582,7 @@ const collector = msg.createReactionCollector(filter, { time: 60000 });
 
 collector.on('collect', (reaction, reactionCollector) => {
 	msg.reply('Collected '+msg.id);
+	msg.edit("Alterar: "+msg.id) 
 });
 
 collector.on('end', collected => {
