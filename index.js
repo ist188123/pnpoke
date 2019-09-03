@@ -581,7 +581,7 @@ const filter = (reaction, user) => {
 const collector = msg.createReactionCollector(filter, { time: 60000 });
 
 collector.on('collect', (reaction, reactionCollector) => {
-	msg.reply('Collected '+msg.author.username);
+	msg.reply('Collected '+msg.channel.fetchMessage());
 });
 
 collector.on('end', collected => {
