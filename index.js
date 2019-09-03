@@ -573,21 +573,7 @@ if (msg.channel.name == 'teste' ){
 	    
 		//----  
 		//msg.react('👍').then(() => msg.react('👎'));
-
-
-const reactions = await msg.awaitReactions(reaction => reaction.emoji.name == '👍' || reaction.emoji.name == '👎', {time: 60000, max: 1});
-let reaction = await reactions.first();
-if (reaction.emoji.name === '👍') {
-    await msg.delete();
-    await msg.author.send('Your order was completed. Please come to the pharmacy');
-    return;
-};
-
-if (reaction.emoji.name === '👎') {
-    await msg.delete();
-    await msg.author.send('Your order has been delayed, please message Pixel for info.');
-    return;
-};		    
+	    
 		    
 		    
 		    
@@ -611,7 +597,14 @@ if (reaction.emoji.name === '👎') {
 
 
 
+client.on('messageReactionAdd', (messageReaction, user) => {
 
+const { message, emoji } = messageReaction;
+
+if(emoji.name === "👍") {
+message.reply('oi')
+ } 
+});
 
 
 
