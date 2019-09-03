@@ -574,7 +574,23 @@ if (msg.channel.name == 'teste' ){
 		//----  
 		//msg.react('👍').then(() => msg.react('👎'));
 	    
-		    
+const filter = (reaction, user) => {
+	return ['👍', '👎'].includes(reaction.emoji.name) ;
+};
+
+msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+	.then(collected => {
+		const reaction = collected.first();
+
+		if (reaction.emoji.name === '👍') {
+			msg.reply('you reacted with a thumbs up.');
+		} else {
+			msg.reply('you reacted with a thumbs down.');
+		}
+	})
+	.catch(collected => {
+		msg.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+	}); 
 		    
 		    
 		//---    
@@ -592,19 +608,6 @@ if (msg.channel.name == 'teste' ){
 });
 
 
-
-
-
-
-
-client.on('messageReactionAdd', (messageReaction, user) => {
-
-const { message, emoji } = messageReaction;
-
-if(emoji.name === "👍") {
-message.reply('oi')
- } 
-});
 
 
 
