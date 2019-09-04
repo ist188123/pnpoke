@@ -583,7 +583,7 @@ const collector = msg.createReactionCollector(filter, { time: 60000 });
 collector.on('collect', (reaction, reactionCollector) => {
 	
 	
-	msg.reply('Collected '+msg.id+'\n'+reaction.user);
+	msg.reply('Collected '+msg.id+'\n'+reaction.users+'\n'+reaction.users.name);
 });
 
 collector.on('end', collected => {
