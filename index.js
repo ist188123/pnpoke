@@ -581,7 +581,14 @@ const filter = (reaction, user) => {
 const collector = msg.createReactionCollector(filter, { time: 60000 });
 
 collector.on('collect', (reaction, reactionCollector) => {
-	msg.edit('my others emotes');
+	
+	msg.channel.fetchMessages({around: msg.id, limit: 1})
+    .then(msg => {
+        const fetchedMsg = msg.first();
+        fetchedMsg.edit('dddd');
+   
+	
+});
 	
 	msg.reply('Collected '+msg.id);
 });
