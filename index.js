@@ -454,8 +454,7 @@ for(g in raids)
                
                 pokemon= raids[g][f]
                 tier=parseInt(g)+1
-			    msg.reply('>> ',raids[g][f])
-                ultimolidoPokemon=semelhantePokemon
+	        ultimolidoPokemon=semelhantePokemon
              }
        
                
@@ -474,6 +473,7 @@ for(g in raids)
 
     }
 
+msg.reply('horasTelefone\n',horasTelefone,'\nexraidgym\n',exraidgym,'\ntextoimagem\n',textoimagem,'\nminutosraid\n',minutosraid,'\nginasioRaid\n',ginasioRaid,'\npokemon\n',pokemon,'\ntier\n',tier)
     getTextoImagem(horasTelefone,exraidgym,textoimagem,minutosraid,ginasioRaid,pokemon,tier)
     
 }
