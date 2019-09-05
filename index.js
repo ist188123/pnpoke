@@ -122,7 +122,7 @@ function editDistance(s1, s2) {
  
  function getTextoImagem(htelef,exgym,timagem,mraid,gymraid,pokemon,tier){
 
-msg.reply('-1-tier--- : ', tier)
+
 	 
 	if(pokemon.trim().length<1){
         pokemon='?'
@@ -191,7 +191,7 @@ const filter = (reaction, user) => {
 	 
 	 
 var ovo='https://torneiopokemongopinhalnovo.webnode.pt/_files/200000047-74c3d74c3f/450/question.jpg';
-msg.reply('-2-tier--- : ', tier)
+
 switch (tier) {
     case "1":
         ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000097-88ffa8a090/200/nivel1.png";
@@ -473,7 +473,7 @@ for(g in raids)
 
     }
 
-msg.reply('horasTelefone\n',horasTelefone,'\nexraidgym\n',exraidgym,'\ntextoimagem\n',textoimagem,'\nminutosraid\n',minutosraid,'\nginasioRaid\n',ginasioRaid,'\npokemon\n',pokemon,'\ntier\n',tier)
+//msg.reply('horasTelefone\n',horasTelefone,'\nexraidgym\n',exraidgym,'\ntextoimagem\n',textoimagem,'\nminutosraid\n',minutosraid,'\nginasioRaid\n',ginasioRaid,'\npokemon\n',pokemon,'\ntier\n',tier)
     getTextoImagem(horasTelefone,exraidgym,textoimagem,minutosraid,ginasioRaid,pokemon,tier)
     
 }
