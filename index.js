@@ -454,6 +454,7 @@ for(g in raids)
                
                 pokemon= raids[g][f]
                 tier=parseInt(g)+1
+			    msg.reply('>> ',tier)
                 ultimolidoPokemon=semelhantePokemon
              }
        
