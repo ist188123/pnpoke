@@ -143,7 +143,7 @@ if(gymraid.trim().length<1){
 if(isNaN(parseInt(tier))){  
   tier='?'
 }	 
-
+msg.reply('-1-tier--- : ', tier)
 //-----
 var mn=mraid.split(':')[1];
 var horas_telefone=htelef.split(':')[0];
@@ -191,7 +191,7 @@ const filter = (reaction, user) => {
 	 
 	 
 var ovo='https://torneiopokemongopinhalnovo.webnode.pt/_files/200000047-74c3d74c3f/450/question.jpg';
-msg.reply('--tier--- : ', tier)
+msg.reply('-2-tier--- : ', tier)
 switch (tier) {
     case "1":
         ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000097-88ffa8a090/200/nivel1.png";
