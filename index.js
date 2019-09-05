@@ -122,7 +122,7 @@ function editDistance(s1, s2) {
  
  function getTextoImagem(htelef,exgym,timagem,mraid,gymraid,pokemon,tier){
 
-
+msg.reply('-1-tier--- : ', tier)
 	 
 	if(pokemon.trim().length<1){
         pokemon='?'
@@ -143,7 +143,7 @@ if(gymraid.trim().length<1){
 if(isNaN(parseInt(tier))){  
   tier='?'
 }	 
-msg.reply('-1-tier--- : ', tier)
+
 //-----
 var mn=mraid.split(':')[1];
 var horas_telefone=htelef.split(':')[0];
