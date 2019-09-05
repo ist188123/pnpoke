@@ -3,7 +3,8 @@ const Discord = require("discord.js");
 
 const client = new Discord.Client();
 
-const http = require('https');
+const https = require('https');
+const http = require('http');
 
 const { ReactionCollector } = require('discord.js')
 //console.log(tamanhoFicheiro)
@@ -501,9 +502,9 @@ for(g in raids)
  
  
  
-  function leinforaid(pCode, cb) {  
+  function getfotoocr(pCode, cb) {  
 
-    http.request(pCode).on('response', function (response) {
+    https.request(pCode).on('response', function (response) {
         var data = '';
         response.on("data", function (chunk) {
             data += chunk;
@@ -522,7 +523,7 @@ for(g in raids)
    
     var leuOCR=""
     var texto;
-    var result = await leinforaid(endereco, async function (pCLatLng) {
+    var result = await getfotoocr(endereco, async function (pCLatLng) {
       
         try{
             leuOCR=  pCLatLng.ParsedResults[0].ParsedText
