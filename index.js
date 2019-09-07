@@ -680,7 +680,7 @@ msg.channel.send(embed)
     collector.on('collect', r => {
 	   
       // immutably copy embed's Like field to new obj
-     let embedLikeField = Object.assign({}, embed.fields.add);
+     let embedLikeField = Object.assign({}, embed.fields[0]);
  
       // update 'field' with new value
      embedLikeField.value = msg.author.username;
@@ -692,7 +692,7 @@ msg.channel.send(embed)
         fields: [embedLikeField]
 	
       });
-  
+  newEmbed.addField('Emoji:', 'meu emoji', true);
       // edit message with new embed
       // NOTE: can only edit messages you author
       r.message.edit(newEmbed)
