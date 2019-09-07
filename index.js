@@ -23,13 +23,9 @@ client.on("message", async (msg) => {
 	 var semelhante=0;
 	
 	 var ultimolido=0;
-	
-  
-var raid1=['Swablu','Snorunt','Bagon','Shinx'];
-var raid2=['Cloyster','Exeggutor','Sneasel','Combusken','Kirlia','Breloom','Mawile','Marshtomp','Exeggutor']
-var raid3=['Raichu','Onix','Jynx','Aerodactyl','Piloswine','Machamp','Hitmonlee']
-var raid4=['Marowak','Lapras','Dragonite','Togetic','Granbull']
-var raid5=['Rayquaza','Suicune']
+global.arrays=[]
+ global.f_nivelraid=[]
+ global.f_imagem_boss=[]
 
 
 
@@ -161,8 +157,8 @@ inicioRaid.setMinutes(parseInt(minutos_telefone)+parseInt(mn));
 
 var fimRaid  = new Date(today.getFullYear(), today.getMonth(), today.getDate(), inicioRaid.getHours(), inicioRaid.getMinutes());
 
-
-fimRaid.setMinutes(inicioRaid.getMinutes()+45);
+//miutos raids
+fimRaid.setMinutes(inicioRaid.getMinutes()+90);
 var hora_inicio_raid=horas(inicioRaid.getHours(),inicioRaid.getMinutes())
  var hora_fim_raid=horas(fimRaid.getHours(),fimRaid.getMinutes())  
 	
@@ -364,118 +360,116 @@ msg.channel.send({embed: {
 
 
 
-function readOCR(m) {
+function readOCR(m,arraypkm) {
 
-    //var found = ginasios.includes('PARQUEINFANTIL');
-    // console.log('found ',found)
-    var tier;
-    var pokemon="?"
-	var ginasioRaid="?";    
-    var exraidgym="NORMAL";
-var horasTelefone=" ";
-var textoimagem=" ";
-var minutosraid=" ";
+     var tier;
+    var pokemon = "?"
+    var ginasioRaid = "?";
+    var exraidgym = "NORMAL";
+    var horasTelefone = " ";
+    var textoimagem = " ";
+    var minutosraid = " ";
     var x = m.split('\n')
-var semelhantePokemon=0;
-var ultimolidoPokemon=0;
-
-
+    var semelhantePokemon = 0;
+    var ultimolidoPokemon = 0;
+    var imagem_boss=" ";
+   
     for (z in x) {
-
-
-
-
-        if (x[z].trim().toUpperCase().startsWith('EXRAID')) {
-            exraidgym='EXRAID'
-        }
         
-        var xx = x[z].trim().replace(/[^:a-zA-Z0-9]/g, '');
-        //console.log(xx)
+
+
+        //exraid
+        if (x[z].trim().toUpperCase().startsWith('EX RAID') || (x[z].trim().toUpperCase().startsWith('EXRAID'))) {
+            exraidgym = 'EXRAID'
+        }
+        //-----
+
+        //horas e minutos
+       // var xx = x[z].trim().replace(/[^:a-zA-Z0-9]/g, '');
+        var xx = x[z].trim()
+      
         //retorna true ou false se encontrar
         var n = xx.includes(":");
 
-        //console.log('Quantas vezes ',xx.split('').filter(x => x == ':').length)
-
         //se econtrou : :
         if (xx.split('').filter(x => x == ':').length == 2) {
-
-            minutosraid="\n"+xx
-
-
+            minutosraid = "\n" + xx
         }
         //se econtrou : 
         if (xx.split('').filter(x => x == ':').length == 1) {
-         var horasplit=xx.split(':')[0].substring(xx.split(':')[0].length-2)
-            var minsplit=xx.split(':')[1].substring(0,2)
-   // console.log('horasplit ',horasplit,' minsplit ',minsplit)
-            var nanhoras=!isNaN(horasplit)
-            var nanminutos=!isNaN(minsplit)
-           if(nanhoras && nanminutos){
-            horasTelefone=horasplit+":"+minsplit
-           }
-            
-
-
+            var horasplit = xx.split(':')[0].substring(xx.split(':')[0].length - 2)
+            var minsplit = xx.split(':')[1].substring(0, 2)
+            var nanhoras = !isNaN(horasplit)
+            var nanminutos = !isNaN(minsplit)
+            if (nanhoras && nanminutos) {
+                horasTelefone = horasplit + ":" + minsplit
+            }
         }
-	    
-	
-    
-	
-        
-       // console.log('--->',x[z].toUpperCase(),!/[^a-zA-Z]/.test(x[z]))
-if (!/[^a-zA-Z0]/.test(xx) && !xx.toUpperCase().trim().startsWith('WALKCLOSERTOI') && xx.toUpperCase().trim().length>0) {
-  //  console.log('Orginal -> ',xx)
-   
-        for (f in ginasiosPN) {
-           
-            semelhante = similarity(xx.toUpperCase(), ginasiosPN[f].toUpperCase())
-           // console.log(xx.toUpperCase())
-            if (semelhante > 0.35) {
-		    if(semelhante>ultimolido){
-                ginasioRaid= ginasiosPN[f]
-               // console.log(xx.toUpperCase(),' -> ',ginasiosPN[f].toUpperCase(),' -> ',semelhante)
-                ultimolido=semelhante
-             }
+
+
+
+
+
        
-               
+      //  if (!/[^a-zA-Z0]/.test(xx) && !xx.toUpperCase().trim().startsWith('WALKCLOSERTOI') && xx.toUpperCase().trim().length > 0) {
+        if (!xx.toUpperCase().trim().startsWith('WALKCLOSERTOI') && xx.toUpperCase().trim().length > 0) {     
+            for (f in ginasiosPN) {
+
+                semelhante = similarity(xx.toUpperCase(), ginasiosPN[f].toUpperCase())
+              
+                if (semelhante > 0.35) {
+                    if (semelhante > ultimolido) {
+                        ginasioRaid = ginasiosPN[f]             
+                        ultimolido = semelhante
+                    }
+
+
+                }
+
             }
 
+//------------
+
+
+//-----------
+
+         
+
+          // console.log(arraypkm)
+            for (g in arraypkm){
+
+                    semelhantePokemon = similarity(xx.toUpperCase(), arraypkm[g].toUpperCase())
+                  //  console.log(xx.toUpperCase(),' -> ',arraypkm[g].toUpperCase(),' -> ',semelhantePokemon,'%')
+                    if (xx.toUpperCase() != 'NI') {
+                        if (semelhantePokemon > 0.38) {
+                          
+                            if (semelhantePokemon > ultimolidoPokemon) {
+                               imagem_boss= f_imagem_boss[g]
+                                pokemon = arraypkm[g]
+                                tier=f_nivelraid[g]
+                               // tier = parseInt(g) + 1
+                                ultimolidoPokemon = semelhantePokemon
+                            }
+
+
+                        }
+
+                    }
+
+                }
+
+
+            textoimagem = textoimagem + "\n" + xx
+         //   console.log('->',textoimagem + "\n" + xx)
         }
-      var  raids=[raid1,raid2,raid3,raid4,raid5]
-      
-for(g in raids)
-        for (f in raids[g]) {
-           
-            semelhantePokemon = similarity(xx.toUpperCase(), raids[g][f].toUpperCase())
-            //console.log(xx.toUpperCase(),' -> ',raids[g][f].toUpperCase(),' -> ',semelhantePokemon)
-            if(xx.toUpperCase()!='NI'){
-            if (semelhantePokemon > 0.38) {
-               
-		    if(semelhantePokemon>ultimolidoPokemon){
-               
-                pokemon= raids[g][f]
-                tier=parseInt(g)+1
-	        ultimolidoPokemon=semelhantePokemon
-             }
-       
-               
-            }
-
-        }
-
-	}
 
 
-        textoimagem = textoimagem + "\n" + xx
-   
-}
-
-       
 
     }
 
-//msg.reply('horasTelefone\n',horasTelefone,'\nexraidgym\n',exraidgym,'\ntextoimagem\n',textoimagem,'\nminutosraid\n',minutosraid,'\nginasioRaid\n',ginasioRaid,'\npokemon\n',pokemon,'\ntier\n',tier)
-    getTextoImagem(horasTelefone,exraidgym,textoimagem,minutosraid,ginasioRaid,pokemon,tier)
+   // console.log('horasTelefone\n',horasTelefone,'\nexraidgym\n',exraidgym,'\ntextoimagem\n',textoimagem,'\nminutosraid\n',minutosraid,'\nginasioRaid\n',ginasioRaid,'\npokemon\n',pokemon,'\ntier\n',tier)
+    getTextoImagem(horasTelefone, exraidgym, imagem_boss, minutosraid, ginasioRaid, pokemon, tier)
+
     
 }
 
@@ -499,10 +493,7 @@ for(g in raids)
  
  
  
- 
- 
- 
-  function getfotoocr(pCode, cb) {  
+ function leinforaid(pCode, cb) {
 
     https.request(pCode).on('response', function (response) {
         var data = '';
@@ -516,40 +507,94 @@ for(g in raids)
         });
     }).end();
 }
-  
-  
- 
- async function getNest(endereco) {
-   
-    var leuOCR=""
-    var texto;
-    var result = await getfotoocr(endereco, async function (pCLatLng) {
+
+
+async function getNest(arraypkm,endereco) {
+    var leuOCR = ""
+    var result = await leinforaid(endereco, async function (pCLatLng) {
+        try {
+
+            leuOCR = pCLatLng.ParsedResults[0].ParsedText
+
+
+        } catch (error) {
+
+            leuOCR = 'Erro na imagem:\nVerique o tamanho, não pode ser superior a 1MB.'
+           
+        }
       
-        try{
-            leuOCR=  pCLatLng.ParsedResults[0].ParsedText
-           // console.log(pCLatLng.ParsedResults[0].ParsedText)
+        readOCR(leuOCR,arraypkm)
         
-    }catch(error) {
-        leuOCR='Erro na imagem:\nVerique o tamanho, não pode ser superior a 1MB.'
-        //console.log('As imagens deve ter 1MB.');
-      }
-      if(leuOCR.startsWith('Erro')){
-	      
-      // console.log(leuOCR)
-    }else{
+    })
+
+}
+
+
+
+
+
+//------
+function leinfoBoss(pCode, cb) {  //leraud
+
+    http.request(pCode).on('response', function (response) {
+        var data = '';
+        response.on("data", function (chunk) {
+            data += chunk;
+        });
+        response.on('end', function () {
+            var pCJSON = JSON.parse(data);
+            cb(pCJSON);
+
+        });
+    }).end();
+}
+
+
+ 
+ async function inicio(endereco,allboss) {
+    var cp=""
+    var nivelraid="?"
+    var achou=false;
+    var pokemon="?";
+    var imagem="";
+    var tipo="?";
+
+ var f_boss=[]
+
+
+var t=0;
+    var result = await leinfoBoss(endereco, async function (pCLatLng) {
+        pCLatLng.forEach(nivel => {
+          //  if(nivel.boss.toLocaleUpperCase()==qualPokemon.toLocaleUpperCase()){
+                achou=true;
+                cp="";
+                nivelraid=nivel.nivel;
+                pokemon=nivel.boss;
+                imagem=nivel.imagem;
+                tipo=nivel.bosstipo
+
+                
+             //   arrays.push[[nivelraid][tipo][pokemon][imagem]]
+             f_imagem_boss[t]=imagem
+             f_nivelraid[t]=nivelraid
+             f_boss[t]=pokemon
+      
+            t=++t;
+
+      //  }
+        })
+      
        
-        
-   readOCR(leuOCR); 
-    }
-   
-    
-    
 
-})
+        getNest(f_boss,allboss)
+     
+    })
 
-   
-} 
-  
+}
+	
+	
+	
+	
   
   if (msg.channel.name == 'ocr-teste' || msg.channel.name == 'info-raids') {
 	  
@@ -558,7 +603,7 @@ for(g in raids)
         //  msg.channel.send(Attachment[0].url);
        var imagem=Attachment[0].url
     
-	getNest(process.env.pnPoGoOCR+imagem+process.env.valuespnPoGo) 
+	inicio('http://pnraidspn.atwebpages.com/raid.php',process.env.pnPoGoOCR+imagem+process.env.valuespnPoGo) 
 	  
 
   //-----
