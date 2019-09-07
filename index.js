@@ -657,10 +657,10 @@ if (mensagem.startsWith("!c")) {
 	const reactionFilter = (reaction, user) => reaction.emoji.name === '👍';
 
 const embed = new Discord.RichEmbed({
-  title: 'Suggestion by someone',
-  description: 'This is a test suggestion. Can you please like it or dislike it :)',
+  title: 'Raid Boss',
+  description: 'Teste para adicionar treinadores :)',
   fields: [{
-    name: 'Like:',
+    name: 'Treinadores:',
     value: '<3'
   }]
 });
@@ -675,17 +675,16 @@ msg.channel.send(embed)
       .createReactionCollector(reactionFilter, {
         time: 60000
       });
-var dd=0
+
     // set collector events
     collector.on('collect', r => {
 	   
       // immutably copy embed's Like field to new obj
-    //  let embedLikeField = Object.assign({}, embed.fields[0]);
-  let embedLikeField = Object.assign({}, embed.fields=[]);
+     let embedLikeField = Object.assign({}, embed.fields.add);
+ 
       // update 'field' with new value
-    //  embedLikeField.value = msg.author.username;
-	     embedLikeField[dd] = msg.author.username;
-
+     embedLikeField.value = msg.author.username;
+	   
       // create new embed with old title & description, new field
       const newEmbed = new Discord.RichEmbed({
         title: embed.title,
@@ -693,11 +692,11 @@ var dd=0
         fields: [embedLikeField]
 	
       });
-    dd=++dd
+  
       // edit message with new embed
       // NOTE: can only edit messages you author
       r.message.edit(newEmbed)
-        .then(newMsg => msg.reply('new embed added',dd))
+        .then(newMsg => msg.reply('new embed added'))
         .catch(console.log);
     });
     collector.on('end', collected => msg.reply('Collected ${collected.size} reactions'));
