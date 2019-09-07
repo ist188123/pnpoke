@@ -23,9 +23,9 @@ client.on("message", async (msg) => {
 	 var semelhante=0;
 	
 	 var ultimolido=0;
-global.arrays=[]
- global.f_nivelraid=[]
- global.f_imagem_boss=[]
+
+ var f_nivelraid=[]
+ var f_imagem_boss=[]
 
 
 
