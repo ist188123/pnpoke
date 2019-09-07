@@ -186,7 +186,7 @@ const filter = (reaction, user) => {
 	return ['👍', '\u0031\u20E3','\u0032\u20E3','\u0033\u20E3','\u0034\u20E3','\u0035\u20E3'].includes(reaction.emoji.name) && user.id === msg.author.id;
 };
 	 
-	 
+if(tier='?'){	 
 var ovo='https://torneiopokemongopinhalnovo.webnode.pt/_files/200000047-74c3d74c3f/450/question.jpg';
 
 switch (tier) {
@@ -211,7 +211,7 @@ switch (tier) {
         break;
 
 }	 
-	 
+} 
 	 
 //------------
 	 
