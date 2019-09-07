@@ -360,7 +360,7 @@ msg.channel.send({embed: {
 
 
 
-function readOCR(m,arraypkm) {
+function readOCR(m,arraypkm,f_imagem_boss,f_nivelraid) {
 
      var tier;
     var pokemon = "?"
@@ -509,7 +509,7 @@ function readOCR(m,arraypkm) {
 }
 
 
-async function getNest(arraypkm,endereco) {
+async function getNest(arraypkm,f_imagem_boss,f_nivelraid,endereco) {
     var leuOCR = ""
     var result = await leinforaid(endereco, async function (pCLatLng) {
         try {
@@ -523,7 +523,7 @@ async function getNest(arraypkm,endereco) {
            
         }
       
-        readOCR(leuOCR,arraypkm)
+        readOCR(leuOCR,arraypkm,f_imagem_boss,f_nivelraid)
         
     })
 
@@ -586,7 +586,7 @@ var t=0;
       
        
 
-        getNest(f_boss,allboss)
+        getNest(f_boss,f_imagem_boss,f_nivelraid,allboss)
      
     })
 
