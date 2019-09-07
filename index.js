@@ -682,7 +682,7 @@ msg.channel.send(embed)
       let embedLikeField = Object.assign({}, embed.fields[0]);
 
       // update 'field' with new value
-      embedLikeField.value = '<3 <3 <3';
+      embedLikeField.value = msg.author.id;
 
       // create new embed with old title & description, new field
       const newEmbed = new Discord.RichEmbed({
