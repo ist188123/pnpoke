@@ -692,7 +692,7 @@ msg.channel.send(embed)
         fields: [embedLikeField]
 	
       });
-  newEmbed.addField('Emoji:', 'meu emoji', true);
+  newEmbed.addField('#:', msg.author.username, true);
       // edit message with new embed
       // NOTE: can only edit messages you author
       r.message.edit(newEmbed)
