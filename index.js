@@ -119,7 +119,7 @@ function editDistance(s1, s2) {
  
  function getTextoImagem(htelef,exgym,timagem,mraid,gymraid,pokemon,tier){
 
-
+var ovo='https://torneiopokemongopinhalnovo.webnode.pt/_files/200000047-74c3d74c3f/450/question.jpg';
 	 
 	if(pokemon.trim().length<1){
         pokemon='?'
@@ -129,6 +129,33 @@ function editDistance(s1, s2) {
 }
  if(timagem.trim().length<1){
     timagem='?'
+	 
+switch (tier) {
+    case "1":
+        ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000097-88ffa8a090/200/nivel1.png";
+        break;
+    case "2":
+        ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000097-88ffa8a090/200/nivel1.png";
+        break;
+
+    case "3":
+        ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
+
+        break;
+    case "4":
+        ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
+
+        break;
+    case "5":
+        ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000019-4d5f84e5ec/200/Egg_Raid_Legendary.png";
+
+        break;
+
+}	 	 
+	 
+	 
+}else{
+ovo=timagem	
 }
  if(mraid.trim().length<1){
     mraid='?'
@@ -186,34 +213,13 @@ const filter = (reaction, user) => {
 	return ['👍', '\u0031\u20E3','\u0032\u20E3','\u0033\u20E3','\u0034\u20E3','\u0035\u20E3'].includes(reaction.emoji.name) && user.id === msg.author.id;
 };
 	 
-if(tier=='?'){	 
-var ovo='https://torneiopokemongopinhalnovo.webnode.pt/_files/200000047-74c3d74c3f/450/question.jpg';
+ 
 
-switch (tier) {
-    case "1":
-        ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000097-88ffa8a090/200/nivel1.png";
-        break;
-    case "2":
-        ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000097-88ffa8a090/200/nivel1.png";
-        break;
 
-    case "3":
-        ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
 
-        break;
-    case "4":
-        ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000027-959cf96a39/200/4.png";
 
-        break;
-    case "5":
-        ovo = "https://exraidspinhalnovo.webnode.pt/_files/200000019-4d5f84e5ec/200/Egg_Raid_Legendary.png";
+	 
 
-        break;
-
-}	 
-}else{
-	ovo=timagem
-}
 	 
 //------------
 	 
