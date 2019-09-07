@@ -211,7 +211,9 @@ switch (tier) {
         break;
 
 }	 
-} 
+}else{
+	ovo=timagem
+}
 	 
 //------------
 	 
