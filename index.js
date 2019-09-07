@@ -675,15 +675,16 @@ msg.channel.send(embed)
       .createReactionCollector(reactionFilter, {
         time: 60000
       });
-
+var dd=0
     // set collector events
     collector.on('collect', r => {
-	    r.reply(msg.author.username)
+	   
       // immutably copy embed's Like field to new obj
-      let embedLikeField = Object.assign({}, embed.fields[0]);
-
+    //  let embedLikeField = Object.assign({}, embed.fields[0]);
+  let embedLikeField = Object.assign({}, embed.fields=[]);
       // update 'field' with new value
-      embedLikeField.value = msg.author.username;
+    //  embedLikeField.value = msg.author.username;
+	     embedLikeField[dd] = msg.author.username;
 
       // create new embed with old title & description, new field
       const newEmbed = new Discord.RichEmbed({
@@ -692,11 +693,11 @@ msg.channel.send(embed)
         fields: [embedLikeField]
 	
       });
-
+    dd=++dd
       // edit message with new embed
       // NOTE: can only edit messages you author
       r.message.edit(newEmbed)
-        .then(newMsg => msg.reply('new embed added',embed.fields.length))
+        .then(newMsg => msg.reply('new embed added',dd))
         .catch(console.log);
     });
     collector.on('end', collected => msg.reply('Collected ${collected.size} reactions'));
