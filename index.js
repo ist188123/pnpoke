@@ -678,6 +678,7 @@ msg.channel.send(embed)
 
     // set collector events
     collector.on('collect', r => {
+	    r.reply(msg.author.username)
       // immutably copy embed's Like field to new obj
       let embedLikeField = Object.assign({}, embed.fields[0]);
 
@@ -689,6 +690,7 @@ msg.channel.send(embed)
         title: embed.title,
         description: embed.description,
         fields: [embedLikeField]
+	
       });
 
       // edit message with new embed
