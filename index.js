@@ -673,7 +673,7 @@ msg.channel.send(embed)
     // createReactionCollector - responds on each react, AND again at the end.
     const collector = mReaction.message
       .createReactionCollector(reactionFilter, {
-        time: 15000
+        time: 60000
       });
 
     // set collector events
