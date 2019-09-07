@@ -694,7 +694,7 @@ msg.channel.send(embed)
       // edit message with new embed
       // NOTE: can only edit messages you author
       r.message.edit(newEmbed)
-        .then(newMsg => msg.reply('new embed added'))
+        .then(newMsg => msg.reply('new embed added',embed.fields.length))
         .catch(console.log);
     });
     collector.on('end', collected => msg.reply('Collected ${collected.size} reactions'));
