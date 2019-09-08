@@ -652,6 +652,26 @@ collector.on('end', collected => {
 	
 	
 	
+	if (msg.content === '!fruits') {
+		try {
+			await msg.react('🍎');
+			await msg.react('🍊');
+			await msg.react('🍇');
+		} catch (error) {
+			msg.reply('One of the emojis failed to react.');
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 if (mensagem.startsWith("!c")) {	
 	
 	const reactionFilter = (reaction, user) => reaction.emoji.name === '👍';
