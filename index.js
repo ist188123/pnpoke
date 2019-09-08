@@ -278,11 +278,11 @@ msg.channel.send({embed: {
 }).then(msg => {
 	
 	 if(pokemon=='?'){
-		  msg.react('\u0031\u20E3')
-		  msg.react('\u0032\u20E3')
-		  msg.react('\u0033\u20E3')
-		  msg.react('\u0034\u20E3')
-		  msg.react('\u0035\u20E3')
+		await  msg.react('\u0031\u20E3')
+		await  msg.react('\u0032\u20E3')
+		await  msg.react('\u0033\u20E3')
+		await  msg.react('\u0034\u20E3')
+		await  msg.react('\u0035\u20E3')
 		 
 	 }else{
 		msg.react('👍') 
