@@ -169,9 +169,11 @@ if(isNaN(parseInt(tier))){
 }	 
 
 //-----
-var mnhoras=mraid.split(':')[0];
-mnhoras=60*mnhoras;	 
+ var mnhoras = mraid.split(':')[0];
+	 
+	 
 var mn=mraid.split(':')[1];
+ mn=60*parseInt(mnhoras)+parseInt(mn)
 var horas_telefone=htelef.split(':')[0];
 var minutos_telefone=htelef.split(':')[1];
 var today = new Date();
@@ -180,7 +182,7 @@ var today = new Date();
 var inicioRaid = new Date(today.getFullYear(), today.getMonth(), today.getDate(), horas_telefone, minutos_telefone);
 //se boss
   if(pokemon!='?'){
-    mn=-(mn+mnhoras)
+    mn = -(90 - mn)
   }
 inicioRaid.setMinutes(parseInt(minutos_telefone)+parseInt(mn));
 
