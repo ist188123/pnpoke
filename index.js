@@ -206,6 +206,13 @@ var tempoEspera=mf-mi;
 	 msg.delete()
 	}	 
 	 
+	
+	 if( msg.channel.name == 'teste'){
+	 //apaga a imagemmessage.channel.fetchMessages({limit: 1}).then(
+	
+	} 
+
+	 
 	 
 	 
 	 
