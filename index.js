@@ -178,7 +178,7 @@ var today = new Date();
 var inicioRaid = new Date(today.getFullYear(), today.getMonth(), today.getDate(), horas_telefone, minutos_telefone);
 //se boss
   if(pokemon!='?'){
-    mn=-(45-mn)
+    mn=-mn
   }
 inicioRaid.setMinutes(parseInt(minutos_telefone)+parseInt(mn));
 
@@ -277,68 +277,9 @@ msg.channel.send({embed: {
   }
 }).then(msg => {
 	
-	 if(pokemon=='?'){
-		  msg.react('\u0031\u20E3')
-		  msg.react('\u0032\u20E3')
-		  msg.react('\u0033\u20E3')
-		  msg.react('\u0034\u20E3')
-		  msg.react('\u0035\u20E3')
-		 
-	 }else{
-		msg.react('👍') 
-	 }
-		 
-	
-	let embedLikeField = Object.assign({}, embed.fields[0]);
-	const newEmbed = new Discord.RichEmbed({
-        title: embed.title,
-        description: embed.description,
-        fields: [embedLikeField]
-	  });
-	
-	
-	msg.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
-	.then(collected => {
-		
-		
-		const reaction = collected.first();
-                if (reaction.emoji.name === '👍') {
-			msg.reply('thumbs up.');
-		} 
-		
-		if (reaction.emoji.name === '\u0031\u20E3') {
-			msg.reply('Nivel 1');
-			//embedLikeField.value = '1';
-			collected.msg.edit(newEmbed)
-			msg.react('👍')
-		} 
-		if (reaction.emoji.name === '\u0032\u20E3') {
-			msg.reply('Nivel 2');
-			//embedLikeField.value = '2';
-			msg.react('👍')
-		} 
-		if (reaction.emoji.name === '\u0033\u20E3') {
-			msg.reply('Nivel 3');
-			//embedLikeField.value = '3';
-			msg.react('👍')
-		} 
-		if (reaction.emoji.name === '\u0034\u20E3') {
-			msg.reply('Nivel 4');
-			//embedLikeField.value = '4';
-			msg.react('👍')
-		} 
-		if (reaction.emoji.name === '\u0035\u20E3') {
-			msg.reply('Nivel 5');
-			//embedLikeField.value = '5';
-			msg.react('👍')
-		} 
-	
-		
-	})
-	.catch(collected => {
-		msg.reply('Teste OCR, obrigado por colaborar.');
-	});		 
 	 
+		msg.react('👍') 
+	
 	 });
 	 
 	 //------
