@@ -296,7 +296,7 @@ msg.channel.send({embed: {
         value: hora_fim_raid
       },
 	     {
-        name: "Tempo",
+        name: "Tempo "+tempo_raid_ativa+"m",
         value: horas_definidas
       }
 	 /**   ,
