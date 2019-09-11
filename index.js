@@ -53,6 +53,24 @@ var ginasiosPN = [
   ]
 
   
+var add_minutes = function (dt, minutes) {
+    var d = new Date(dt.getTime() + minutes * 60000),
+        dformat = [mzero(d.getUTCHours() + 1),
+        mzero(d.getMinutes())].join(':');
+
+    return dformat;
+}
+
+var mzero = function (mzero) {
+    if (mzero < 10) {
+        mzero = "0" + mzero
+    }
+    return mzero;
+}
+
+
+
+
   var horas=function(h,m){
 
     if(h<10){
@@ -227,10 +245,18 @@ const filter = (reaction, user) => {
  
 
 
+var h_t = htelef.split(':')[0]*60;
+    var m_t = htelef.split(':')[1];
+    var hf_r=fimRaid.getHours()*60
+    var mf_r= fimRaid.getMinutes()
+    var tempo_raid_ativa=parseInt(hf_r) -parseInt(h_t)+parseInt(m_t)-parseInt(mf_r)
 
-
-	 
-
+var horas_definidas="";	 
+var date = new Date();
+for (var ii=0;ii<tempo_raid_ativa;ii+=10){
+    horas_definidas=horas_definidas+"\n"+ add_minutes(date,ii)
+    
+}
 	 
 //------------
 	 
@@ -248,7 +274,12 @@ msg.channel.send({embed: {
 	thumbnail: {
 		url: ovo,
 	},
-    fields: [{
+    fields: [
+	     {
+        name: "Ginásio",
+        value: gymraid
+      },
+	    {
         name: "Nivel ",
         value: tier
       },
@@ -265,8 +296,8 @@ msg.channel.send({embed: {
         value: hora_fim_raid
       },
 	     {
-        name: "Ginásio",
-        value: gymraid
+        name: "Tempo",
+        value: horas_definidas
       }
 	 /**   ,
 	     {
