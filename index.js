@@ -1,6 +1,6 @@
 
 const Discord = require("discord.js");
-
+const prompter = require('discordjs-prompter');
 const client = new Discord.Client();
 
 const https = require('https');
