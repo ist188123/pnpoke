@@ -292,7 +292,7 @@ msg.channel.send({embed: {
         value: hora_inicio_raid
       },
 	    {
-        name: "Termina",
+        name: "Termina em "+tempo_raid_ativa+" m",
         value: hora_fim_raid
       },
 	     {
@@ -620,8 +620,13 @@ const collector = msg.createReactionCollector(filter, { time: 60000 });
 
 collector.on('collect', (reaction, reactionCollector) => {
 	
+	if (reaction.emoji.name === '👍') {
+            msg.reply('you reacted with a thumbs up.');
+        }
+        else {
+           msg.reply('Collected '+msg.id+'\n'+reaction.users+'\n'+reaction.users.name);
+        }
 	
-	msg.reply('Collected '+msg.id+'\n'+reaction.users+'\n'+reaction.users.name);
 });
 
 collector.on('end', collected => {
@@ -635,15 +640,7 @@ collector.on('end', collected => {
 	
 	
 	
-	if (msg.content === '!fruits') {
-		try {
-			await msg.react('👍');
-			await msg.react('👎');
-			await msg.react('🍇');
-		} catch (error) {
-			msg.reply('One of the emojis failed to react.');
-		}
-	}
+	
 	
 	
 	
